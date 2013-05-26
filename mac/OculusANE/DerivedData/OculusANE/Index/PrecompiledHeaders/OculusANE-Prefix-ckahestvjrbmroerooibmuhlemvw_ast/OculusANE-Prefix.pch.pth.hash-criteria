@@ -1,0 +1,32 @@
+Contents of /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch
+
+x86_64-apple-darwin12.2.0
+-x
+objective-c++
+-arch
+x86_64
+-fmessage-length=0
+-std=gnu++11
+-stdlib=libc++
+-fobjc-arc
+-fpascal-strings
+-O0
+-DDEBUG=1
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+-fasm-blocks
+-fstrict-aliasing
+-mmacosx-version-min=10.8
+-g
+-fvisibility-inlines-hidden
+-I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug
+-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac
+-ferror-limit=10
+-working-directory=/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE
+-Xclang
+-detailed-preprocessing-record
+SDK_PRODUCT_BUILD_VERSION=12C37
