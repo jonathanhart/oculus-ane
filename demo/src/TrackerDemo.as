@@ -11,7 +11,12 @@ package
 		
 		public function TrackerDemo()
 		{
-			this.addEventListener(Event.ENTER_FRAME, handleEnterFrame);
+			if (_ovr.isSupported()) {
+				this.addEventListener(Event.ENTER_FRAME, handleEnterFrame);
+				var obj:Object = _ovr.getHMDInfo();
+			} else {
+				trace("Oculus Rift not connected or unsupported.");
+			}
 		}
 		
 		private function handleEnterFrame(event:Event) : void

@@ -22,6 +22,12 @@ package com.numeda.OculusANE
 			return _extContext.call("getCameraQuaternion") as Vector.<Number>;
 		}
 		
+		public function getHMDInfo() : Object
+		{
+			var info:Object = _extContext.call("getHMDInfo") as Object;
+			return info;
+		}
+			
 		public function isSupported() : Boolean
 		{
 			return _extContext.call("isSupported");

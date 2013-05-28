@@ -7,13 +7,13 @@
 		<string>/Users/jonathan/Documents/git/oculus-ane</string>
 	</array>
 	<key>LastWorkingCopyScanDate</key>
-	<date>2013-05-26T08:57:08Z</date>
+	<date>2013-05-28T08:39:40Z</date>
 	<key>MissingFilePaths</key>
 	<array>
 		<string>/Users/opt/X11/lib/libGL.dylib</string>
 		<string>/Users/jonathan/Documents/git/oculus-ane/oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Debug/OculusRoomTiny.app</string>
-		<string>/Users/jonathan/Documents/git/oculus-ane/oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Debug/SensorBoxTest.app</string>
 		<string>/Users/opt/X11/lib/libX11.dylib</string>
+		<string>/Users/jonathan/Documents/git/oculus-ane/oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Debug/SensorBoxTest.app</string>
 		<string>/Users/System/Library/Frameworks/AudioToolbox.framework</string>
 		<string>/Users/jonathan/Documents/git/oculus-ane/oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Debug/OculusWorldDemo.app</string>
 	</array>

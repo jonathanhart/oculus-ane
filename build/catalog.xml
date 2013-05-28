@@ -10,7 +10,7 @@
   </features>
   <libraries>
     <library path="library.swf">
-      <script name="com/numeda/OculusANE/OculusANE" mod="1369711061000" signatureChecksum="1367037093" >
+      <script name="com/numeda/OculusANE/OculusANE" mod="1369733115000" signatureChecksum="1204182374" >
         <def id="com.numeda.OculusANE:OculusANE" /> 
         <dep id="flash.external:ExtensionContext" type="e" /> 
         <dep id="Error" type="e" /> 
@@ -18,14 +18,14 @@
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
-      <script name="_ad8b3c27cee202862b06385595745a103908d40c7c02a679d50f429ae9822307_flash_display_Sprite" mod="1369711061828" signatureChecksum="3522721773" >
-        <def id="_ad8b3c27cee202862b06385595745a103908d40c7c02a679d50f429ae9822307_flash_display_Sprite" /> 
+      <script name="_42d22f7d30db7a3172d399d94ca77236b7aef301d4f3a5de21a12bb158a8e7b4_flash_display_Sprite" mod="1369733309219" signatureChecksum="2829351629" >
+        <def id="_42d22f7d30db7a3172d399d94ca77236b7aef301d4f3a5de21a12bb158a8e7b4_flash_display_Sprite" /> 
         <dep id="flash.system:Security" type="e" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.display:Sprite" type="i" /> 
       </script>
       <digests>
-        <digest type="SHA-256" signed="false" value="691b636926cddc4c1cf56c5f5a508d52d355dfe2fce8e7a3f7d6a1d23564db52"   />
+        <digest type="SHA-256" signed="false" value="185f0d382dd950b71036ccc024886441285358a894496d44a51bc7942f00391d"   />
       </digests>
     </library>
   </libraries>
