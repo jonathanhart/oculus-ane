@@ -1,4 +1,5 @@
 rm OculusANE.ane
+rm OculusANE.swc
 cp ../ane/bin/OculusANE.swc .
 unzip -o OculusANE.swc
 rm -r -f mac

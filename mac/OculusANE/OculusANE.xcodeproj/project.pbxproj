@@ -17,6 +17,10 @@
 		ABDACAD81752041900994FF9 /* OculusANETests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDACAD71752041900994FF9 /* OculusANETests.m */; };
 		ABDACAE217520A9900994FF9 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE117520A9900994FF9 /* Adobe AIR.framework */; };
 		ABDACAE417520E3E00994FF9 /* libovr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE317520E3E00994FF9 /* libovr.a */; };
+		ABDACAE6175450E900994FF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE5175450E900994FF9 /* CoreGraphics.framework */; };
+		ABDACAE7175450FE00994FF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAB91752041900994FF9 /* Foundation.framework */; };
+		ABDACAE91754513E00994FF9 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE81754513E00994FF9 /* CoreServices.framework */; };
+		ABDACAEB1754515F00994FF9 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAEA1754515F00994FF9 /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,9 @@
 		ABDACAD71752041900994FF9 /* OculusANETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OculusANETests.m; sourceTree = "<group>"; };
 		ABDACAE117520A9900994FF9 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<absolute>"; };
 		ABDACAE317520E3E00994FF9 /* libovr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libovr.a; path = ../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release/libovr.a; sourceTree = "<group>"; };
+		ABDACAE5175450E900994FF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ABDACAE81754513E00994FF9 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		ABDACAEA1754515F00994FF9 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDACAEB1754515F00994FF9 /* IOKit.framework in Frameworks */,
+				ABDACAE91754513E00994FF9 /* CoreServices.framework in Frameworks */,
+				ABDACAE7175450FE00994FF9 /* Foundation.framework in Frameworks */,
+				ABDACAE6175450E900994FF9 /* CoreGraphics.framework in Frameworks */,
 				ABDACAE417520E3E00994FF9 /* libovr.a in Frameworks */,
 				ABDACAE217520A9900994FF9 /* Adobe AIR.framework in Frameworks */,
 				ABDACAB51752041900994FF9 /* Cocoa.framework in Frameworks */,
@@ -76,6 +87,9 @@
 		ABDACAA71752041900994FF9 = {
 			isa = PBXGroup;
 			children = (
+				ABDACAEA1754515F00994FF9 /* IOKit.framework */,
+				ABDACAE81754513E00994FF9 /* CoreServices.framework */,
+				ABDACAE5175450E900994FF9 /* CoreGraphics.framework */,
 				ABDACAE317520E3E00994FF9 /* libovr.a */,
 				ABDACABA1752041900994FF9 /* OculusANE */,
 				ABDACAD01752041900994FF9 /* OculusANETests */,
@@ -325,6 +339,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -342,6 +357,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
@@ -372,6 +391,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
@@ -399,6 +422,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release\"",
 				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fno-rtti",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -425,6 +452,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release\"",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fno-rtti",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;

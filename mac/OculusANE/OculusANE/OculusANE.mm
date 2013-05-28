@@ -18,13 +18,18 @@ using namespace std;
 using namespace OVR;
 
 extern "C" {
-    
-    FREObject cameraQuaternionResult;
-    FREObject cameraEulerResult;
-    
     Ptr<SensorDevice> pSensor;
     SensorFusion fusion;
     Ptr<DeviceManager> pManager;
+    
+    void redirectConsoleLogToDocumentFolder ()
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                             NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *logPath = [documentsDirectory stringByAppendingPathComponent:@"console.log"];
+        freopen([logPath fileSystemRepresentation],"a+",stderr);
+    }
     
     FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
         FREObject result;
@@ -37,13 +42,36 @@ extern "C" {
     
     FREObject getCameraQuaternion(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
     {
+        FREObject cameraQuaternionResult;
+        FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &cameraQuaternionResult, nil);
+        FRESetArrayLength(&cameraQuaternionResult, 4);
+
+        NSLog(@"getCameraQuaternion");
         Quatf quaternion = fusion.GetOrientation();
         
-        FRESetArrayElementAt(cameraQuaternionResult, 0, &quaternion.x);
-        FRESetArrayElementAt(cameraQuaternionResult, 1, &quaternion.y);
-        FRESetArrayElementAt(cameraQuaternionResult, 2, &quaternion.z);
-        FRESetArrayElementAt(cameraQuaternionResult, 3, &quaternion.w);
+        // get an element at index
+        FREObject xVal;
+        double x = static_cast<double>(quaternion.x);
+        FRENewObjectFromDouble(x, &xVal);
+        FRESetArrayElementAt(cameraQuaternionResult, 0, xVal);
 
+        FREObject yVal;
+        double y = static_cast<double>(quaternion.y);
+        FRENewObjectFromDouble(y, &yVal);
+        FRESetArrayElementAt(cameraQuaternionResult, 1, yVal);
+        
+        FREObject zVal;
+        double z = static_cast<double>(quaternion.z);
+        FRENewObjectFromDouble(z, &zVal);
+        FRESetArrayElementAt(cameraQuaternionResult, 2, zVal);
+        
+        FREObject wVal;
+        double w = static_cast<double>(quaternion.w);
+        FRENewObjectFromDouble(w, &wVal);
+        FRESetArrayElementAt(cameraQuaternionResult, 3, wVal);
+        
+        NSLog(@"Quat Vals: %f,%f,%f,%f", quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+        
         return cameraQuaternionResult;
     }
     
@@ -65,12 +93,17 @@ extern "C" {
         
         *functionsToSet = func;
         
+        NSLog(@"Initialized Native Extension");
+        
         OVR::System::Init();
         pManager = *DeviceManager::Create();
         
+        NSLog(@"Initialized OVR");
+        if (!pManager) {
+            NSLog(@"ERROR: pManager null");
+        }
         DeviceEnumerator<SensorDevice> isensor = pManager->EnumerateDevices<SensorDevice>();
         DeviceEnumerator<SensorDevice> oculusSensor;
-        DeviceEnumerator<SensorDevice> oculusSensor2;
         
         while(isensor)
         {
@@ -94,8 +127,13 @@ extern "C" {
             if (pSensor) {
                 pSensor->SetRange(SensorRange(4 * 9.81f, 8 * Math<float>::Pi, 1.0f), true);
                 fusion.AttachToSensor(pSensor);
+                NSLog(@"Attached to sensor");
+            } else {
+                NSLog(@"ERROR: pSensor null");
             }
             oculusSensor.Clear();
+        } else {
+            NSLog(@"ERROR: no Sensor found");
         }
     }
     
@@ -119,12 +157,8 @@ extern "C" {
         extDataToSet = NULL;
         *ctxInitializerToSet = &OculusANE_ContextInitializer;
         *ctxFinalizerToSet = &OculusANE_ContextFinalizer;
-        
-        FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &cameraQuaternionResult, nil);
-        FRESetArrayLength(&cameraQuaternionResult, 4);
-        
-        FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &cameraEulerResult, nil);
-        FRESetArrayLength(&cameraEulerResult, 3);
+      
+        redirectConsoleLogToDocumentFolder();
     }
     
     void OculusANEFinalizer (FREContext ctx) {
