@@ -3,7 +3,7 @@ oculus-ane
 
 Oculus ANE (Adobe Native Extension)
 
-This will provide Native Extension support for the Oculus Rift for use in products.
+Mac OSX only for now. Windows support coming soon (especially if someone wants to help out with it)
 
-The ANE will provide tracking support to AIR applications. I hope to also include viewport adapters to most of the 
-popular Flash/AIR based 3d engines, such as Away3D and Flare3D.
+This ANE will integrate the tracking sensors into AIR applications. It does not yet provide integration with the popular AIR frameworks such as Flare3D and Away3D but that's coming soon!
+
