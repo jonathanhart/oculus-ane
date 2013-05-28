@@ -474,7 +474,7 @@ void InputTestApp::OnIdle()
             OVR_sprintf(titleBuffer, 512, "OVR SensorBox %s %s  Ang: %0.3f",
                         (SFusion.IsGravityEnabled() ?  "" : "[Grav Off]"),
                         (coord == SensorDevice::Coord_HMD) ? "[HMD Coord]" : "",
-                        CaplcDownAngleDegrees(q));
+                        CalcDownAngleDegrees(q));
             pPlatform->SetWindowTitle(titleBuffer);
             LastTitleUpdate = curtime;
         }

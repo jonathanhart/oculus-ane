@@ -1,0 +1,13 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.1">
+    <id>com.numeda.OculusANE</id>
+    <versionNumber>0.0.1</versionNumber>
+    <platforms>
+        <platform name="MacOS-x86">
+            <applicationDeployment>
+                <nativeLibrary>OculusANE.framework</nativeLibrary>
+                <initializer>OculusANEInitializer</initializer>
+                <finalizer>OculusANEFinalizer</finalizer>
+            </applicationDeployment>
+        </platform>
+     </platforms>
+</extension>
