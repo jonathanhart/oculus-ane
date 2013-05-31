@@ -19,7 +19,7 @@ To connect the Oculus via the ANE, add it in the Project Properties (remember to
 
 Connect to the Oculus in AS3:
 
-	var oculus:OculusANE = new OculusANE();
+	var _oculus:OculusANE = new OculusANE();
 
 Tell Away3D to render in Oculus mode:
 
