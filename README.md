@@ -35,3 +35,13 @@ Tell Away3D to render in Oculus mode:
 
   addChild(_view);
 
+For every frame of your render loop, have this code:
+
+	private function enterFrame(event:Event) : void {
+		
+		var quatVec:Vector.<Number> = _oculus.getCameraQuaternion();
+		var quat:Quaternion = new Quaternion(-quatVec[0], -quatVec[1], quatVec[2], quatVec[3]); 
+		_camera.transform = quat.toMatrix3D(_core.transform);
+		_view.render();
+	}
+
