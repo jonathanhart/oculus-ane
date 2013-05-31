@@ -11,6 +11,9 @@ package com.numeda.oculus.away3d
 		public function OculusStereoView3D(scene:Scene3D=null, camera:Camera3D=null, renderer:RendererBase=null, stereoRenderMethod:StereoRenderMethodBase=null)
 		{
 			super(scene, camera, renderer, stereoRenderMethod);
+			width = 1280;
+			height = 800;
+			stereoEnabled = true;
 		}
 		
 		public override function set width(val:Number) : void
