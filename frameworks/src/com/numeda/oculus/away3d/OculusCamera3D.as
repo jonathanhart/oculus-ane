@@ -9,7 +9,7 @@ package com.numeda.oculus.away3d
 		{
 			super(lens);
 			this.stereoFocus = Infinity;
-			this.stereoOffset = -381;
+			this.stereoOffset = 400;
 		} 
 	}
 }
