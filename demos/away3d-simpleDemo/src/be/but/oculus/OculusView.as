@@ -63,9 +63,10 @@ package be.but.oculus
 		{
 			leftView.width = rightView.width = (_width / 2);
 			leftView.height = rightView.height = _height;
-			rightView.x = leftView.width;
-			//leftView.x = leftView.width;
-			trace( "OculusView.positionViews: " + rightView.x );
+			rightView.x = leftView.width; // normal
+			//leftView.x = leftView.width; // crosseye
+			
+			trace( "crosseye: " + (leftView.x != 0));
 		}
 		
 		public function render():void 
