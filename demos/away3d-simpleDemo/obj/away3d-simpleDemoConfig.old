@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2/06/2013'</value>
+      <value>'4/06/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -40,7 +40,7 @@
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\src\simpleDemo\Main.as</path-element>
+    <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#000000</default-background-color>
   <default-frame-rate>60</default-frame-rate>
