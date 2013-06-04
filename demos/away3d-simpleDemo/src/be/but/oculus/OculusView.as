@@ -41,23 +41,7 @@ package be.but.oculus
 			
 			addChild(leftView);
 			addChild(rightView);
-			//addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
-		
-		/*private function onAddedToStage(e:Event):void 
-		{
-			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-			
-			var man:Stage3DManager = Stage3DManager.getInstance(stage);
-			var stageProxy:Stage3DProxy = man.getStage3DProxy(0);
-			
-			rightView = new View3D(scene, _camera.rightCamera);
-			rightView.stage3DProxy = leftView.stage3DProxy;
-
-			addChild(leftView);
-			addChild(rightView);
-			positionViews();
-		}*/
 		
 		private function positionViews():void 
 		{

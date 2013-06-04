@@ -37,6 +37,8 @@
     </source-path>
     <library-path append="true">
       <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\away3d-core-fp11_4_1_1_Beta.swc</path-element>
+      <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\joyquery.swc</path-element>
+      <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\OculusANE.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
