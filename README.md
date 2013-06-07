@@ -3,7 +3,7 @@ oculus-ane
 
 Oculus ANE (Adobe Native Extension)
 
-Mac OSX only for now. Windows support coming soon (especially if someone wants to help out with it)
+Alpha support for both Mac OSX and Windows.
 
 --- 
 
