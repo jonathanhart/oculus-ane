@@ -36,7 +36,7 @@ package
 			ship.position = new Vector3D();
 			addChild(ship);
 			
-			//_oculusTracker = new OculusANE();
+			_oculusTracker = new OculusANE();
 			
 			OculusSetup.instance.addEnterFrameHandler(onEnterFrame);
 			Main.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
@@ -61,10 +61,13 @@ package
 			// the camera is attached to this ship
 			// thus moving along the path and rotation of the ship
 			// the oculus should rotate the camera in its own space, thus looking arround inside the ship
-			if (_oculusTracker && _oculusTracker.isSupported()) {
-				var quatVec:Vector.<Number> = _oculusTracker.getCameraQuaternion();
-				var quat:Quaternion = new Quaternion(-quatVec[0], -quatVec[1], quatVec[2], quatVec[3]); 
-				OculusSetup.instance.camera.transform = quat.toMatrix3D();
+			if (_oculusTracker) {
+				trace( "_oculusTracker : " + _oculusTracker );
+				if (_oculusTracker.isSupported()) {
+					var quatVec:Vector.<Number> = _oculusTracker.getCameraQuaternion();
+					var quat:Quaternion = new Quaternion(-quatVec[0], -quatVec[1], quatVec[2], quatVec[3]); 
+					OculusSetup.instance.camera.transform = quat.toMatrix3D();					
+				}
 			}
 
 			moveForward(_speed);

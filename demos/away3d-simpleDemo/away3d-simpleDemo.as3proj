@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\away3dsimpleDemo.swf" />
     <movie fps="60" />
-    <movie width="1280" />
-    <movie height="800" />
+    <movie width="640" />
+    <movie height="400" />
     <movie version="3" />
     <movie minorVersion="7" />
     <movie platform="AIR" />

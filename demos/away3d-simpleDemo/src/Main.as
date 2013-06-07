@@ -89,7 +89,7 @@ package
 			ship.moveBackward(6371);
 			ship.rotationY = 20;
 			
-			JoystickHelper.sharedInstance().addEventListener(JoystickHelper.EVT_BUTTON_DOWN, onButtonDown);
+			//JoystickHelper.sharedInstance().addEventListener(JoystickHelper.EVT_BUTTON_DOWN, onButtonDown);
 
 			_setup.addEnterFrameHandler(onEnterFrame);
 		}

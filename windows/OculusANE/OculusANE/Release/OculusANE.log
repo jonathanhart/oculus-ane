@@ -1,0 +1,16 @@
+﻿Build started 8/06/2013 1:21:15.
+     1>Project "C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\OculusANE\OculusANE.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Adobe\Adobe Flash Builder 4.6\sdks\4.6.0\include" /IC:\code\OculusSDK\LibOVR\Include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D OCULUSANE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt OculusANE.cpp
+         OculusANE.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\FlashDevelop\Tools\flexsdk\lib\win" /LIBPATH:"C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\LibOVR\Lib\Win32" Winmm.lib FlashRuntimeExtensions.lib libovr.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.lib" /MACHINE:X86 /SAFESEH /DLL Release\OculusANE.obj
+            Creating library C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.lib and object C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.exp
+         Generating code
+         Finished generating code
+         OculusANE.vcxproj -> C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\Release\OculusANE.dll
+     1>Done Building Project "C:\Users\Tom\Documents\GitHub\oculus-ane\windows\OculusANE\OculusANE\OculusANE.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.16

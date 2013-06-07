@@ -25,5 +25,6 @@
   <supportedProfiles>extendedDesktop</supportedProfiles>
   <extensions>
     <extensionID>extension.JoyQuery.Joystick</extensionID>
+    <extensionID>com.numeda.OculusANE</extensionID>
   </extensions>
 </application>
