@@ -1,0 +1,15 @@
+<extension xmlns="http://ns.adobe.com/air/extension/2.5">
+	<id>extension.JoyQuery.Joystick</id>
+	<versionNumber>1.0.0</versionNumber>
+	<name>JoyQuery 2.0</name>
+	<description>JoyQuery Adobe AIR Native Extension. This is free software. You may copy, reuse, and redistribute this software freely provided that it remains unaltered.</description>
+	<copyright>Copyright (C) Alexander O'Mara</copyright>
+	<platforms>
+		<platform name="Windows-x86">
+			<applicationDeployment>
+				<nativeLibrary>joyquery.dll</nativeLibrary>
+				<initializer>initializer</initializer>
+			</applicationDeployment>
+		</platform>
+	</platforms>
+</extension>

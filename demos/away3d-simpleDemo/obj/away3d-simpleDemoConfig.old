@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'4/06/2013'</value>
+      <value>'8/06/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -37,6 +37,8 @@
     </source-path>
     <library-path append="true">
       <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\away3d-core-fp11_4_1_1_Beta.swc</path-element>
+      <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\joyquery.swc</path-element>
+      <path-element>C:\Users\Tom\Documents\GitHub\oculus-ane\demos\away3d-simpleDemo\lib\OculusANE.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
@@ -45,7 +47,7 @@
   <default-background-color>#000000</default-background-color>
   <default-frame-rate>60</default-frame-rate>
   <default-size>
-    <width>1280</width>
-    <height>800</height>
+    <width>640</width>
+    <height>400</height>
   </default-size>
 </flex-config>

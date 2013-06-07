@@ -105,6 +105,7 @@ package be.but.scenery
 		
 		private function onEnterFrame():void 
 		{
+			rotationX -= 0.003
 			clouds.rotationY += 0.006;
 			clouds.rotationX += 0.002;
 		}

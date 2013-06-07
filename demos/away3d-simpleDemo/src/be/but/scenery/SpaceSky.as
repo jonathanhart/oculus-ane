@@ -3,6 +3,7 @@ package be.but.scenery
 	import away3d.primitives.SkyBox;
 	import away3d.textures.BitmapCubeTexture;
 	import away3d.utils.Cast;
+	import be.but.oculus.OculusSetup;
 	
 	/**
 	 * ...
@@ -33,6 +34,12 @@ package be.but.scenery
 			super(cubeTexture);
 			
 			// generate clouds maybe?
+			OculusSetup.instance.addEnterFrameHandler(onEnterFrame);
+		}
+		
+		private function onEnterFrame():void 
+		{
+			
 		}
 		
 	}

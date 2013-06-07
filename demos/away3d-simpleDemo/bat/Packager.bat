@@ -8,7 +8,12 @@ set OUTPUT=%AIR_PATH%\%AIR_NAME%%AIR_TARGET%.air
 :: Package
 echo.
 echo Packaging %AIR_NAME%%AIR_TARGET%.air using certificate %CERT_FILE%...
-call adt -package %OPTIONS% %SIGNING_OPTIONS% %OUTPUT% %APP_XML% %FILE_OR_DIR%
+
+call adt -package %OPTIONS% %SIGNING_OPTIONS% -target bundle %OUTPUT% %APP_XML% %FILE_OR_DIR% -extdir ext/
+::echo adt -package %OPTIONS% %SIGNING_OPTIONS% %OUTPUT% %APP_XML% %FILE_OR_DIR%
+::call adt -package -tsa none  -storetype pkcs12 -keystore "bat\away3dsimpleDemo.p12" storepass fd air\away3dsimpleDemo-captive-runtime.air application.xml -C bin .
+::call adt -package  -storetype pkcs12 -keystore "cert\BUT_pc_distribution\AC_ProductExplorer.p12" -storepass fd -target bundle "dist\ProductExplorer.air" application-desktop.xml -C bin . -C "icons/android" . -extdir ext/
+
 if errorlevel 1 goto failed
 goto end
 
