@@ -1,0 +1,9 @@
+﻿Build started 8/06/2013 0:05:51.
+     1>Project "C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\Samples\SensorBox\SensorBoxTest_Msvc2010.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         SensorBoxTest_Msvc2010.vcxproj -> C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\Samples\SensorBox\Debug\SensorBoxTest.exe
+     1>Done Building Project "C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\Samples\SensorBox\SensorBoxTest_Msvc2010.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.09

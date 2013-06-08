@@ -18,10 +18,7 @@
     <ClInclude Include="OculusANE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\code\OculusSDK\LibOVR\Include\OVR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\Program Files (x86)\Adobe\Adobe Flash Builder 4.6\sdks\4.6.0\include\FlashRuntimeExtensions.h">
+    <ClInclude Include="..\..\..\oculus_sdk\OculusSDK\LibOVR\Include\OVR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

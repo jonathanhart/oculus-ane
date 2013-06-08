@@ -7,7 +7,7 @@ echo.
 echo Starting AIR Debug Launcher...
 echo.
 
-adl "%APP_XML%" "%APP_DIR%"
+adl "%APP_XML%" "%APP_DIR%" -extdir lib/
 if errorlevel 1 goto error
 goto end
 

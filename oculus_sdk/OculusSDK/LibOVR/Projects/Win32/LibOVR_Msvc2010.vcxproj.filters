@@ -143,9 +143,6 @@
     <ClInclude Include="..\..\Src\Kernel\OVR_UTF8Util.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\OVR.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\OVR_Device.h" />
     <ClInclude Include="..\..\Src\OVR_DeviceConstants.h" />
     <ClInclude Include="..\..\Src\OVR_DeviceMessages.h" />

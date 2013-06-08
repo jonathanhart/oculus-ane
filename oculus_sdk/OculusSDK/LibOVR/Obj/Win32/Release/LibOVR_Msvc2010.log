@@ -1,0 +1,75 @@
+﻿Build started 8/06/2013 1:20:46.
+     1>Project "C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\LibOVR\Projects\Win32\LibOVR_Msvc2010.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Z7 /nologo /W4 /WX- /MP /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"../../Obj/Win32/Release/" /Fd"../../Obj/Win32/Release/vc110.pdb" /Gd /TP /analyze- /Zl /errorReport:prompt ..\..\Src\Kernel\OVR_Alg.cpp ..\..\Src\Kernel\OVR_Allocator.cpp ..\..\Src\Kernel\OVR_Atomic.cpp ..\..\Src\Kernel\OVR_File.cpp ..\..\Src\Kernel\OVR_FileFILE.cpp ..\..\Src\Kernel\OVR_Log.cpp ..\..\Src\Kernel\OVR_Math.cpp ..\..\Src\Kernel\OVR_RefCount.cpp ..\..\Src\Kernel\OVR_Std.cpp ..\..\Src\Kernel\OVR_String.cpp ..\..\Src\Kernel\OVR_String_FormatUtil.cpp ..\..\Src\Kernel\OVR_String_PathUtil.cpp ..\..\Src\Kernel\OVR_SysFile.cpp ..\..\Src\Kernel\OVR_System.cpp ..\..\Src\Kernel\OVR_ThreadsWinAPI.cpp ..\..\Src\Kernel\OVR_Timer.cpp ..\..\Src\Kernel\OVR_UTF8Util.cpp ..\..\Src\OVR_DeviceHandle.cpp ..\..\Src\OVR_DeviceImpl.cpp ..\..\Src\OVR_LatencyTestImpl.cpp ..\..\Src\OVR_SensorFilter.cpp ..\..\Src\OVR_SensorFusion.cpp ..\..\Src\OVR_SensorImpl.cpp ..\..\Src\OVR_ThreadCommandQueue.cpp ..\..\Src\OVR_Win32_DeviceManager.cpp ..\..\Src\OVR_Win32_DeviceStatus.cpp ..\..\Src\OVR_Win32_HIDDevice.cpp ..\..\Src\OVR_Win32_HMDDevice.cpp ..\..\Src\Util\Util_LatencyTest.cpp ..\..\Src\OVR_Win32_SensorDevice.cpp ..\..\Src\Util\Util_MagCalibration.cpp ..\..\Src\Util\Util_Render_Stereo.cpp
+         OVR_Alg.cpp
+         OVR_Allocator.cpp
+         OVR_Atomic.cpp
+         OVR_File.cpp
+         OVR_FileFILE.cpp
+         OVR_Log.cpp
+         OVR_Math.cpp
+         OVR_RefCount.cpp
+         OVR_Std.cpp
+         OVR_String.cpp
+         OVR_String_FormatUtil.cpp
+         OVR_String_PathUtil.cpp
+         OVR_SysFile.cpp
+         OVR_System.cpp
+         OVR_ThreadsWinAPI.cpp
+         OVR_Timer.cpp
+         OVR_UTF8Util.cpp
+         OVR_DeviceHandle.cpp
+         OVR_DeviceImpl.cpp
+         OVR_LatencyTestImpl.cpp
+         OVR_SensorFilter.cpp
+         OVR_SensorFusion.cpp
+         OVR_SensorImpl.cpp
+         OVR_ThreadCommandQueue.cpp
+         OVR_Win32_DeviceManager.cpp
+         OVR_Win32_DeviceStatus.cpp
+         OVR_Win32_HIDDevice.cpp
+         OVR_Win32_HMDDevice.cpp
+         Util_LatencyTest.cpp
+         OVR_Win32_SensorDevice.cpp
+         Util_MagCalibration.cpp
+         Util_Render_Stereo.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"../../Lib/Win32/libovr.lib" Setupapi.lib /NOLOGO /LTCG ../../Obj/Win32/Release/OVR_Alg.obj
+         ../../Obj/Win32/Release/OVR_Allocator.obj
+         ../../Obj/Win32/Release/OVR_Atomic.obj
+         ../../Obj/Win32/Release/OVR_File.obj
+         ../../Obj/Win32/Release/OVR_FileFILE.obj
+         ../../Obj/Win32/Release/OVR_Log.obj
+         ../../Obj/Win32/Release/OVR_Math.obj
+         ../../Obj/Win32/Release/OVR_RefCount.obj
+         ../../Obj/Win32/Release/OVR_Std.obj
+         ../../Obj/Win32/Release/OVR_String.obj
+         ../../Obj/Win32/Release/OVR_String_FormatUtil.obj
+         ../../Obj/Win32/Release/OVR_String_PathUtil.obj
+         ../../Obj/Win32/Release/OVR_SysFile.obj
+         ../../Obj/Win32/Release/OVR_System.obj
+         ../../Obj/Win32/Release/OVR_ThreadsWinAPI.obj
+         ../../Obj/Win32/Release/OVR_Timer.obj
+         ../../Obj/Win32/Release/OVR_UTF8Util.obj
+         ../../Obj/Win32/Release/OVR_DeviceHandle.obj
+         ../../Obj/Win32/Release/OVR_DeviceImpl.obj
+         ../../Obj/Win32/Release/OVR_LatencyTestImpl.obj
+         ../../Obj/Win32/Release/OVR_SensorFilter.obj
+         ../../Obj/Win32/Release/OVR_SensorFusion.obj
+         ../../Obj/Win32/Release/OVR_SensorImpl.obj
+         ../../Obj/Win32/Release/OVR_ThreadCommandQueue.obj
+         ../../Obj/Win32/Release/OVR_Win32_DeviceManager.obj
+         ../../Obj/Win32/Release/OVR_Win32_DeviceStatus.obj
+         ../../Obj/Win32/Release/OVR_Win32_HIDDevice.obj
+         ../../Obj/Win32/Release/OVR_Win32_HMDDevice.obj
+         ../../Obj/Win32/Release/Util_LatencyTest.obj
+         ../../Obj/Win32/Release/OVR_Win32_SensorDevice.obj
+         ../../Obj/Win32/Release/Util_MagCalibration.obj
+         ../../Obj/Win32/Release/Util_Render_Stereo.obj
+         LibOVR_Msvc2010.vcxproj -> C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\LibOVR\Projects\Win32\../../Lib/Win32/libovr.lib
+     1>Done Building Project "C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\LibOVR\Projects\Win32\LibOVR_Msvc2010.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:14.49

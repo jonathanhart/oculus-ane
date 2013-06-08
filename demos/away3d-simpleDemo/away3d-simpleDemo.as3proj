@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\away3dsimpleDemo.swf" />
     <movie fps="60" />
-    <movie width="1280" />
-    <movie height="800" />
+    <movie width="640" />
+    <movie height="400" />
     <movie version="3" />
     <movie minorVersion="7" />
     <movie platform="AIR" />
@@ -52,6 +52,8 @@
   <!-- SWC Libraries -->
   <libraryPaths>
     <element path="lib\away3d-core-fp11_4_1_1_Beta.swc" />
+    <element path="lib\joyquery.swc" />
+    <element path="lib\OculusANE.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

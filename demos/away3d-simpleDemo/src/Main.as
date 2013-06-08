@@ -4,7 +4,9 @@ package
 	import away3d.lights.PointLight;
 	import away3d.materials.lightpickers.StaticLightPicker;
 	import away3d.primitives.WireframeSphere;
+	import be.but.joystick.JoystickHelper;
 	import be.but.oculus.OculusSetup;
+	import be.but.scenery.DustParticles;
 	import be.but.scenery.Earth;
 	import be.but.scenery.SpaceSky;
 	import flash.display.Sprite;
@@ -12,7 +14,12 @@ package
 	import flash.display.StageAlign;
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
+	import flash.events.Event;
 	import flash.geom.Vector3D;
+	import flash.ui.GameInput;
+	import flash.ui.GameInputControl;
+	import flash.ui.GameInputDevice;
+	import flash.utils.setTimeout;
 	
 	/**
 	 * ...
@@ -46,6 +53,9 @@ package
 			PerspectiveLens(_setup.camera.leftCamera.lens).near = 0.5;
 			PerspectiveLens(_setup.camera.rightCamera.lens).near = 0.5;
 			
+			//PerspectiveLens(_setup.camera.leftCamera.lens).fieldOfView = 90;
+			//PerspectiveLens(_setup.camera.rightCamera.lens).fieldOfView = 90;
+			
 			_light = new PointLight();
 			_light.x = 10000;
 			_light.ambient = 1;
@@ -65,6 +75,12 @@ package
 			_setup.scene.addChild(earth2);
 			earth2.position = new Vector3D(6000, 0, -6000);
 			
+			var dustParticles:DustParticles = new DustParticles(_lightPicker);
+			_setup.scene.addChild(dustParticles);
+			dustParticles.moveBackward(6300);
+			dustParticles.moveDown(10);
+			
+
 			ship = new Spaceship();
 			ship.addChild(_setup.camera);
 			_setup.camera.moveBackward(2);
@@ -73,12 +89,21 @@ package
 			ship.moveBackward(6371);
 			ship.rotationY = 20;
 			
-			//_scene.addEnterFrameHandler(onEnterFrame);
+			JoystickHelper.sharedInstance().addEventListener(JoystickHelper.EVT_BUTTON_DOWN, onButtonDown);
+
+			_setup.addEnterFrameHandler(onEnterFrame);
+		}
+		
+		private function onButtonDown(e:Event):void 
+		{
+			//JoystickHelper.buttonIsDownStates[0]
+			trace( "JoystickHelper.buttonIsDownStates[0] : " + JoystickHelper.buttonIsDownStates[0] );
 		}
 		
 		private function onEnterFrame():void 
 		{
 			//ship.moveForward(1);
+
 		}
 				
 	}
