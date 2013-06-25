@@ -45,3 +45,6 @@ For every frame of your render loop, have this code:
 		_view.render();
 	}
 
+When your application is closing make sure to call the dispose method to avoid a crash by using this code:
+
+	_oculus.dispose();
