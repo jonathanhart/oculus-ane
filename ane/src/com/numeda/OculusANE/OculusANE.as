@@ -32,6 +32,10 @@ package com.numeda.OculusANE
 		{
 			return _extContext.call("isSupported");
 		}
-
+		
+		public function dispose():void
+		{
+			_extContext.dispose();
+		}
 	}
 }
