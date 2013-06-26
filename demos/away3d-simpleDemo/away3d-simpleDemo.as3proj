@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\away3dsimpleDemo.swf" />
     <movie fps="60" />
-    <movie width="640" />
-    <movie height="400" />
+    <movie width="1280" />
+    <movie height="800" />
     <movie version="3" />
     <movie minorVersion="7" />
     <movie platform="AIR" />
@@ -54,6 +54,7 @@
     <element path="lib\away3d-core-fp11_4_1_1_Beta.swc" />
     <element path="lib\joyquery.swc" />
     <element path="lib\OculusANE.swc" />
+    <element path="lib\lib_simplegui.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
@@ -90,5 +91,8 @@
     <option testMovieCommand="Run.bat" />
   </options>
   <!-- Plugin storage -->
-  <storage />
+  <storage>
+    <entry key="at_enabled"><![CDATA[0]]></entry>
+    <entry key="at_password"><![CDATA[]]></entry>
+  </storage>
 </project>

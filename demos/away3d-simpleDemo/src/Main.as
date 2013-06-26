@@ -1,11 +1,15 @@
 package 
 {
 	import away3d.cameras.lenses.PerspectiveLens;
+	import away3d.filters.BloomFilter3D;
+	import away3d.filters.DepthOfFieldFilter3D;
+	import away3d.filters.Filter3DBase;
 	import away3d.lights.PointLight;
 	import away3d.materials.lightpickers.StaticLightPicker;
 	import away3d.primitives.WireframeSphere;
 	import be.but.joystick.JoystickHelper;
 	import be.but.oculus.OculusSetup;
+	import be.but.scenery.AsteroidParticles;
 	import be.but.scenery.DustParticles;
 	import be.but.scenery.Earth;
 	import be.but.scenery.SpaceSky;
@@ -30,9 +34,13 @@ package
 		public static var stage:Stage;
 		private var _plane:WireframeSphere;		
 		private var _setup:OculusSetup;
-		private var ship:Spaceship;
+		private var _ship:Spaceship;
 		private var _lightPicker:StaticLightPicker;
 		private var _light:PointLight;
+		private var _depthOfFieldFilter:Filter3DBase;
+		private var earth:Earth;
+		private var earth2:Earth;
+		private var asteroids:AsteroidParticles;
 		
 		
 		public function Main():void 
@@ -43,18 +51,8 @@ package
 			stage.quality = StageQuality.LOW;
 			
 			_setup = new OculusSetup();
+			//_setup.view.crossEye = true;
 			addChild(_setup);
-			
-			// 3 earths
-			PerspectiveLens(_setup.camera.leftCamera.lens).far = (6371 * 2);
-			PerspectiveLens(_setup.camera.rightCamera.lens).far = (6371 * 2);
-					
-			// 50 cm
-			PerspectiveLens(_setup.camera.leftCamera.lens).near = 0.5;
-			PerspectiveLens(_setup.camera.rightCamera.lens).near = 0.5;
-			
-			//PerspectiveLens(_setup.camera.leftCamera.lens).fieldOfView = 90;
-			//PerspectiveLens(_setup.camera.rightCamera.lens).fieldOfView = 90;
 			
 			_light = new PointLight();
 			_light.x = 10000;
@@ -65,47 +63,40 @@ package
 		
 			
 			var sky:SpaceSky = new SpaceSky();
+			sky.position = new Vector3D(0, 0, 0);
 			_setup.scene.addChild(sky);
 			
-			var earth:Earth = new Earth(_lightPicker);
+			earth = new Earth(_lightPicker);
 			_setup.scene.addChild(earth);
 			earth.position = new Vector3D(0, 0, 0);
 			
-			var earth2:Earth = new Earth(_lightPicker);
+			earth2 = new Earth(_lightPicker);
 			_setup.scene.addChild(earth2);
 			earth2.position = new Vector3D(6000, 0, -6000);
 			
-			var dustParticles:DustParticles = new DustParticles(_lightPicker);
-			_setup.scene.addChild(dustParticles);
-			dustParticles.moveBackward(6300);
-			dustParticles.moveDown(10);
 			
-
-			ship = new Spaceship();
-			ship.addChild(_setup.camera);
-			_setup.camera.moveBackward(2);
-			_setup.scene.addChild(ship);
+			_ship = new Spaceship(_lightPicker);
+			_setup.scene.addChild(_ship);
+			_ship.moveBackward(5000);
 			
-			ship.moveBackward(6371);
-			ship.rotationY = 20;
+			asteroids = new AsteroidParticles(_lightPicker);
+			asteroids.moveBackward(6400);
+			_setup.scene.addChild(asteroids);
 			
-			JoystickHelper.sharedInstance().addEventListener(JoystickHelper.EVT_BUTTON_DOWN, onButtonDown);
-
-			_setup.addEnterFrameHandler(onEnterFrame);
+			//JoystickHelper.sharedInstance().addEventListener(JoystickHelper.EVT_BUTTON_DOWN, onButtonDown);
+			//_setup.addEnterFrameHandler(onEnterFrame);
+		}
+		
+		private function onEnterFrame():void 
+		{
+			//_depthOfFieldFilter.focusTarget=asteroids;
 		}
 		
 		private function onButtonDown(e:Event):void 
 		{
 			//JoystickHelper.buttonIsDownStates[0]
 			trace( "JoystickHelper.buttonIsDownStates[0] : " + JoystickHelper.buttonIsDownStates[0] );
-		}
-		
-		private function onEnterFrame():void 
-		{
-			//ship.moveForward(1);
-
-		}
-				
+		}				
 	}
 	
 }

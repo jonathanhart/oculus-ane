@@ -5,10 +5,16 @@ package be.but.oculus
 	import away3d.containers.View3D;
 	import away3d.core.managers.Stage3DManager;
 	import away3d.core.managers.Stage3DProxy;
+	import away3d.core.render.DefaultRenderer;
 	import away3d.core.render.RendererBase;
+	import away3d.events.Stage3DEvent;
+	import away3d.filters.BloomFilter3D;
+	import away3d.filters.BlurFilter3D;
+	import away3d.filters.RadialBlurFilter3D;
 	import flash.display.Sprite;
 	import flash.display.Stage3D;
 	import flash.events.Event;
+	import flash.utils.setTimeout;
 	/**
 	 * ...
 	 * @author 
@@ -17,6 +23,7 @@ package be.but.oculus
 	{
 		public var leftView:View3D;
 		public var rightView:View3D;
+		private var _crossEye:Boolean = false;
 		
 		private var _backgroundColor:Number;
 		private var _antiAlias:Number;
@@ -25,59 +32,55 @@ package be.but.oculus
 		private var _width:Number;
 		private var _height:Number;
 		
-		public function OculusView(scene:Scene3D=null, camera:OculusCamera=null, renderer:RendererBase=null, forceSoftware:Boolean=false) 
+		public function OculusView(scene:Scene3D, camera:OculusCamera) 
 		{
-			if (scene) {
-				_scene = scene;
-			}
-			if (camera) {
-				_camera = camera;
-			}else {
-				_camera = new OculusCamera();
-			}
-			
-			leftView = new View3D(scene, _camera.leftCamera, renderer, forceSoftware);
-			rightView = new View3D(scene, _camera.rightCamera, renderer, forceSoftware);
-			
+			_scene = scene;
+			_camera = camera;
+
+			leftView = new View3D(_scene, _camera.leftCamera);
 			addChild(leftView);
+			
+			rightView = new View3D(_scene, _camera.rightCamera);
 			addChild(rightView);
+			
+			//setTimeout(onContextCreated, 3000);
+		}
+		
+		private function onContextCreated():void 
+		{
+			rightView.filters3d = [new OculusBarrelDistortionFilter3D()];
+			leftView.filters3d = [new OculusBarrelDistortionFilter3D()];
 		}
 		
 		private function positionViews():void 
 		{
-			leftView.width = rightView.width = (_width / 2);
-			leftView.height = rightView.height = _height;
-			rightView.x = leftView.width; // normal
-			//leftView.x = leftView.width; // crosseye
-			
-			trace( "crosseye: " + (leftView.x != 0));
+			trace( "OculusView.positionViews: " + _width );
+			if (leftView && rightView) {
+				
+				leftView.width = rightView.width = (_width / 2);
+				leftView.height = rightView.height = _height;
+				
+				if (_crossEye) {
+					rightView.x = 0;
+					leftView.x = rightView.x + rightView.width; // crosseye		
+				}else {
+					leftView.x = 0;
+					rightView.x = leftView.x + leftView.width;
+				}
+			}
 		}
 		
-		public function render():void 
+		public function render(e:Event = null):void 
 		{
-			leftView.render();
-			rightView.render();
+			if (leftView && rightView) {
+				leftView.render();
+				rightView.render();				
+			}
 		}
 		
-		override public function get width():Number 
-		{
-			return _width;
-		}
-		
-		override public function set width(value:Number):void 
-		{
-			_width = value;
-			positionViews();
-		}
-		
-		override public function get height():Number 
-		{
-			return _height;
-		}
-		
-		override public function set height(value:Number):void 
-		{
-			_height = value;
+		public function setSize(width:Number, height:Number):void {
+			_width = width;
+			_height = height;
 			positionViews();
 		}
 		
@@ -126,6 +129,16 @@ package be.but.oculus
 			rightView.camera = _camera.rightCamera;
 		}
 		
+		public function get crossEye():Boolean 
+		{
+			return _crossEye;
+		}
+		
+		public function set crossEye(value:Boolean):void 
+		{
+			_crossEye = value;
+			positionViews();
+		}		
 	}
 
 }

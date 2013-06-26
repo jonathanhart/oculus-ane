@@ -18,12 +18,15 @@ package be.but.oculus
 	{
 		public var leftCamera:Camera3D;
 		public var rightCamera:Camera3D;
-		private var _ipd:Number;
+		private var _stereoSeperation:Number;
 		
-		public function OculusCamera(lens:LensBase=null) 
+		public function OculusCamera(fov:Number, horizontalShiftPercentage:Number) 
 		{
-			leftCamera = new Camera3D(lens);
-			rightCamera = new Camera3D(lens);
+			var leftLens:OculusLens = new OculusLens(fov, 0.5 + horizontalShiftPercentage, 0.5);
+			var rightLens:OculusLens = new OculusLens(fov, 0.5 - horizontalShiftPercentage, 0.5);
+			
+			leftCamera = new Camera3D(leftLens);
+			rightCamera = new Camera3D(rightLens);
 			
 			addChild(leftCamera);
 			addChild(rightCamera);
@@ -32,16 +35,16 @@ package be.but.oculus
 			rightCamera.position = new Vector3D();
 		}
 				
-		public function get ipd():Number 
+		public function get stereoSeperation():Number 
 		{
-			return _ipd;
+			return _stereoSeperation;
 		}
 		
-		public function set ipd(value:Number):void 
+		public function set stereoSeperation(value:Number):void 
 		{
-			_ipd = value;
-			leftCamera.x = -(_ipd / 2);
-			rightCamera.x = (_ipd / 2);
+			_stereoSeperation = value;
+			leftCamera.x = -(_stereoSeperation / 2);
+			rightCamera.x = (_stereoSeperation / 2);
 		}		
 	}
 

@@ -54,6 +54,7 @@ package be.but.scenery
 	import be.but.oculus.OculusSetup;
 	import flash.display.BitmapData;
 	import flash.display.BitmapDataChannel;
+	import flash.display.BlendMode;
 	import flash.geom.ColorTransform;
 	import flash.geom.Point;
 
@@ -150,7 +151,7 @@ package be.but.scenery
 			atmosphereMaterial = new ColorMaterial(0x1671cc);
 			//atmosphereMaterial.diffuseMethod = atmosphereDiffuseMethod;
 			//atmosphereMaterial.specularMethod = atmosphereSpecularMethod;
-			atmosphereMaterial.blendMode = flash.display.BlendMode.ADD;
+			atmosphereMaterial.blendMode = BlendMode.ADD;
 			atmosphereMaterial.lightPicker = lightPicker;
 			atmosphereMaterial.specular = 0.5;
 			atmosphereMaterial.gloss = 5;
