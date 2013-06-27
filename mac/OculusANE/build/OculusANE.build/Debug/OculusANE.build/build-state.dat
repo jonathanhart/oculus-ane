@@ -1,670 +1,0 @@
-TOculusANE
-v5
-r1
-cCheck dependencies
-cSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources Versions/Current/Resources
-cSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Current A
-cSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANE Versions/Current/OculusANE
-cProcessInfoPlistFile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist OculusANE/OculusANE-Info.plist
-cProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE normal i386
-cCopyStringsFile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings
-cTouch /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework
-
-N/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR
-c0000000051868F9F0000000001BD52E8
-t1367773087
-s29184744
-
-N/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Headers/Adobe Air.h
-c0000000051868F930000000000000314
-t1367773075
-s788
-
-N/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Headers/FlashRuntimeExtensions.h
-c0000000051868F930000000000004D54
-t1367773075
-s19796
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c00000000503F1B7700000000000000AA
-t1346313079
-s170
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
-c0000000051178EA900000000000025C8
-t1360498345
-s9672
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
-c0000000051178EA900000000000001E5
-t1360498345
-s485
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c0000000051178EA90000000000087838
-t1360498345
-s555064
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
-c0000000051178EA9000000000000962C
-t1360498345
-s38444
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c0000000051178EAA00000000000C39B8
-t1360498346
-s801208
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/IOKit.framework/IOKit
-c0000000051178EAA000000000003E878
-t1360498346
-s256120
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../../../../../../Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR
-c0000000051868F9F0000000001BD52E8
-t1367773087
-s29184744
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release/libovr.a
-c000000005196D8F60000000000448730
-t1368840438
-s4491056
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/Kernel/OVR_Array.h
-c000000005196CD4600000000000068A8
-t1368837446
-s26792
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/Kernel/OVR_Atomic.h
-c000000005196CD460000000000008396
-t1368837446
-s33686
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/Kernel/OVR_Color.h
-c000000005196CD4600000000000005DC
-t1368837446
-s1500
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/Kernel/OVR_String.h
-c000000005196CD46000000000000534D
-t1368837446
-s21325
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/OVR_DeviceConstants.h
-c000000005196CD4600000000000004C3
-t1368837446
-s1219
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/OVR_DeviceHandle.h
-c000000005196CD460000000000000C75
-t1368837446
-s3189
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/OVR_DeviceMessages.h
-c000000005196CD4600000000000013E6
-t1368837446
-s5094
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/OVR_HIDDeviceBase.h
-c000000005196CD46000000000000047C
-t1368837446
-s1148
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Src/OVR_SensorFilter.h
-c000000005196CD460000000000000B5B
-t1368837446
-s2907
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Alg.h
-c000000005196CD460000000000007634
-t1368837446
-s30260
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Allocator.h
-c000000005196CD460000000000002D52
-t1368837446
-s11602
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_ContainerAllocator.h
-c000000005196CD460000000000001BD2
-t1368837446
-s7122
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Log.h
-c000000005196CD460000000000001DAA
-t1368837446
-s7594
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Math.h
-c000000005196CD460000000000009D33
-t1368837446
-s40243
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_RefCount.h
-c000000005196CD4600000000000038A4
-t1368837446
-s14500
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Std.h
-c000000005196CD460000000000003367
-t1368837446
-s13159
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_System.h
-c000000005196CD4600000000000008EB
-t1368837446
-s2283
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_Types.h
-c000000005196CD46000000000000374B
-t1368837446
-s14155
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Kernel/OVR_UTF8Util.h
-c000000005196CD460000000000000DE1
-t1368837446
-s3553
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/OVR_Device.h
-c000000005196CD4600000000000061EF
-t1368837446
-s25071
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/OVR_SensorFusion.h
-c000000005196CD4600000000000024B6
-t1368837446
-s9398
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Util/../Kernel/OVR_List.h
-c000000005196CD46000000000000261B
-t1368837446
-s9755
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Util/Util_LatencyTest.h
-c000000005196CD440000000000001768
-t1368837444
-s5992
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Util/Util_MagCalibration.h
-c000000005196CD460000000000001007
-t1368837446
-s4103
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/../Src/Util/Util_Render_Stereo.h
-c000000005196CD460000000000003244
-t1368837446
-s12868
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/include/OVR.h
-c000000005196CD4600000000000004BF
-t1368837446
-s1215
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch
-c0000000051A1CC990000000000000095
-t1369558169
-s149
-i<Cocoa/Cocoa.h>
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.h
-c0000000051A1CDAD00000000000000A3
-t1369558445
-s163
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.m
-c0000000051A1CC9900000000000000B7
-t1369558169
-s183
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm
-c0000000051A3E53C0000000000000F7F
-t1369695548
-s3967
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/en.lproj/InfoPlist.strings
-c0000000051A1CC99000000000000002D
-t1369558169
-s45
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework
-t1369709174
-s170
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANE
-t3
-s26
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources
-t3
-s26
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE
-t1369709174
-s382732
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist
-t1369560003
-s1208
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings
-t1369709174
-s92
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Current
-t3
-s1
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.LinkFileList
-c0000000051A3E5810000000000000083
-t1369695617
-s131
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o
-t1369709174
-s71988
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.LinkFileList
-c0000000051A1D3C30000000000000085
-t1369560003
-s133
-
-N/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o
-t1369695586
-s75308
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.pth
-t1369561056
-s15887828
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-avxtekzlkfwoobamwtxyspsizwir/OculusANE-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.pth
-t1369561098
-s15887848
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth
-t1369709173
-s16492940
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cgnzpcgcjgvxordgrohxbivjgvdq/OculusANE-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.pth
-t1369561001
-s15887844
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.pth
-t1369695739
-s16493020
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.pth
-t1369560004
-s15887844
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-egzzzrakabulordlvoveoxnxrjzo/OculusANE-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.pth
-t1369561042
-s15887824
-
-N/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.pth
-t1369561026
-s15887824
-
-NOculusANE/OculusANE-Info.plist
-c0000000051A1CC9900000000000003B8
-t1369558169
-s952
-
-CBuild AST from /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.m
-r0
-
-CBuild AST from /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesab05122e5254b741^67261c2e5254b741^---0#1#0#--18"Check dependencies36"4A30804B-0028-4B58-9274-743DF8CA08E9-
-
-CCompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391401973.616982
-e391401974.241291
-r1
-xCompileC
-xbuild/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mmed0d9ef55154b741^50c53df65154b741^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm0000000000000000^2859"CompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/i386 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -fno-rtti -include /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch -MMD -MT dependencies -MF /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.d --serialize-diagnostics /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm -o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.o36"3A9FDC0E-956A-4C76-829A-A7B06C69066F-
-
-CCompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391388383.208694
-e391388386.889425
-r1
-xCompileC
-xbuild/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm049135df1c54b741^9ab2e3e21c54b741^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm0000000000000000^2874"CompileC build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o OculusANE/OculusANE.mm normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -include /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch -MMD -MT dependencies -MF /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.d --serialize-diagnostics /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE.mm -o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.o36"625AC9AE-FC99-4756-968D-2379CF4FEA49-
-
-CCopyStringsFile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings
-s391401974.335411
-e391401974.400482
-r1
-xCopyStringsFile
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings
-xOculusANE/en.lproj/InfoPlist.strings
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Copy OculusANE/en.lproj/InfoPlist.strings88f255f65154b741^2f8666f65154b741^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/en.lproj/InfoPlist.strings0000000000000000^442"CopyStringsFile build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/en.lproj -- OculusANE/en.lproj/InfoPlist.strings36"722D9315-7DFE-4C68-9612-E64F0E3222C6-
-
-CLd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE normal i386
-s391401974.248581
-e391401974.327336
-r1
-xLd
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE
-xnormal
-xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Link /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE0bcf3ff65154b741^3ecf53f65154b741^---0#0#0#--1376"Ld build/Debug/OculusANE.framework/Versions/A/OculusANE normal i386    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug -L/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -filelist /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/i386/OculusANE.LinkFileList -install_name /Library/Frameworks/OculusANE.framework/Versions/A/OculusANE -mmacosx-version-min=10.8 -all_load -ObjC -stdlib=libc++ -fobjc-link-runtime -framework IOKit -framework CoreServices -framework Foundation -framework CoreGraphics -lovr -framework "Adobe AIR" -framework Cocoa -single_module -compatibility_version 1 -current_version 1 -o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE36"3FAE9AFA-CAC9-40D6-817C-93789ABF77DF-
-
-CLd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE normal x86_64
-s391388386.896390
-e391388387.798334
-r0
-xLd
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE
-xnormal
-xx86_64
-old: warning: ignoring file /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR
-oUndefined symbols for architecture x86_64:
-o  "_FRENewObject", referenced from:
-o      _OculusANEInitializer in OculusANE.o
-o  "_FRENewObjectFromBool", referenced from:
-o      _isSupported in OculusANE.o
-o  "_FRESetArrayElementAt", referenced from:
-o      _getCameraQuaternion in OculusANE.o
-o  "_FRESetArrayLength", referenced from:
-o      _OculusANEInitializer in OculusANE.o
-o  "_IODisplayCreateInfoDictionary", referenced from:
-o      OVR::OSX::HMDDeviceFactory::EnumerateDevices(OVR::DeviceFactory::EnumerateVisitor&) in libovr.a(OVR_OSX_HMDDevice.o)
-o  "_IOHIDDeviceClose", referenced from:
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceGetProperty", referenced from:
-o      OVR::OSX::HIDDeviceManager::getIntProperty(__IOHIDDevice*, __CFString const*, int*) in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDeviceManager::getStringProperty(__IOHIDDevice*, __CFString const*, OVR::String*) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceGetReport", referenced from:
-o      OVR::OSX::HIDDevice::GetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceOpen", referenced from:
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceRegisterInputReportCallback", referenced from:
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceRegisterRemovalCallback", referenced from:
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceScheduleWithRunLoop", referenced from:
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceSetReport", referenced from:
-o      OVR::OSX::HIDDevice::SetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDDeviceUnscheduleFromRunLoop", referenced from:
-o      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDManagerCopyDevices", referenced from:
-o      OVR::OSX::HIDDeviceManager::Enumerate(OVR::HIDEnumerateVisitor*) in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDManagerCreate", referenced from:
-o      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDManagerRegisterDeviceMatchingCallback", referenced from:
-o      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDManagerScheduleWithRunLoop", referenced from:
-o      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOHIDManagerSetDeviceMatching", referenced from:
-o      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOIteratorNext", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-o      OVR::OSX::HIDDevice::deviceAddedCallback(unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IONotificationPortCreate", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IONotificationPortDestroy", referenced from:
-o      OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IONotificationPortGetRunLoopSource", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOObjectRelease", referenced from:
-o      OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOServiceAddMatchingNotification", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "_IOServiceMatching", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-o  "typeinfo for OVR::Allocator", referenced from:
-o      typeinfo for OVR::Allocator_SingletonSupport<OVR::DefaultAllocator> in OculusANE.o
-o  "_kIOMasterPortDefault", referenced from:
-o      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)
-old: symbol(s) not found for architecture x86_64
-oclang: error: linker command failed with exit code 1 (use -v to see invocation)
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Link /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE7991e5e21c54b741^af5fcce31c54b741^-4877"ld: warning: ignoring file /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIRUndefined symbols for architecture x86_64:  "_FRENewObject", referenced from:      _OculusANEInitializer in OculusANE.o  "_FRENewObjectFromBool", referenced from:      _isSupported in OculusANE.o  "_FRESetArrayElementAt", referenced from:      _getCameraQuaternion in OculusANE.o  "_FRESetArrayLength", referenced from:      _OculusANEInitializer in OculusANE.o  "_IODisplayCreateInfoDictionary", referenced from:      OVR::OSX::HMDDeviceFactory::EnumerateDevices(OVR::DeviceFactory::EnumerateVisitor&) in libovr.a(OVR_OSX_HMDDevice.o)  "_IOHIDDeviceClose", referenced from:      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceGetProperty", referenced from:      OVR::OSX::HIDDeviceManager::getIntProperty(__IOHIDDevice*, __CFString const*, int*) in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDeviceManager::getStringProperty(__IOHIDDevice*, __CFString const*, OVR::String*) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceGetReport", referenced from:      OVR::OSX::HIDDevice::GetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceOpen", referenced from:      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceRegisterInputReportCallback", referenced from:      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceRegisterRemovalCallback", referenced from:      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceScheduleWithRunLoop", referenced from:      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceSetReport", referenced from:      OVR::OSX::HIDDevice::SetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDDeviceUnscheduleFromRunLoop", referenced from:      OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDManagerCopyDevices", referenced from:      OVR::OSX::HIDDeviceManager::Enumerate(OVR::HIDEnumerateVisitor*) in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDManagerCreate", referenced from:      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDManagerRegisterDeviceMatchingCallback", referenced from:      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDManagerScheduleWithRunLoop", referenced from:      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOHIDManagerSetDeviceMatching", referenced from:      OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOIteratorNext", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)      OVR::OSX::HIDDevice::deviceAddedCallback(unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)  "_IONotificationPortCreate", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)  "_IONotificationPortDestroy", referenced from:      OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)  "_IONotificationPortGetRunLoopSource", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOObjectRelease", referenced from:      OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOServiceAddMatchingNotification", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)  "_IOServiceMatching", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)  "typeinfo for OVR::Allocator", referenced from:      typeinfo for OVR::Allocator_SingletonSupport<OVR::DefaultAllocator> in OculusANE.o  "_kIOMasterPortDefault", referenced from:      OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)ld: symbol(s) not found for architecture x86_64clang: error: linker command failed with exit code 1 (use -v to see invocation)65(21%IDEActivityLogMessage2@486"Ignoring file /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR-391388387#0#500#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#32"Apple Mach-O Linker (ld) Warning--2@33""_FRENewObject", referenced from:-391388387#543#36#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@36"_OculusANEInitializer in OculusANE.o-391388387#579#43#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41""_FRENewObjectFromBool", referenced from:-391388387#622#44#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@27"_isSupported in OculusANE.o-391388387#666#34#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41""_FRESetArrayElementAt", referenced from:-391388387#700#44#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@35"_getCameraQuaternion in OculusANE.o-391388387#744#42#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@38""_FRESetArrayLength", referenced from:-391388387#786#41#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@36"_OculusANEInitializer in OculusANE.o-391388387#827#43#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@50""_IODisplayCreateInfoDictionary", referenced from:-391388387#870#53#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@116"OVR::OSX::HMDDeviceFactory::EnumerateDevices(OVR::DeviceFactory::EnumerateVisitor&) in libovr.a(OVR_OSX_HMDDevice.o)-391388387#923#123#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@37""_IOHIDDeviceClose", referenced from:-391388387#1046#40#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1086#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@71"OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1159#78#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@43""_IOHIDDeviceGetProperty", referenced from:-391388387#1237#46#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@116"OVR::OSX::HIDDeviceManager::getIntProperty(__IOHIDDevice*, __CFString const*, int*) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1283#123#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@127"OVR::OSX::HIDDeviceManager::getStringProperty(__IOHIDDevice*, __CFString const*, OVR::String*) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1406#134#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41""_IOHIDDeviceGetReport", referenced from:-391388387#1540#44#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@100"OVR::OSX::HIDDevice::GetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1584#107#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@36""_IOHIDDeviceOpen", referenced from:-391388387#1691#39#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1730#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@59""_IOHIDDeviceRegisterInputReportCallback", referenced from:-391388387#1803#62#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1865#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@71"OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#1938#78#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@55""_IOHIDDeviceRegisterRemovalCallback", referenced from:-391388387#2016#58#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2074#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@71"OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2147#78#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@51""_IOHIDDeviceScheduleWithRunLoop", referenced from:-391388387#2225#54#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2279#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41""_IOHIDDeviceSetReport", referenced from:-391388387#2352#44#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@100"OVR::OSX::HIDDevice::SetFeatureReport(unsigned char*, unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2396#107#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@53""_IOHIDDeviceUnscheduleFromRunLoop", referenced from:-391388387#2503#56#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@71"OVR::OSX::HIDDevice::closeDevice(bool) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2559#78#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@44""_IOHIDManagerCopyDevices", referenced from:-391388387#2637#47#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@97"OVR::OSX::HIDDeviceManager::Enumerate(OVR::HIDEnumerateVisitor*) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2684#104#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@66"OVR::OSX::HIDDevice::openDevice() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2788#73#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@39""_IOHIDManagerCreate", referenced from:-391388387#2861#42#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@80"OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#2903#87#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@63""_IOHIDManagerRegisterDeviceMatchingCallback", referenced from:-391388387#2990#66#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@80"OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3056#87#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@52""_IOHIDManagerScheduleWithRunLoop", referenced from:-391388387#3143#55#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@80"OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3198#87#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@50""_IOHIDManagerSetDeviceMatching", referenced from:-391388387#3285#53#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@80"OVR::OSX::HIDDeviceManager::initializeManager() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3338#87#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@35""_IOIteratorNext", referenced from:-391388387#3425#38#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3463#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@87"OVR::OSX::HIDDevice::deviceAddedCallback(unsigned int) in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3558#94#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@45""_IONotificationPortCreate", referenced from:-391388387#3652#48#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3700#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@46""_IONotificationPortDestroy", referenced from:-391388387#3795#49#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@67"OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3844#74#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@55""_IONotificationPortGetRunLoopSource", referenced from:-391388387#3918#58#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#3976#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@36""_IOObjectRelease", referenced from:-391388387#4071#39#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@67"OVR::OSX::HIDDevice::HIDShutdown() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#4110#74#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@53""_IOServiceAddMatchingNotification", referenced from:-391388387#4184#56#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#4240#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@38""_IOServiceMatching", referenced from:-391388387#4335#41#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#4376#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@47""typeinfo for OVR::Allocator", referenced from:-391388387#4471#50#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@82"Typeinfo for OVR::Allocator_SingletonSupport<OVR::DefaultAllocator> in OculusANE.o-391388387#4521#89#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@41""_kIOMasterPortDefault", referenced from:-391388387#4610#44#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--2@88"OVR::OSX::HIDDevice::setupDevicePluggedInNotification() in libovr.a(OVR_OSX_HIDDevice.o)-391388387#4654#95#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@43"Symbol(s) not found for architecture x86_64-391388387#4749#48#-0#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-391388387#4797#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#0#--1290"Ld build/Debug/OculusANE.framework/Versions/A/OculusANE normal x86_64    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug -L/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -filelist /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/Objects-normal/x86_64/OculusANE.LinkFileList -install_name /Library/Frameworks/OculusANE.framework/Versions/A/OculusANE -mmacosx-version-min=10.8 -stdlib=libc++ -fobjc-arc -fobjc-link-runtime -lovr -framework "Adobe AIR" -framework Cocoa -single_module -compatibility_version 1 -current_version 1 -o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/OculusANE36"E43E5DF9-D56E-4FA4-A7AB-97F228897A09-
-
-CProcessInfoPlistFile /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist OculusANE/OculusANE-Info.plist
-s391252803.374739
-e391252803.377666
-r1
-xProcessInfoPlistFile
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist
-xOculusANE/OculusANE-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Process OculusANE/OculusANE-Info.plist15ff5f430b52b741^daae60430b52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Info.plist0000000000000000^398"ProcessInfoPlistFile build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist OculusANE/OculusANE-Info.plist    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    builtin-infoPlistUtility OculusANE/OculusANE-Info.plist -expandbuildsettings -platform macosx -o /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/A/Resources/Info.plist36"886824B4-DAA3-46CA-8CBE-595A1852A36E-
-
-CProcessPCH /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ezgyfyzpnzqchzgejufxucwyxgzf_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cgnzpcgcjgvxordgrohxbivjgvdq/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-apeqmncdswgbqpffiyubkoeumjvm_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ayguxfmxljzxwlgycfimercmjamw_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-brmizajabaqghjdslxwndzxvmhou_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-bserfanrbqgdziafbcmfptmvxqtj_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ckahestvjrbmroerooibmuhlemvw_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-dgnbldoyyaenrbexfwsqovimcpnh_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-dsolsxmwfeveumflsysaatbbgggw_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-egwsgmrtjhyjqyfrxirrhrpbitfm_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ejcskvdxrqymehbmbdkdavzvbczo_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ejuskzxvvehowxdqbigxwnpqibce_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-frmeodmvrqkgrbeidlvvjfsvliiv_ast/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391253855.814065
-e391253857.111989
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch0682d05f0f52b741^3bac1c610f52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2870"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-acqpvigwewenmpawgounrzqialkw/OculusANE-Prefix.pch.d36"84987243-A75A-4E69-9639-C76493F455F7-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-avxtekzlkfwoobamwtxyspsizwir/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391253897.858158
-e391253899.179353
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pcha7cadb890f52b741^afe92d8b0f52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2910"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-bmhrayrgpohmbbaajxqsmugvvelq/OculusANE-Prefix.pch.d36"67300B6A-A70B-4CE3-A232-7F0D27AD74A1-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391401971.852671
-e391401973.609884
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pchfa63daf35154b741^5c219cf55154b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2903"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/i386 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -fno-rtti --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cdkhiuamvgfrhaemybdxazmtjntu/OculusANE-Prefix.pch.d36"FDE39AF6-7D56-452F-9DA9-C0089300CA45-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391253800.697337
-e391253802.124250
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch23bfb2280f52b741^74ce1f2a0f52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^3152"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" -F../../../oculus_sdk/OculusSDK/LibOVR/include --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-cznynwrnapgfrobcizaombbikovm/OculusANE-Prefix.pch.d36"0757EEC6-0D9E-415C-B7B5-7ED415706EF5-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391388537.717213
-e391388539.420157
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch8db5b7791d54b741^75906b7b1d54b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2893"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/i386 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dtwjvqhigraokpbzaompbelnbgbk/OculusANE-Prefix.pch.d36"EDC93118-20C5-4A04-A6A1-4BD83A134B7F-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391388514.013092
-e391388514.030139
-r0
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xi386
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oerror: -fobjc-arc is not supported on platforms using the legacy runtime
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pcha41804621d54b741^56b607621d54b741^-198"error: -fobjc-arc is not supported on platforms using the legacy runtimeCommand /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang failed with exit code 11(21%IDEActivityLogMessage2@124"Command /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang failed with exit code 1-391388514#18446744073709551615#0#-2#--20"Clang LLVM 1.0 Error--0#0#0#-19%DVTDocumentLocation3@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2904"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../oculus_sdk/OculusSDK/LibOVR/include -I../../oculus_sdk/OculusSDK/LibOVR/Src -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/i386 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-dzbngkkwgbkikpevpthgnxezzofl/OculusANE-Prefix.pch.d36"CE2EB865-7530-4EE5-9A58-87FC46355FB3-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391252803.386281
-e391252804.907238
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pcha0ff62430b52b741^3a40e8440b52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^3105"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-eeilwhblbmodrybwufvjhjgtgogz/OculusANE-Prefix.pch.d36"9C8B37D8-F3FB-4B41-A2F5-5310A8B06F31-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-egzzzrakabulordlvoveoxnxrjzo/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391253839.813350
-e391253843.188726
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch9352d04f0f52b741^8b5030530f52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2876"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../../../oculus_sdk/OculusSDK/LibOVR/include -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gkhxmgeahortpegunqqmuhkmmomk/OculusANE-Prefix.pch.d36"ABABED0A-4B3A-471A-A895-E899C018BFA2-
-
-CProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
-s391253825.873519
-e391253827.063292
-r1
-xProcessPCH++
-x/var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.pth
-xOculusANE/OculusANE-Prefix.pch
-xnormal
-xx86_64
-xobjective-c++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch67badf410f52b741^a43310430f52b741^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch0000000000000000^2873"ProcessPCH++ /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.pth OculusANE/OculusANE-Prefix.pch normal x86_64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch x86_64 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/OculusANE.hmap -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/include -I../../../oculus_sdk/OculusSDK/LibOVR/include -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources/x86_64 -I/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/OculusANE.build/Debug/OculusANE.build/DerivedSources -F/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug "-F/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac" --serialize-diagnostics /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.dia -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/OculusANE/OculusANE-Prefix.pch -o /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/rf/q26sz8sx5wzg0fqr5lhv926m0000gr/C/com.apple.Xcode.504/SharedPrecompiledHeaders/OculusANE-Prefix-gymbhgybsgwccdcpzuoulrdhfmnq/OculusANE-Prefix.pch.d36"0D543526-4930-4464-9003-7E6C6B92884A-
-
-CSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANE Versions/Current/OculusANE
-s391252803.288306
-e391252803.366892
-r1
-xSymLink
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANE
-xVersions/Current/OculusANE
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Process /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANEc2d949430b52b741^2a005e430b52b741^---0#0#0#--279"SymLink build/Debug/OculusANE.framework/OculusANE Versions/Current/OculusANE    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    /bin/ln -sf Versions/Current/OculusANE /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/OculusANE36"BF9256AF-211F-494D-808D-84040A8E9FAE-
-
-CSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources Versions/Current/Resources
-s391252803.288294
-e391252803.366898
-r1
-xSymLink
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources
-xVersions/Current/Resources
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Process /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources5ed949430b52b741^f4fc5d430b52b741^---0#0#0#--279"SymLink build/Debug/OculusANE.framework/Resources Versions/Current/Resources    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    /bin/ln -sf Versions/Current/Resources /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Resources36"0EF4341B-A83C-4D29-BFBC-E24C352F3916-
-
-CSymLink /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Current A
-s391252803.288259
-e391252803.366917
-r1
-xSymLink
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Current
-xA
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Process /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Currentd8d849430b52b741^69015e430b52b741^---0#0#0#--243"SymLink build/Debug/OculusANE.framework/Versions/Current A    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    /bin/ln -sf A /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework/Versions/Current36"EA0CDEFC-D74E-477A-A7BF-AEC70DA2FE2F-
-
-CTouch /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework
-s391401974.408783
-e391401974.424264
-r1
-xTouch
-x/Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Touch /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.frameworkf6b368f65154b741^c39c6cf65154b741^---0#0#0#--209"Touch build/Debug/OculusANE.framework    cd /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE    /usr/bin/touch -c /Users/jonathan/Documents/git/oculus-ane/mac/OculusANE/build/Debug/OculusANE.framework36"349F5B3B-A1BC-4676-9841-0F5CB5AEEDDE-
-
