@@ -3,7 +3,9 @@ package be.but.oculus
 	import away3d.cameras.Camera3D;
 	import away3d.core.managers.Stage3DProxy;
 	import away3d.filters.tasks.Filter3DBrightPassTask;
+	import away3d.filters.tasks.Filter3DRadialBlurTask;
 	import away3d.filters.tasks.Filter3DTaskBase;
+	import flash.display3D.Context3D;
 
 	import flash.display3D.Context3DProgramType;
 
@@ -15,63 +17,73 @@ package be.but.oculus
 		public function OculusBarrelDistortionTask()
 		{
 			super();
+		}		
+		
+		override protected function getVertexCode() : String
+		{
+			return 	"mov op, va0\n" +
+					"mov v0, va1";
 		}
-
+		
 		override protected function getFragmentCode() : String
 		{
-			// PURE VOODO MAGIC BELOW THAT DOES SOME BRIGHTNESS STUFF COPIED FROM THE Filter3DBrightPassTask
-			return 	"tex ft0, v0, fs0 <2d,linear,clamp>	\n" +
-					"dp3 ft1.x, ft0.xyz, ft0.xyz	\n" +
-					"sqt ft1.x, ft1.x				\n" +
-					"sub ft1.y, ft1.x, fc0.x		\n" +
-					"mul ft1.y, ft1.y, fc0.y		\n" +
-					"sat ft1.y, ft1.y				\n" +
-					"mul ft0.xyz, ft0.xyz, ft1.y	\n" +
-					"mov oc, ft0					\n";
+			return 	"mov ft0, v0	\n" +
 					
-			// converted GLSL shader for the rift with 
-			// http://www.cmodule.org/glsl2agal/
-			// but code is erroring.. no idea where to start looking
-			
-			/*return	"sub ft1.xy, v2.xyyy, v0.xyyy	\n" +
-					"mul ft3.xy, ft1.xyyy, fc5.xyyy	\n" +
-					"mul ft1.y, ft3.y, ft3.y	\n" +
-					"mul ft1.x, ft3.x, ft3.x	\n" +
-					"add ft4.z, ft1.x, ft1.y	\n" +
-					"mul ft2.z, fc6.w, ft4.z	\n" +
-					"mul ft2.y, ft2.z, ft4.z	\n" +
-					"mul ft2.x, ft2.y, ft4.z	\n" +
-					"mul ft0.w, fc6.z, ft4.z	\n" +
-					"mul ft0.z, ft0.w, ft4.z	\n" +
-					"mul ft0.y, fc6.y, ft4.z	\n" +
-					"add ft0.x, fc6.x, ft0.y	\n" +
-					"add ft1.w, ft0.x, ft0.z	\n" +
-					"add ft1.z, ft1.w, ft2.x	\n" +
-					"mul ft4.xy, ft3.xyyy, ft1.z	\n" +
-					"mul ft3.xy, fc7.xyyy, ft4.xyyy	\n" +
-					"add ft4.xy, v0.xyyy, ft3.xyyy	\n" +
-					"mov ft3.xy, ft4.xyyy	\n" +
-					"sub ft3.y, fc3.x, ft4.y	\n" +
-					"sub ft4.xy, v1.xyyy, fc4.xyyy	\n" +
-					"add ft0.xy, v1.xyyy, fc4.xyyy	\n" +
-					"min ft1.xy, ft3.xyyy, ft0.xyyy	\n" +
-					"max ft0.xy, ft1.xyyy, ft4.xyyy	\n" +
-					"seq ft1.xy, ft0.xyyy, ft3.xyyy	\n" +
-					"add ft0.x, ft1.x, ft1.y	\n" +
-					"sub ft1.x, fc3.x, ft0.x	\n" +
-					"sub ft2.w, fc3.x, ft1.x	\n" +
-					"mul oc, oc, ft2.w	\n" +
-					"sub ft0.x, fc3.x, ft1.x	\n" +
-					"sub ft1.x, fc3.x, ft0.x	\n" +
-					"mul oc, oc, ft1.x	\n" +
-					"tex ft1, ft3.xyyy, fs0 <linear mipdisable repeat 2d>	\n" +
-					"mul ft3, ft1, ft0.x	\n" +
-					"add oc, oc, ft3	\n";*/
-		}
+					//  centerpoint to the right
+					"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
+					// scale it
+					"mul ft0.xy, ft0.xy, fc0.zz 	\n" +
+					
+					// pytagoras ft1 = theta
+					"mul ft1.x, ft0.x, ft0.x 	\n" +
+					"mul ft1.y, ft0.y, ft0.y 	\n" +
+					
+					// length of vector ft2 = r squared
+					"add ft2.x, ft1.x, ft1.y 	\n" +
+					
+					
+					// inner mul hmd.y with r squared
+					"mul ft3.x, fc1.y, ft2.x 	\n" +
+					
+					// add hmd.x with previous result
+					"add ft4.x, ft3.x, fc1.x 	\n" +
+					
+					// double up r squared
+					"mul ft6.x, ft2.x, ft2.x 	\n" +
+					"mul ft5.x, ft6.x, fc1.z	\n" +
 
+					
+					// add 
+					"add ft4.x, ft4.x, ft5.x 	\n" +
+					
+					// double up r squared
+					"mul ft6.x, ft6.x, ft2.x 	\n" +
+					"mul ft6.x, ft6.x, fc1.w 	\n" +
+					
+					
+					// now add everything 
+					"add ft4.x, ft4.x, ft6.x 	\n" +
+					
+					// and mul with theta ( ft6 = rVector )					
+					"mul ft6.xy, ft1.xy, ft4.xx 	\n" +
+					
+					// add the scale
+					"mul ft6.xy, ft6.xy, fc0.ww	\n" + 
+					
+					// add the screencenter again
+					"add ft6.xy, ft6.xy, fc0.xy	\n" + 
+					"tex ft1, ft6.xy, fs0 <2d,linear,clamp>	\n" +
+
+					"mov oc, ft1";
+		}
+		
 		override public function activate(stage3DProxy : Stage3DProxy, camera3D : Camera3D, depthTexture : Texture) : void
 		{
-			stage3DProxy.context3D.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, Vector.<Number>([0.01, 1 / (1-0.01), 0, 0]), 1);
+			var context:Context3D = stage3DProxy.context3D;
+			
+			// center x, center y, scaleIn, scale,     hmdParam.x, y, z, w
+			var data:Vector.<Number> = Vector.<Number>([0.5, 0.5, 2, 1,    1, 0.22, 0.24, 0]);
+			context.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, data, 2);
 		}
 	}
 }

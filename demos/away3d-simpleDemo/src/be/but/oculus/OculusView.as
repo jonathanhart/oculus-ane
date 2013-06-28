@@ -43,7 +43,7 @@ package be.but.oculus
 			rightView = new View3D(_scene, _camera.rightCamera);
 			addChild(rightView);
 			
-			//setTimeout(onContextCreated, 3000);
+			setTimeout(onContextCreated, 5000);
 		}
 		
 		private function onContextCreated():void 
