@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.20617.1 PREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OculusANE", "OculusANE\OculusANE.vcxproj", "{3AEFD89E-A591-4F9E-8772-C0EC502D8180}"
 	ProjectSection(ProjectDependencies) = postProject
 		{934B40C7-F40A-4E4C-97A7-B9659BE0A441} = {934B40C7-F40A-4E4C-97A7-B9659BE0A441}
@@ -8,7 +10,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OculusANE", "OculusANE\Ocul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FEEDF28F-0DED-4B75-9D21-5D4E37E2E282}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibOVR", "..\..\oculus_sdk\OculusSDK\LibOVR\Projects\Win32\LibOVR_Msvc2010.vcxproj", "{934B40C7-F40A-4E4C-97A7-B9659BE0A441}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibOVR", "..\..\..\..\OculusSDK\LibOVR\Projects\Win32\LibOVR_Msvc2010.vcxproj", "{934B40C7-F40A-4E4C-97A7-B9659BE0A441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
