@@ -7,18 +7,18 @@ package
 	import away3d.library.AssetLibrary;
 	import away3d.library.assets.AssetType;
 	import away3d.loaders.parsers.AWDParser;
-	import away3d.primitives.WireframeCube;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
-	import flash.events.Event;
 	import flash.net.URLRequest;
 	import oculusAne.away3d.OculusScene3D;
+	
 	/**
-	 * ...
+	 * Simple demo showcasing the away3d oculus integration
 	 * @author Fragilem17
 	 */
+	[SWF(backgroundColor="#000000", frameRate="60", quality="LOW", width="1280", height="800")]
 	public class Main extends Sprite
 	{	
 		private var _oculusScene3d:OculusScene3D;	
@@ -42,8 +42,7 @@ package
 			_oculusScene3d.camera.moveForward(24);
 			_oculusScene3d.camera.moveRight(5);
 			_oculusScene3d.camera.yaw(180);
-			
-			
+						
 			
 			//   By default the tracker's target is the oculusScene3D's camera
 			//   You can change the tracker's target this way
