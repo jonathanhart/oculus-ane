@@ -26,6 +26,7 @@ call "C:/Program Files (x86)/FlashDevelop/Tools/flexsdk/bin/adt" -package -targe
 
 del OculusANE.swc
 del catalog.xml
+del library.swf
 rd mac /S /Q
 rd win /S /Q
 
