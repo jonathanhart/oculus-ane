@@ -13,7 +13,7 @@
 #define OCULUSRIFTANEDLL_H_
 
 #include "FlashRuntimeExtensions.h"
-#include "OVR.h"
+#include "..\..\..\..\..\OculusSDK\LibOVR\Include\OVR.h"
 
 extern "C"
 {

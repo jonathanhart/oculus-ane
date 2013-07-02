@@ -18,9 +18,6 @@
     <ClInclude Include="OculusANE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\OculusSDK\LibOVR\Include\OVR.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OculusANE.cpp">

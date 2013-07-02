@@ -58,7 +58,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>Winmm.lib;FlashRuntimeExtensions.lib;libovrd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\lib\win;C:\svnProjects\OculusSDK\LibOVR\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\FlashDevelop\Tools\flexsdk\lib\win;C:\svnProjects\OculusSDK\LibOVR\Lib\Win32;C:\svnProjects\OculusSDK\LibOVR\Include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -78,11 +78,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>Winmm.lib;FlashRuntimeExtensions.lib;libovr.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files\FlashDevelop\Tools\flexsdk\lib\win;C:\Users\Tom\Documents\GitHub\oculus-ane\oculus_sdk\OculusSDK\LibOVR\Lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\svnProjects\OculusSDK\LibOVR\Lib\Win32;C:\Program Files\FlashDevelop\Tools\flexsdk\lib\win;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\OculusSDK\LibOVR\Include\OVR.h" />
     <ClInclude Include="OculusANE.h" />
   </ItemGroup>
   <ItemGroup>

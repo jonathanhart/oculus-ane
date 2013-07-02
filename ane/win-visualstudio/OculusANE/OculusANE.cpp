@@ -45,7 +45,7 @@ extern "C" {
 		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &cameraQuaternionResult, NULL);
 		FRESetArrayLength(&cameraQuaternionResult, 4);
 		
-		cout << "getCameraQuaternion";
+		// cout << "getCameraQuaternion";
 		Quatf quaternion = fusion.GetOrientation();
 		
 		FREObject xVal;
@@ -146,14 +146,14 @@ extern "C" {
         
 		*functionsToSet = func;
         
-		cout << "Initialized Native Extension";
+		cout << "Initialized Native Extension\n";
         
 		OVR::System::Init();
 		pManager = *DeviceManager::Create();
         
-		cout << "Initialized OVR";
+		cout << "Initialized OVR\n";
 		if (!pManager) {
-			cout << "ERROR: pManager null";
+			cout << "ERROR: pManager null\n";
 		}
 		DeviceEnumerator<SensorDevice> isensor = pManager->EnumerateDevices<SensorDevice>();
 		DeviceEnumerator<SensorDevice> oculusSensor;
@@ -180,13 +180,13 @@ extern "C" {
 			if (pSensor) {
 				pSensor->SetRange(SensorRange(4 * 9.81f, 8 * Math<float>::Pi, 1.0f), true);
 				fusion.AttachToSensor(pSensor);
-				cout << "Attached to sensor";
+				cout << "Attached to sensor\n";
 			} else {
-				cout << "ERROR: pSensor null";
+				cout << "ERROR: pSensor null\n";
 			}
 			oculusSensor.Clear();
 		} else {
-			cout << "ERROR: no Sensor found";
+			cout << "ERROR: no Sensor found\n";
 		}
 	}
     
