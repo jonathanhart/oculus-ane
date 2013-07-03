@@ -1,5 +1,10 @@
 package oculusAne.away3d 
 {
+	import flash.display.Sprite;
+	import flash.display.Stage3D;
+	import flash.events.Event;
+	import flash.utils.setTimeout;
+	
 	import away3d.cameras.Camera3D;
 	import away3d.containers.Scene3D;
 	import away3d.containers.View3D;
@@ -11,10 +16,6 @@ package oculusAne.away3d
 	import away3d.filters.BloomFilter3D;
 	import away3d.filters.BlurFilter3D;
 	import away3d.filters.RadialBlurFilter3D;
-	import flash.display.Sprite;
-	import flash.display.Stage3D;
-	import flash.events.Event;
-	import flash.utils.setTimeout;
 	/**
 	 * ...
 	 * @author 
@@ -43,6 +44,7 @@ package oculusAne.away3d
 			rightView = new View3D(_scene, _camera.rightCamera);
 			addChild(rightView);
 			
+			//setTimeout(checkForContext, 2000);
 			//checkForContext();
 		}
 		

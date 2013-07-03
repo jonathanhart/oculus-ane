@@ -1,15 +1,14 @@
 package oculusAne.away3d
 {
+	import flash.display3D.Context3D;
+	import flash.display3D.Context3DProgramType;
+	import flash.display3D.textures.Texture;
+	
 	import away3d.cameras.Camera3D;
 	import away3d.core.managers.Stage3DProxy;
 	import away3d.filters.tasks.Filter3DBrightPassTask;
 	import away3d.filters.tasks.Filter3DRadialBlurTask;
 	import away3d.filters.tasks.Filter3DTaskBase;
-	import flash.display3D.Context3D;
-
-	import flash.display3D.Context3DProgramType;
-
-	import flash.display3D.textures.Texture;
 
 	public class OculusBarrelDistortionTask extends Filter3DTaskBase
 	{
@@ -31,12 +30,15 @@ package oculusAne.away3d
 					
 					//  centerpoint to the right
 					"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
+					
 					// scale it
 					"mul ft0.xy, ft0.xy, fc0.zz 	\n" +
+					
 					
 					// pytagoras ft1 = theta
 					"mul ft1.x, ft0.x, ft0.x 	\n" +
 					"mul ft1.y, ft0.y, ft0.y 	\n" +
+					
 					
 					// length of vector ft2 = r squared
 					"add ft2.x, ft1.x, ft1.y 	\n" +
@@ -68,22 +70,35 @@ package oculusAne.away3d
 					"mul ft6.xy, ft1.xy, ft4.xx 	\n" +
 					
 					// add the scale
-					"mul ft6.xy, ft6.xy, fc0.ww	\n" + 
+					//"mul ft6.xy, ft6.xy, fc2.xx	\n" + 
 					
 					// add the screencenter again
 					"add ft6.xy, ft6.xy, fc0.xy	\n" + 
 					"tex ft1, ft6.xy, fs0 <2d,linear,clamp>	\n" +
-
+					
 					"mov oc, ft1";
+					/*
+					"tex ft0, ft0.xy, fs0 <2d,linear,clamp>	\n" +
+					"mov oc, ft0";*/
 		}
 		
 		override public function activate(stage3DProxy : Stage3DProxy, camera3D : Camera3D, depthTexture : Texture) : void
 		{
 			var context:Context3D = stage3DProxy.context3D;
 			
+			// damn texture map is 1024 instead of 640
+			var centerX:Number = (640/2) / 1024;
+			var centerY:Number = (800/2) / 1024;
+			
+			// total left side of texture needs to be -1, total right 1
+			// code above needs to mul. the centerX with scale in orde to achieve this 
+			var scaleX:Number = (1 / (centerX*2)) * 2;
+			var scaleY:Number = (1 / (centerY*2)) * 2;
+			
+			
 			// center x, center y, scaleIn, scale,     hmdParam.x, y, z, w
-			var data:Vector.<Number> = Vector.<Number>([0.5, 0.5, 2, 1,    1, 0.22, 0.24, 0]);
-			context.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, data, 2);
+			var data:Vector.<Number> = Vector.<Number>([0.5, 0.5, 2, 1,    1, 0.22, 0.24, 0,    0, 0, 0, 0]);
+			context.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, data, 3);
 		}
 	}
 }

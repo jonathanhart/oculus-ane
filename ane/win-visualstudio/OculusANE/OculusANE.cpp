@@ -23,7 +23,7 @@ extern "C" {
 	Ptr<SensorDevice> pSensor;
 	SensorFusion fusion;
 	Ptr<DeviceManager> pManager;
-	Ptr<HMDDevice> pDevice;
+	Ptr<HMDDevice> pHMD;
 	
 	FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
 		FREObject result;
@@ -77,50 +77,62 @@ extern "C" {
 		FRENewObject((const uint8_t*)"Object", 0, NULL, &result, NULL);
         
 		HMDInfo info;
-		pSensor->GetDeviceInfo(&info);
-        
+		pHMD->GetDeviceInfo(&info);
+	        
 		FREObject hScreenSize;
 		FRENewObjectFromDouble(static_cast<double>(info.HScreenSize), &hScreenSize);
-		FRESetObjectProperty(result, (const uint8_t*)"HScreenSize", hScreenSize, NULL);
+		FRESetObjectProperty(result, (const uint8_t*)"hScreenSize", hScreenSize, NULL);
 
 		FREObject vScreenSize;
 		FRENewObjectFromDouble(static_cast<double>(info.VScreenSize), &vScreenSize);
-		FRESetObjectProperty(result, (const uint8_t*)"VScreenSize", vScreenSize, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "vScreenSize", vScreenSize, NULL);
 
 		FREObject vScreenCenter;
 		FRENewObjectFromDouble(static_cast<double>(info.VScreenCenter), &vScreenCenter);
-		FRESetObjectProperty(result, (const uint8_t*)"VScreenCenter", vScreenCenter, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "vScreenCenter", vScreenCenter, NULL);
 
 		FREObject eyeToScreenDistance;
 		FRENewObjectFromDouble(static_cast<double>(info.EyeToScreenDistance), &eyeToScreenDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"EyeToScreenDistance", eyeToScreenDistance, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "eyeToScreenDistance", eyeToScreenDistance, NULL);
 
 		FREObject lensSeparationDistance;
 		FRENewObjectFromDouble(static_cast<double>(info.LensSeparationDistance), &lensSeparationDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"LensSeparationDistance", lensSeparationDistance, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "lensSeparationDistance", lensSeparationDistance, NULL);
 
 		FREObject interPupillaryDistance;
 		FRENewObjectFromDouble(static_cast<double>(info.InterpupillaryDistance), &interPupillaryDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"InterpupillaryDistance", interPupillaryDistance, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "interPupillaryDistance", interPupillaryDistance, NULL);
         
 		FREObject hResolution;
 		FRENewObjectFromDouble(static_cast<double>(info.HResolution), &hResolution);
-		FRESetObjectProperty(result, (const uint8_t*)"HResolution", hResolution, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "hResolution", hResolution, NULL);
         
 		FREObject vResolution;
 		FRENewObjectFromDouble(static_cast<double>(info.VResolution), &vResolution);
-		FRESetObjectProperty(result, (const uint8_t*)"VResolution", vResolution, NULL);
+		FRESetObjectProperty(result, (const uint8_t*) "vResolution", vResolution, NULL);
         
-		FREObject kDistortion;
-		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &kDistortion, NULL);
-		FRESetArrayLength(kDistortion, 4);
+		FREObject distortionK;
+		FRENewObject((const uint8_t*) "Vector.<Number>", 0, NULL, &distortionK, NULL);
+		FRESetArrayLength(distortionK, 4);
 		for(int i=0; i<4; i++) {
 			FREObject kValue;
 			FRENewObjectFromDouble(static_cast<double>(info.DistortionK[i]), &kValue);
-			FRESetArrayElementAt(kDistortion, i, kValue);
+			FRESetArrayElementAt(distortionK, i, kValue);
 		}
+		FRESetObjectProperty(result, (const uint8_t*) "distortionK", distortionK, NULL);
+
+
+		FREObject chromaAbCorrection;
+		FRENewObject((const uint8_t*) "Vector.<Number>", 0, NULL, &chromaAbCorrection, NULL);
+		FRESetArrayLength(chromaAbCorrection, 4);
+		for (int i = 0; i < 4; i++) {
+			FREObject cValue;
+			FRENewObjectFromDouble(static_cast<double>(info.ChromaAbCorrection[i]), &cValue);
+			FRESetArrayElementAt(chromaAbCorrection, i, cValue);
+		}
+		FRESetObjectProperty(result, (const uint8_t*) "chromaAbCorrection", chromaAbCorrection, NULL);
         
-		FRESetObjectProperty(result, (const uint8_t*)"DistortionK", kDistortion, NULL);
+
 		return result;
 	}
     
@@ -150,6 +162,7 @@ extern "C" {
         
 		OVR::System::Init();
 		pManager = *DeviceManager::Create();
+		pHMD = *pManager->EnumerateDevices<HMDDevice>().CreateDevice();
         
 		cout << "Initialized OVR\n";
 		if (!pManager) {

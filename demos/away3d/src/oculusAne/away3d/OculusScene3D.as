@@ -1,17 +1,15 @@
 package oculusAne.away3d
-{
+{	
+	import flash.events.Event;
+	import flash.geom.Vector3D;
+	
 	import away3d.cameras.lenses.LensBase;
 	import away3d.containers.Scene3D;
 	import away3d.core.base.Object3D;
-	import away3d.core.managers.Stage3DManager;
-	import away3d.core.managers.Stage3DProxy;
 	import away3d.core.math.Quaternion;
-	import away3d.events.Stage3DEvent;
-	import com.numeda.OculusANE.OculusANE;
-	import flash.desktop.NativeApplication;
-	import flash.display.Sprite;
-	import flash.events.Event;
-	import flash.geom.Vector3D;
+	
+	import oculusANE.HmdInfo;
+	import oculusANE.OculusANE;
 	
 	/**
 	 * ...
@@ -31,6 +29,8 @@ package oculusAne.away3d
 		private var _quatVec:Vector.<Number>;
 		private var _quat:Quaternion = new Quaternion();
 		private var _prevPos:Vector3D;
+
+		public var hmdInfo:HmdInfo;
 		
 		public function OculusScene3D() 
 		{			
@@ -38,27 +38,39 @@ package oculusAne.away3d
 			var zNear:Number = 0.5;
 			
 			_tracker = new OculusANE();
-			var infoObj:Object = new Object();
-			//if (_oculusAne.isSupported()) {
-				//infoObj = _oculusAne.getHMDInfo();
-			//}else {
-				infoObj.hScreenSize = 0.14976;
-				infoObj.vScreenSize = 0.09356;
-				infoObj.vScreenCenter = 0.0468;
-				infoObj.eyeToScreenDistance = 0.041;
-				infoObj.lensSeparationDistance = 0.0635;
-				infoObj.interPupillaryDistance = 0.054;
-				infoObj.hResolution = 1280;
-				infoObj.vResolution = 800;
-				infoObj.kDistortion = [1, 0.22, 0.24, 0];
-				infoObj.chromAbCorrection = [0.996, -0.004, 1.014, 0];
-			//}
 			
-			var fov:Number = (2 * Math.atan(infoObj.vScreenSize / (2 * infoObj.eyeToScreenDistance))) * 57.2957795;
-			var halfScreenAspectRatio:Number = infoObj.hResolution / (2 * infoObj.vResolution);
+			if (_tracker.isSupported()) {
+				// get information from HMD
+				hmdInfo = _tracker.getHMDInfo();
+			}else {
+				// set default values from Oculus devkit 1 
+				hmdInfo = new HmdInfo();
+				hmdInfo.hScreenSize	= 0.14975999295711517;
+				hmdInfo.vScreenSize	= 0.09359999746084213;
+				hmdInfo.vScreenCenter = 0.046799998730421066;	
+				hmdInfo.eyeToScreenDistance = 0.04100000113248825;
+				hmdInfo.lensSeparationDistance = 0.06350000202655792;
+				hmdInfo.interPupillaryDistance = 0.06400000303983688;
+				hmdInfo.hResolution = 1280;
+				hmdInfo.vResolution = 800;
+				hmdInfo.distortionK	= new Vector.<Number>;
+				hmdInfo.distortionK.push(1);
+				hmdInfo.distortionK.push(0.2199999988079071);
+				hmdInfo.distortionK.push(0.23999999463558197);
+				hmdInfo.distortionK.push(0);
+				
+				hmdInfo.chromaAbCorrection = new Vector.<Number>;
+				hmdInfo.chromaAbCorrection.push(0.9959999918937683);
+				hmdInfo.chromaAbCorrection.push(-0.004000000189989805);
+				hmdInfo.chromaAbCorrection.push(1.0140000581741333);
+				hmdInfo.chromaAbCorrection.push(0);
+			}
 			
-			var horizontalShift:Number = (infoObj.hScreenSize / 4) - (infoObj.lensSeparationDistance / 2); // meters per eye
-			var horizontalShiftPercentage:Number = horizontalShift / (infoObj.hScreenSize / 2);
+			var fov:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
+			var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
+			
+			var horizontalShift:Number = (hmdInfo.hScreenSize / 4) - (hmdInfo.lensSeparationDistance / 2); // meters per eye
+			var horizontalShiftPercentage:Number = horizontalShift / (hmdInfo.hScreenSize / 2);
 			
 			/*
 			var projectionVector:Vector.<Number> = new Vector.<Number>;

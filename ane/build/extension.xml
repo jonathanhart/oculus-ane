@@ -1,5 +1,5 @@
 <extension xmlns="http://ns.adobe.com/air/extension/3.1">
-    <id>com.numeda.OculusANE</id>
+    <id>oculusAne</id>
     <versionNumber>0.0.1</versionNumber>
     <platforms>
         <platform name="MacOS-x86">

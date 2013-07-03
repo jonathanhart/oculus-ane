@@ -42,7 +42,7 @@ package
 			_oculusScene3d.camera.moveForward(24);
 			_oculusScene3d.camera.moveRight(5);
 			_oculusScene3d.camera.yaw(180);
-						
+		
 			
 			//   By default the tracker's target is the oculusScene3D's camera
 			//   You can change the tracker's target this way
