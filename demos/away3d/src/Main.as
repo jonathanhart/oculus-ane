@@ -18,7 +18,7 @@ package
 	 * Simple demo showcasing the away3d oculus integration
 	 * @author Fragilem17
 	 */
-	[SWF(backgroundColor="#000000", frameRate="60", quality="LOW", width="1280", height="800")]
+	[SWF(backgroundColor="#000000", frameRate="120", quality="LOW", width="1280", height="800")]
 	public class Main extends Sprite
 	{	
 		private var _oculusScene3d:OculusScene3D;	
@@ -36,13 +36,13 @@ package
 			AssetLibrary.enableParser(AWDParser);
 			AssetLibrary.addEventListener(AssetEvent.ASSET_COMPLETE, onAssetComplete);
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
-			AssetLibrary.load(new URLRequest("level_lights.awd"));
+			AssetLibrary.load(new URLRequest("level_light.awd"));
 			
 			_oculusScene3d.camera.moveUp(10);
 			_oculusScene3d.camera.moveForward(24);
 			_oculusScene3d.camera.moveRight(5);
 			_oculusScene3d.camera.yaw(180);
-		
+			
 			
 			//   By default the tracker's target is the oculusScene3D's camera
 			//   You can change the tracker's target this way
