@@ -28,7 +28,7 @@ package oculusAne.away3d
 				
 				// SDK says: 
 				//  float2 theta = (in01 - LensCenter) * ScaleIn; // Scales to [-1, 1]
-				// translate above with constants
+				// replace above with constants
 				// float2 theta = (ft0.xy - fc0.xy) * fc0.z;
 				
 				"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
@@ -41,7 +41,7 @@ package oculusAne.away3d
 				
 				// SDK says:
 				//  float rSq = theta.x * theta.x + theta.y * theta.y;
-				// translate above with constants
+				// replace above with constants
 				//  float rSq = ft0.x * ft0.x + ft0.y * ft0.y;
 				
 				"mul ft1.x, ft0.x, ft0.x 	\n" +
@@ -58,7 +58,7 @@ package oculusAne.away3d
 				
 				// SDK says:
 				// float2 rvector= theta * (HmdWarpParam.x + HmdWarpParam.y * rSq +	HmdWarpParam.z * rSq * rSq + HmdWarpParam.w * rSq * rSq * rSq);
-				// translate above with constants
+				// replace above with constants
 				// float2 rvector= ft0.xy * (fc1.x + fc1.y * ft2.x + fc1.z * ft2.x * ft2.x + fc1.w * ft2.x * ft2.x * ft2.x);
 				
 				
@@ -101,7 +101,7 @@ package oculusAne.away3d
 				
 				// SDK says:
 				// float2 tc = LensCenter + Scale * rvector;
-				// translate above with constants
+				// replace above with constants
 				// float2 tc = fc0.xy + fc0.w * ft4.zw;
 				
 				"mul ft5.xy, fc0.ww, ft4.zw 	\n" +
@@ -131,6 +131,8 @@ package oculusAne.away3d
 			var scaleX:Number = (1 / (centerX*2)) * 2;
 			var scaleY:Number = (1 / (centerY*2)) * 2;
 			*/
+			
+			// hmd params should come from the hms, not just hardcoded like now
 			
 			// center x, center y, ScaleIn, scale,     hmdParam.x, y, z, w
 			var data:Vector.<Number> = Vector.<Number>([0.5, 0.5, 2, 1,    1, 0.22, 0.24, 0]);
