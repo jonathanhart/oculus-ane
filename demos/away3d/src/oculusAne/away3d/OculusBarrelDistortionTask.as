@@ -49,11 +49,11 @@ package oculusAne.away3d
 			_fragmentConstData[0] = _lensCenterX;		// fc0.x
 			_fragmentConstData[1] = _lensCenterY;		// fc0.y
 			_fragmentConstData[2] = _scaleInX;			// fc0.z
-			_fragmentConstData[3] = 0;					// fc0.w // scaleInY is not really needed to removed it
+			_fragmentConstData[3] = _scaleInX; // * (800/640);			// fc0.w
 			
 			// fc1
-			_fragmentConstData[4] = _scaleX;			// fc1.x // scaleY is not really needed to removed it
-			_fragmentConstData[5] = 0;					// fc1.y
+			_fragmentConstData[4] = _scaleX;			// fc1.x
+			_fragmentConstData[5] = _scaleX; // / (800/640);			// fc1.y
 			_fragmentConstData[6] = 0; 					// fc1.z
 			_fragmentConstData[7] = 0; 					// fc1.w
 			
@@ -83,7 +83,7 @@ package oculusAne.away3d
 				"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
 				// float2 theta = (ft0.xy) * fc0.z;
 				
-				"mul ft0.xy, ft0.xy, fc0.zz 	\n" +
+				"mul ft0.xy, ft0.xy, fc0.zw 	\n" +
 				// float2 theta = ft0.xy;
 				// ft0.xy = theta
 				
@@ -152,7 +152,7 @@ package oculusAne.away3d
 				// replace above with constants
 				// float2 tc = fc0.xy + fc1.xy * ft0.xy;
 				
-				"mul ft0.xy, ft0.xy, fc1.xx 	\n" +
+				"mul ft0.xy, ft0.xy, fc1.xy 	\n" +
 				// float2 tc = fc0.xy + ft0.xy;
 				
 				"add ft0.xy, fc0.xy, ft0.xy 	\n" +
