@@ -10,17 +10,14 @@ package oculusAne.away3d
 	
 	public class OculusBarrelDistortionTask extends Filter3DTaskBase
 	{
-		private var _data:Vector.<Number>;
-		
+		private var _fragmentConstData:Vector.<Number>;
+		private var _vertexConstData:Vector.<Number>;		
 		
 		private var _lensCenterX:Number;
 		private var _lensCenterY:Number;
 		
-		private var _scaleInX:Number;
-		private var _scaleInY:Number;
-		
+		private var _scaleInX:Number;		
 		private var _scaleX:Number;
-		private var _scaleY:Number;
 		
 		private var _hmdWarpParamX:Number;
 		private var _hmdWarpParamY:Number;
@@ -28,51 +25,52 @@ package oculusAne.away3d
 		private var _hmdWarpParamW:Number;
 
 
-		public function OculusBarrelDistortionTask(lensCenterX:Number, lensCenterY:Number, scaleInX:Number, scaleInY:Number, scaleX:Number, scaleY:Number, hmdWarpParamX:Number, hmdWarpParamY:Number, hmdWarpParamZ:Number, hmdWarpParamW:Number)
-		{
-			super();
-			
+
+
+		public function OculusBarrelDistortionTask(lensCenterX:Number, lensCenterY:Number, scaleInX:Number, scaleX:Number, hmdWarpParamX:Number, hmdWarpParamY:Number, hmdWarpParamZ:Number, hmdWarpParamW:Number)
+		{			
 			_lensCenterX = lensCenterX;
 			_lensCenterY = lensCenterY;
 			_scaleInX = scaleInX;
-			_scaleInY = scaleInY;
 			_scaleX = scaleX;
-			_scaleY = scaleY;
 			_hmdWarpParamX = hmdWarpParamX;
 			_hmdWarpParamY = hmdWarpParamY;
 			_hmdWarpParamZ = hmdWarpParamZ;
 			_hmdWarpParamW = hmdWarpParamW;
 			
-			_data = Vector.<Number>([0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0]);	
+			_fragmentConstData = Vector.<Number>([0, 0, 0, 0,   0, 0, 0, 0,   0, 0, 0, 0]);	
 			updateFragmentConstants();
+
+			super();
 		}
 		
 		protected function updateFragmentConstants():void {
 			// fc0
-			_data[0] = _lensCenterX;		// fc0.x
-			_data[1] = _lensCenterY;		// fc0.y
-			_data[2] = _scaleInX;			// fc0.z
-			_data[3] = _scaleInY;			// fc0.w
+			_fragmentConstData[0] = _lensCenterX;		// fc0.x
+			_fragmentConstData[1] = _lensCenterY;		// fc0.y
+			_fragmentConstData[2] = _scaleInX;			// fc0.z
+			_fragmentConstData[3] = 0;					// fc0.w // scaleInY is not really needed to removed it
 			
 			// fc1
-			_data[4] = _scaleX;				// fc1.x
-			_data[5] = _scaleY;				// fc1.y
-			_data[6] = 0; 					// not used
-			_data[7] = 0; 					// not used
+			_fragmentConstData[4] = _scaleX;			// fc1.x // scaleY is not really needed to removed it
+			_fragmentConstData[5] = 0;					// fc1.y
+			_fragmentConstData[6] = 0; 					// fc1.z
+			_fragmentConstData[7] = 0; 					// fc1.w
 			
 			// fc2
-			_data[8] = _hmdWarpParamX;		// fc2.x
-			_data[9] = _hmdWarpParamY;		// fc2.y
-			_data[10] = _hmdWarpParamZ;		// fc2.z
-			_data[11] = _hmdWarpParamW;		// fc2.w
+			_fragmentConstData[8] = _hmdWarpParamX;		// fc2.x
+			_fragmentConstData[9] = _hmdWarpParamY;		// fc2.y
+			_fragmentConstData[10] = _hmdWarpParamZ;	// fc2.z
+			_fragmentConstData[11] = _hmdWarpParamW;	// fc2.w
 		}
 		
 		override protected function getVertexCode() : String
 		{
-			return 	"mov op, va0\n" +
-				"mov v0, va1";
+			return 	"mov op, va0	\n" +
+					"mov v0, va1	";
 		}
-		
+	
+				
 		override protected function getFragmentCode() : String
 		{
 			return 	"mov ft0, v0	\n" +
@@ -85,8 +83,7 @@ package oculusAne.away3d
 				"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
 				// float2 theta = (ft0.xy) * fc0.z;
 				
-				
-				"mul ft0.xy, ft0.xy, fc0.zw 	\n" +
+				"mul ft0.xy, ft0.xy, fc0.zz 	\n" +
 				// float2 theta = ft0.xy;
 				// ft0.xy = theta
 				
@@ -145,25 +142,25 @@ package oculusAne.away3d
 				// float2 rvector= ft0.xy * (ft4.y);
 				
 				
-				"mul ft4.zw, ft0.xy, ft4.yy 	\n" +
-				// float2 rvector= ft4.zw;
+				"mul ft0.xy, ft0.xy, ft4.yy 	\n" +
+				// float2 rvector= ft0.xy;
 				// ft4.zw = rvector
 				
 				
 				// SDK says:
 				// float2 tc = LensCenter + Scale * rvector;
 				// replace above with constants
-				// float2 tc = fc0.xy + fc1.xy * ft4.zw;
+				// float2 tc = fc0.xy + fc1.xy * ft0.xy;
 				
-				"mul ft5.xy, fc1.xy, ft4.zw 	\n" +
-				// float2 tc = fc0.xy + ft5.xy;
+				"mul ft0.xy, ft0.xy, fc1.xx 	\n" +
+				// float2 tc = fc0.xy + ft0.xy;
 				
-				"add ft5.xy, fc0.xy, ft5.xy 	\n" +
-				// float2 tc = ft5.xy;				
+				"add ft0.xy, fc0.xy, ft0.xy 	\n" +
+				// float2 tc = ft0.xy;				
 				
 				
 				// SDK says: return Texture.Sample(Linear, tc);
-				"tex ft1, ft5.xy, fs0 <2d,linear,clamp>	\n" +
+				"tex ft1, ft0.xy, fs0 <2d,linear,clamp>	\n" +
 				
 				"mov oc, ft1";
 		}
@@ -171,7 +168,8 @@ package oculusAne.away3d
 		override public function activate(stage3DProxy : Stage3DProxy, camera3D : Camera3D, depthTexture : Texture) : void
 		{
 			var context:Context3D = stage3DProxy.context3D;
-			context.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, _data, 3);
+			//context.setProgramConstantsFromVector(Context3DProgramType.VERTEX, 0, _vertexConstData, 1);
+			context.setProgramConstantsFromVector(Context3DProgramType.FRAGMENT, 0, _fragmentConstData, 3);
 		}
 
 		public function get lensCenterX():Number
@@ -194,7 +192,7 @@ package oculusAne.away3d
 		{
 			_lensCenterY = value;
 			updateFragmentConstants();
-		}
+		}		
 
 		public function get scaleInX():Number
 		{
@@ -207,17 +205,6 @@ package oculusAne.away3d
 			updateFragmentConstants();
 		}
 
-		public function get scaleInY():Number
-		{
-			return _scaleInY;
-		}
-
-		public function set scaleInY(value:Number):void
-		{
-			_scaleInY = value;
-			updateFragmentConstants();
-		}
-
 		public function get scaleX():Number
 		{
 			return _scaleX;
@@ -226,17 +213,6 @@ package oculusAne.away3d
 		public function set scaleX(value:Number):void
 		{
 			_scaleX = value;
-			updateFragmentConstants();
-		}
-
-		public function get scaleY():Number
-		{
-			return _scaleY;
-		}
-
-		public function set scaleY(value:Number):void
-		{
-			_scaleY = value;
 			updateFragmentConstants();
 		}
 

@@ -10,10 +10,10 @@ package oculusAne.away3d
 	{
 		private var _task:OculusBarrelDistortionTask;		
 		
-		public function OculusBarrelDistortionFilter3D(lensCenterX:Number = 0.5, lensCenterY:Number = 0.5, scaleInX:Number = 2, scaleInY:Number = 2, scaleX:Number = 1, scaleY:Number = 1, hmdWarpParamX:Number = 1, hmdWarpParamY:Number = 0.22, hmdWarpParamZ:Number = 0.24, hmdWarpParamW:Number = 0) 
+		public function OculusBarrelDistortionFilter3D(lensCenterX:Number = 0.5, lensCenterY:Number = 0.5, scaleInX:Number = 2, scaleX:Number = 0.5, hmdWarpParamX:Number = 1, hmdWarpParamY:Number = 0.22, hmdWarpParamZ:Number = 0.24, hmdWarpParamW:Number = 0) 
 		{
 			super();
-			_task = new OculusBarrelDistortionTask(lensCenterX, lensCenterY, scaleInX, scaleInY, scaleX, scaleY, hmdWarpParamX, hmdWarpParamY, hmdWarpParamZ, hmdWarpParamW);
+			_task = new OculusBarrelDistortionTask(lensCenterX, lensCenterY, scaleInX, scaleX, hmdWarpParamX, hmdWarpParamY, hmdWarpParamZ, hmdWarpParamW);
 			addTask(_task);
 		}
 		
@@ -48,16 +48,6 @@ package oculusAne.away3d
 			_task.scaleInX = value;			
 		}
 		
-		public function get scaleInY():Number
-		{
-			return _task.scaleInY;
-		}
-		
-		public function set scaleInY(value:Number):void
-		{
-			_task.scaleInY = value;			
-		}
-		
 		public function get scaleX():Number
 		{
 			return _task.scaleX;
@@ -66,16 +56,6 @@ package oculusAne.away3d
 		public function set scaleX(value:Number):void
 		{
 			_task.scaleX = value;			
-		}
-		
-		public function get scaleY():Number
-		{
-			return _task.scaleY;
-		}
-		
-		public function set scaleY(value:Number):void
-		{
-			_task.scaleY = value;			
 		}
 		
 		public function get hmdWarpParamX():Number

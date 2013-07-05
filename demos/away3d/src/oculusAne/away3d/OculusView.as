@@ -4,7 +4,6 @@ package oculusAne.away3d
 	import flash.events.Event;
 	import flash.utils.setTimeout;
 	
-
 	import away3d.containers.View3D;
 	
 	/**
@@ -24,7 +23,8 @@ package oculusAne.away3d
 		private var _width:Number;
 		private var _height:Number;
 
-		public var oculusBarrelDistortionFilter:OculusBarrelDistortionFilter3D;
+		public var oculusBarrelDistortionFilterLeft:OculusBarrelDistortionFilter3D;
+		public var oculusBarrelDistortionFilterRight:OculusBarrelDistortionFilter3D;
 		
 		public function OculusView(scene:OculusScene3D, camera:OculusCamera) 
 		{
@@ -52,9 +52,13 @@ package oculusAne.away3d
 		
 		private function onContextCreated():void 
 		{
-			oculusBarrelDistortionFilter = new OculusBarrelDistortionFilter3D();
-			rightView.filters3d = [oculusBarrelDistortionFilter];
-			leftView.filters3d = [oculusBarrelDistortionFilter];
+			var dk:Vector.<Number> = scene.hmdInfo.distortionK;
+			
+			oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
+			leftView.filters3d = [oculusBarrelDistortionFilterLeft];
+			
+			oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
+			rightView.filters3d = [oculusBarrelDistortionFilterRight];
 		}
 		
 		

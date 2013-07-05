@@ -19,10 +19,14 @@ package oculusAne.away3d
 	{
 		public var leftCamera:Camera3D;
 		public var rightCamera:Camera3D;
+		public var horizontalShiftPercentage:Number;
+		
 		private var _stereoSeperation:Number;
+
 		
 		public function OculusCamera(fov:Number, horizontalShiftPercentage:Number) 
 		{
+			this.horizontalShiftPercentage = horizontalShiftPercentage;
 			var leftLens:OculusLens = new OculusLens(fov, 0.5 + horizontalShiftPercentage, 0.5);
 			var rightLens:OculusLens = new OculusLens(fov, 0.5 - horizontalShiftPercentage, 0.5);
 			
