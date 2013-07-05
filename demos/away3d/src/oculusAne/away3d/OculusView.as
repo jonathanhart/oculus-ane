@@ -1,24 +1,15 @@
 package oculusAne.away3d 
 {
 	import flash.display.Sprite;
-	import flash.display.Stage3D;
 	import flash.events.Event;
 	import flash.utils.setTimeout;
 	
-	import away3d.cameras.Camera3D;
-	import away3d.containers.Scene3D;
+
 	import away3d.containers.View3D;
-	import away3d.core.managers.Stage3DManager;
-	import away3d.core.managers.Stage3DProxy;
-	import away3d.core.render.DefaultRenderer;
-	import away3d.core.render.RendererBase;
-	import away3d.events.Stage3DEvent;
-	import away3d.filters.BloomFilter3D;
-	import away3d.filters.BlurFilter3D;
-	import away3d.filters.RadialBlurFilter3D;
+	
 	/**
 	 * ...
-	 * @author 
+	 * @author Fragilem17
 	 */
 	public class OculusView extends Sprite
 	{
@@ -28,12 +19,14 @@ package oculusAne.away3d
 		
 		private var _backgroundColor:Number;
 		private var _antiAlias:Number;
-		private var _scene:Scene3D;
+		private var _scene:OculusScene3D;
 		private var _camera:OculusCamera;
 		private var _width:Number;
 		private var _height:Number;
+
+		public var oculusBarrelDistortionFilter:OculusBarrelDistortionFilter3D;
 		
-		public function OculusView(scene:Scene3D, camera:OculusCamera) 
+		public function OculusView(scene:OculusScene3D, camera:OculusCamera) 
 		{
 			_scene = scene;
 			_camera = camera;
@@ -45,7 +38,7 @@ package oculusAne.away3d
 			addChild(rightView);
 			
 			//setTimeout(checkForContext, 2000);
-			//checkForContext();
+			checkForContext();
 		}
 		
 		private function checkForContext():void 
@@ -59,8 +52,9 @@ package oculusAne.away3d
 		
 		private function onContextCreated():void 
 		{
-			rightView.filters3d = [new OculusBarrelDistortionFilter3D()];
-			leftView.filters3d = [new OculusBarrelDistortionFilter3D()];
+			oculusBarrelDistortionFilter = new OculusBarrelDistortionFilter3D();
+			rightView.filters3d = [oculusBarrelDistortionFilter];
+			leftView.filters3d = [oculusBarrelDistortionFilter];
 		}
 		
 		
@@ -118,12 +112,12 @@ package oculusAne.away3d
 			leftView.antiAlias = rightView.antiAlias = _antiAlias;
 		}
 		
-		public function get scene():Scene3D 
+		public function get scene():OculusScene3D 
 		{
 			return _scene;
 		}
 		
-		public function set scene(value:Scene3D):void 
+		public function set scene(value:OculusScene3D):void 
 		{
 			_scene = value;
 			leftView.scene = rightView.scene = _scene;
