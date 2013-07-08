@@ -1,5 +1,6 @@
 package 
 {	
+	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageQuality;
@@ -90,8 +91,8 @@ package
 				_gui.addSlider(baseClassPath + "lensCenterX", 0, 1, {label:'lensCenterX'});
 				_gui.addSlider(baseClassPath + "lensCenterY", 0, 1, {label:'lensCenterY'});
 	 
-				_gui.addSlider(baseClassPath + "scaleInX", 1, 3, {label:'scaleInX'});
-				_gui.addSlider(baseClassPath + "scaleX", 0.3, 0.5, {label:'scaleX'});
+				_gui.addSlider(baseClassPath + "scaleInX", 0, 4, {label:'scaleInX'});
+				_gui.addSlider(baseClassPath + "scaleX", 0, 0.4, {label:'scaleX'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamX", 0, 1, {label:'hmdWarpParamX'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamY", 0, 1, {label:'hmdWarpParamY'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamZ", 0, 1, {label:'hmdWarpParamZ'});
@@ -103,14 +104,18 @@ package
 				_gui.addSlider(baseClassPath + "lensCenterX", 0, 1, {label:'lensCenterX'});
 				_gui.addSlider(baseClassPath + "lensCenterY", 0, 1, {label:'lensCenterY'});
 		
-				_gui.addSlider(baseClassPath + "scaleInX", 1, 3, {label:'scaleInX'});
-				_gui.addSlider(baseClassPath + "scaleX", 0.3, 0.5, {label:'scaleX'});
+				_gui.addSlider(baseClassPath + "scaleInX", 0, 4, {label:'scaleInX'});
+				_gui.addSlider(baseClassPath + "scaleX", 0, 0.4, {label:'scaleX'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamX", 0, 1, {label:'hmdWarpParamX'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamY", 0, 1, {label:'hmdWarpParamY'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamZ", 0, 1, {label:'hmdWarpParamZ'});
 				_gui.addSlider(baseClassPath + "hmdWarpParamW", 0, 1, {label:'hmdWarpParamW'});
 				
-				_gui.show();				
+				_gui.show();	
+				
+				//var loader:Loader = new Loader();
+				//loader.load(new URLRequest('overlay.png'));
+				//addChild(loader);
 			}
 		}
 		

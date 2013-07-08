@@ -46,14 +46,14 @@ package oculusAne.away3d
 		
 		protected function updateFragmentConstants():void {
 			// fc0
-			_fragmentConstData[0] = _lensCenterX;		// fc0.x
-			_fragmentConstData[1] = _lensCenterY;		// fc0.y
-			_fragmentConstData[2] = _scaleInX;			// fc0.z
-			_fragmentConstData[3] = _scaleInX; // * (800/640);			// fc0.w
+			_fragmentConstData[0] = _lensCenterX;		// fc0.x, 0.5
+			_fragmentConstData[1] = _lensCenterY;		// fc0.y, 0.5
+			_fragmentConstData[2] = scaleInX;			// fc0.z, 2
+			_fragmentConstData[3] = scaleInX;			// fc0.w, 2
 			
 			// fc1
-			_fragmentConstData[4] = _scaleX;			// fc1.x
-			_fragmentConstData[5] = _scaleX; // / (800/640);			// fc1.y
+			_fragmentConstData[4] = _scaleX;			// fc1.x, 0.5
+			_fragmentConstData[5] = _scaleX;			// fc1.y, 0.5
 			_fragmentConstData[6] = 0; 					// fc1.z
 			_fragmentConstData[7] = 0; 					// fc1.w
 			
@@ -82,7 +82,7 @@ package oculusAne.away3d
 				
 				"sub ft0.xy, ft0.xy, fc0.xy 	\n" +
 				// float2 theta = (ft0.xy) * fc0.z;
-				
+								
 				"mul ft0.xy, ft0.xy, fc0.zw 	\n" +
 				// float2 theta = ft0.xy;
 				// ft0.xy = theta
@@ -140,7 +140,6 @@ package oculusAne.away3d
 				
 				"add ft4.y, ft4.x, ft3.z 	\n" +
 				// float2 rvector= ft0.xy * (ft4.y);
-				
 				
 				"mul ft0.xy, ft0.xy, ft4.yy 	\n" +
 				// float2 rvector= ft0.xy;
