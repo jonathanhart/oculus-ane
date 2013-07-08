@@ -55,11 +55,11 @@ package oculusAne.away3d
 			var dk:Vector.<Number> = scene.hmdInfo.distortionK;
 			
 			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
-			oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 3, 0.22, dk[0], dk[1], dk[2], dk[3]);
+			oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
 			leftView.filters3d = [oculusBarrelDistortionFilterLeft];
 			
 			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
-			oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 3, 0.22, dk[0], dk[1], dk[2], dk[3]);
+			oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
 			rightView.filters3d = [oculusBarrelDistortionFilterRight];
 		}
 		
