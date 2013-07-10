@@ -1,5 +1,9 @@
 package oculusAne.away3d 
 {
+	import flash.events.Event;
+	import flash.geom.Vector3D;
+	import flash.utils.setInterval;
+	
 	import away3d.cameras.Camera3D;
 	import away3d.cameras.lenses.LensBase;
 	import away3d.cameras.lenses.PerspectiveLens;
@@ -8,9 +12,6 @@ package oculusAne.away3d
 	import away3d.entities.Entity;
 	import away3d.entities.Mesh;
 	import away3d.primitives.PlaneGeometry;
-	import flash.events.Event;
-	import flash.geom.Vector3D;
-	import flash.utils.setInterval;
 	/**
 	 * ...
 	 * @author Fragilem17
@@ -23,15 +24,18 @@ package oculusAne.away3d
 		
 		private var _stereoSeperation:Number;
 
+		private var _leftLens:OculusLens;
+		private var _rightLens:OculusLens;
+
 		
-		public function OculusCamera(fov:Number, horizontalShiftPercentage:Number) 
+		public function OculusCamera(fieldOfView:Number, horizontalShiftPercentage:Number) 
 		{
 			this.horizontalShiftPercentage = horizontalShiftPercentage;
-			var leftLens:OculusLens = new OculusLens(fov, 0.5 + horizontalShiftPercentage, 0.5);
-			var rightLens:OculusLens = new OculusLens(fov, 0.5 - horizontalShiftPercentage, 0.5);
+			_leftLens = new OculusLens(fieldOfView, 0.5 + horizontalShiftPercentage, 0.5);
+			_rightLens = new OculusLens(fieldOfView, 0.5 - horizontalShiftPercentage, 0.5);
 			
-			leftCamera = new Camera3D(leftLens);
-			rightCamera = new Camera3D(rightLens);
+			leftCamera = new Camera3D(_leftLens);
+			rightCamera = new Camera3D(_rightLens);
 			
 			addChild(leftCamera);
 			addChild(rightCamera);
@@ -51,6 +55,18 @@ package oculusAne.away3d
 			leftCamera.x = -(_stereoSeperation / 2);
 			rightCamera.x = (_stereoSeperation / 2);
 		}		
+
+		public function get fieldOfView():Number
+		{
+			return _leftLens.fieldOfView;
+		}
+
+		public function set fieldOfView(value:Number):void
+		{
+			_leftLens.fieldOfView = value;
+			_rightLens.fieldOfView = value;
+		}
+
 	}
 
 }

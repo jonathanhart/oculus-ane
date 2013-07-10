@@ -38,24 +38,24 @@ package oculusAne.away3d
 			_task.lensCenterY = value;			
 		}
 		
-		public function get scaleInX():Number
+		public function get scaleIn():Number
 		{
-			return _task.scaleInX;
+			return _task.scaleIn;
 		}
 		
-		public function set scaleInX(value:Number):void
+		public function set scaleIn(value:Number):void
 		{
-			_task.scaleInX = value;			
+			_task.scaleIn = value;			
 		}
 		
-		public function get scaleX():Number
+		public function get scale():Number
 		{
-			return _task.scaleX;
+			return _task.scale;
 		}
 		
-		public function set scaleX(value:Number):void
+		public function set scale(value:Number):void
 		{
-			_task.scaleX = value;			
+			_task.scale = value;			
 		}
 		
 		public function get hmdWarpParamX():Number

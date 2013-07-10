@@ -2,6 +2,7 @@ package oculusAne.away3d
 {
 	import flash.display3D.Context3D;
 	import flash.display3D.Context3DProgramType;
+	import flash.display3D.Context3DTextureFormat;
 	import flash.display3D.textures.Texture;
 	
 	import away3d.cameras.Camera3D;
@@ -16,8 +17,8 @@ package oculusAne.away3d
 		private var _lensCenterX:Number;
 		private var _lensCenterY:Number;
 		
-		private var _scaleInX:Number;		
-		private var _scaleX:Number;
+		private var _scaleIn:Number;		
+		private var _scale:Number;
 		
 		private var _hmdWarpParamX:Number;
 		private var _hmdWarpParamY:Number;
@@ -31,8 +32,8 @@ package oculusAne.away3d
 		{			
 			_lensCenterX = lensCenterX;
 			_lensCenterY = lensCenterY;
-			_scaleInX = scaleInX;
-			_scaleX = scaleX;
+			_scaleIn = scaleInX;
+			_scale = scaleX;
 			_hmdWarpParamX = hmdWarpParamX;
 			_hmdWarpParamY = hmdWarpParamY;
 			_hmdWarpParamZ = hmdWarpParamZ;
@@ -43,17 +44,18 @@ package oculusAne.away3d
 
 			super();
 		}
+	
 		
 		protected function updateFragmentConstants():void {
 			// fc0
 			_fragmentConstData[0] = _lensCenterX;		// fc0.x, 0.5
 			_fragmentConstData[1] = _lensCenterY;		// fc0.y, 0.5
-			_fragmentConstData[2] = scaleInX;			// fc0.z, 2
-			_fragmentConstData[3] = scaleInX;			// fc0.w, 2
+			_fragmentConstData[2] = _scaleIn;			// fc0.z, 2
+			_fragmentConstData[3] = _scaleIn; // / (224/384);			// fc0.w, 2
 			
 			// fc1
-			_fragmentConstData[4] = _scaleX;			// fc1.x, 0.5
-			_fragmentConstData[5] = _scaleX;			// fc1.y, 0.5
+			_fragmentConstData[4] = _scale;			// fc1.x, 0.5
+			_fragmentConstData[5] = _scale;			// fc1.y, 0.5
 			_fragmentConstData[6] = 0; 					// fc1.z
 			_fragmentConstData[7] = 0; 					// fc1.w
 			
@@ -62,6 +64,9 @@ package oculusAne.away3d
 			_fragmentConstData[9] = _hmdWarpParamY;		// fc2.y
 			_fragmentConstData[10] = _hmdWarpParamZ;	// fc2.z
 			_fragmentConstData[11] = _hmdWarpParamW;	// fc2.w
+			
+			//textureScale = _scaleX*10 - 5;
+			//trace("textureScale: " + textureScale + " textureWidth: " + textureWidth + " textureHeight: " + textureHeight + " _scaledTextureWidth: " + _scaledTextureWidth + " _scaledTextureHeight: " + _scaledTextureHeight);
 		}
 		
 		override protected function getVertexCode() : String
@@ -193,25 +198,25 @@ package oculusAne.away3d
 			updateFragmentConstants();
 		}		
 
-		public function get scaleInX():Number
+		public function get scaleIn():Number
 		{
-			return _scaleInX;
+			return _scaleIn;
 		}
 
-		public function set scaleInX(value:Number):void
+		public function set scaleIn(value:Number):void
 		{
-			_scaleInX = value;
+			_scaleIn = value;
 			updateFragmentConstants();
 		}
 
-		public function get scaleX():Number
+		public function get scale():Number
 		{
-			return _scaleX;
+			return _scale;
 		}
 
-		public function set scaleX(value:Number):void
+		public function set scale(value:Number):void
 		{
-			_scaleX = value;
+			_scale = value;
 			updateFragmentConstants();
 		}
 

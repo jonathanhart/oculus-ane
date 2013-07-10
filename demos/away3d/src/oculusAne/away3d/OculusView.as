@@ -23,8 +23,8 @@ package oculusAne.away3d
 		private var _width:Number;
 		private var _height:Number;
 
-		public var oculusBarrelDistortionFilterLeft:OculusBarrelDistortionFilter3D;
-		public var oculusBarrelDistortionFilterRight:OculusBarrelDistortionFilter3D;
+		private var _oculusBarrelDistortionFilterLeft:OculusBarrelDistortionFilter3D;
+		private var _oculusBarrelDistortionFilterRight:OculusBarrelDistortionFilter3D;
 		
 		public function OculusView(scene:OculusScene3D, camera:OculusCamera) 
 		{
@@ -37,7 +37,6 @@ package oculusAne.away3d
 			rightView = new View3D(_scene, _camera.rightCamera);
 			addChild(rightView);
 			
-			//setTimeout(checkForContext, 2000);
 			checkForContext();
 		}
 		
@@ -54,13 +53,15 @@ package oculusAne.away3d
 		{
 			var dk:Vector.<Number> = scene.hmdInfo.distortionK;
 			
-			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
-			oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
-			leftView.filters3d = [oculusBarrelDistortionFilterLeft];
+			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			_oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
+			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			leftView.filters3d = [_oculusBarrelDistortionFilterLeft];
 			
-			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 2, 0.46, dk[0], dk[1], dk[2], dk[3]);
-			oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
-			rightView.filters3d = [oculusBarrelDistortionFilterRight];
+			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			_oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
+			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			rightView.filters3d = [_oculusBarrelDistortionFilterRight];
 		}
 		
 		
@@ -150,7 +151,98 @@ package oculusAne.away3d
 		{
 			_crossEye = value;
 			positionViews();
-		}		
+		}
+		
+		
+		
+		
+		public function get lensCenterX():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.lensCenterX;
+		}
+		
+		public function set lensCenterX(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.lensCenterX = value;
+			_oculusBarrelDistortionFilterRight.lensCenterX = value;
+		}
+		
+		public function get lensCenterY():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.lensCenterY;
+		}
+		
+		public function set lensCenterY(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.lensCenterY = value;	
+			_oculusBarrelDistortionFilterRight.lensCenterY = value;		
+		}
+		
+		public function get scaleIn():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.scaleIn;
+		}
+		
+		public function set scaleIn(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.scaleIn = value;	
+			_oculusBarrelDistortionFilterRight.scaleIn = value;		
+		}
+		
+		public function get scale():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.scale;
+		}
+		
+		public function set scale(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.scale = value;
+			_oculusBarrelDistortionFilterRight.scale = value;		
+		}
+		
+		public function get hmdWarpParamX():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.hmdWarpParamX;
+		}
+		
+		public function set hmdWarpParamX(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.hmdWarpParamX = value;
+			_oculusBarrelDistortionFilterRight.hmdWarpParamX = value;			
+		}
+		
+		public function get hmdWarpParamY():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.hmdWarpParamY;
+		}
+		
+		public function set hmdWarpParamY(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.hmdWarpParamY = value;
+			_oculusBarrelDistortionFilterRight.hmdWarpParamY = value;			
+		}
+		
+		public function get hmdWarpParamZ():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.hmdWarpParamZ;
+		}
+		
+		public function set hmdWarpParamZ(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.hmdWarpParamZ = value;
+			_oculusBarrelDistortionFilterRight.hmdWarpParamZ = value;			
+		}
+		
+		public function get hmdWarpParamW():Number
+		{
+			return _oculusBarrelDistortionFilterLeft.hmdWarpParamW;
+		}
+		
+		public function set hmdWarpParamW(value:Number):void
+		{
+			_oculusBarrelDistortionFilterLeft.hmdWarpParamW = value;
+			_oculusBarrelDistortionFilterRight.hmdWarpParamW = value;
+		}			
 	}
 
 }

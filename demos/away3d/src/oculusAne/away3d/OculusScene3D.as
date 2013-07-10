@@ -34,7 +34,7 @@ package oculusAne.away3d
 		
 		public function OculusScene3D() 
 		{			
-			var zFar:Number = 12000;
+			var zFar:Number = 1200;
 			var zNear:Number = 0.5;
 			
 			_tracker = new OculusANE();
@@ -66,40 +66,17 @@ package oculusAne.away3d
 				hmdInfo.chromaAbCorrection.push(0);
 			}
 			
-			var fov:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
-			var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
+			//var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
+			var fieldOfView:Number = 129;
+			
+			trace("fieldOfView: " + fieldOfView);
+			//var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
 			
 			var horizontalShift:Number = (hmdInfo.hScreenSize / 4) - (hmdInfo.lensSeparationDistance / 2); // meters per eye
 			var horizontalShiftPercentage:Number = horizontalShift / (hmdInfo.hScreenSize / 2);
 			
-			/*
-			var projectionVector:Vector.<Number> = new Vector.<Number>;
-			projectionVector.push(1 / (halfScreenAspectRatio * Math.tan(fov/2)));
-			projectionVector.push(0);
-			projectionVector.push(0);
-			projectionVector.push(0);
-			
-			projectionVector.push(0);
-			projectionVector.push(1 / (Math.tan(fov/2)));
-			projectionVector.push(0);
-			projectionVector.push(0);
-			
-			projectionVector.push(0);
-			projectionVector.push(0);
-			projectionVector.push(zFar / (zNear - zFar));
-			projectionVector.push((zFar * zNear) / (zNear - zFar));
-			
-			projectionVector.push(0);
-			projectionVector.push(0);
-			projectionVector.push(-1);
-			projectionVector.push(0);
-			
-			var projectionCenterMatrix:Matrix3D = new Matrix3D(projectionVector);
-			trace( "projectionCenterMatrix : " + projectionCenterMatrix );
-			*/
-			
-			_camera = new OculusCamera(fov, horizontalShiftPercentage);
-			_camera.stereoSeperation = 0.054; // m
+			_camera = new OculusCamera(fieldOfView, horizontalShiftPercentage);
+			_camera.stereoSeperation = hmdInfo.interPupillaryDistance; // m
 			_camera.position = _nullVector;
 			addChild(_camera);
 		
@@ -113,7 +90,7 @@ package oculusAne.away3d
 			
 			_view = new OculusView(this, _camera);		
 			_view.backgroundColor = 0x000000;
-			_view.antiAlias = 4;
+			_view.antiAlias = 0;
 			_view.addEventListener(Event.ADDED_TO_STAGE, onViewAddedToStage);			
 		}
 
@@ -152,7 +129,8 @@ package oculusAne.away3d
 				func.call();
 			}
 			
-			if (tracker && tracker.isSupported() && trackerTarget) {
+			
+			if (tracker && trackerTarget) {
 				_quatVec = tracker.getCameraQuaternion();
 				_quat.x = -_quatVec[0];
 				_quat.y = -_quatVec[1];
