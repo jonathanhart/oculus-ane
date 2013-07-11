@@ -1,14 +1,11 @@
 package 
 {	
-	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageDisplayState;
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
-	import flash.display3D.textures.Texture;
 	import flash.events.KeyboardEvent;
-	import flash.geom.Vector3D;
 	import flash.net.URLRequest;
 	import flash.ui.Keyboard;
 	
@@ -19,10 +16,6 @@ package
 	import away3d.library.AssetLibrary;
 	import away3d.library.assets.AssetType;
 	import away3d.loaders.parsers.AWDParser;
-	import away3d.materials.TextureMaterial;
-	import away3d.primitives.WireframeCube;
-	
-	import oculusAne.away3d.OculusLens;
 	import oculusAne.away3d.OculusScene3D;
 	
 	import uk.co.soulwire.gui.SimpleGUI;
@@ -31,7 +24,7 @@ package
 	 * Simple demo showcasing the away3d oculus integration
 	 * @author Fragilem17
 	 */
-	[SWF(backgroundColor="#000000", frameRate="60", quality="LOW", width="1280", height="800")]
+	[SWF(backgroundColor="#000000", frameRate="120", quality="LOW", width="1280", height="800")]
 	public class Main extends Sprite
 	{	
 		private var _oculusScene3d:OculusScene3D;	
@@ -55,16 +48,16 @@ package
 			AssetLibrary.addEventListener(AssetEvent.ASSET_COMPLETE, onAssetComplete);
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
 			AssetLibrary.load(new URLRequest("level_heavy.awd"));
+			//AssetLibrary.load(new URLRequest("hoverpad.awd"));
+			//AssetLibrary.load(new URLRequest("sceneTest.AWD"));
 			
-			_oculusScene3d.camera.moveUp(20);
+			
+			//_oculusScene3d.camera.moveUp(200);
 			_oculusScene3d.camera.moveBackward(10);
 			_oculusScene3d.camera.moveRight(20);
 			//_oculusScene3d.camera.yaw(180);
 			//_oculusScene3d.camera.position = new Vector3D(0,0,0,0);
 			
-			
-			//var cub:WireframeCube = new WireframeCube(400,400,400);
-			//_oculusScene3d.addChild(cub);
 			
 			//   By default the tracker's target is the oculusScene3D's camera
 			//   You can change the tracker's target this way
@@ -73,7 +66,7 @@ package
 			//   You can attach the camera to another mesh this way
 			// virtualHeadOrSomething.addChild(_oculusScene3d.camera);
 			
-			addChild(new AwayStats(_oculusScene3d.view.leftView));
+			//addChild(new AwayStats(_oculusScene3d.view.leftView));
 			
 			
 			_oculusScene3d.addEnterFrameHandler(onEnterFrame);
@@ -85,11 +78,11 @@ package
 		private function onEnterFrame():void
 		{
 			if(_forward){
-				_oculusScene3d.camera.moveForward(0.2);
+				_oculusScene3d.camera.moveForward(0.20);
 			}
 			
 			if(_backward){
-				_oculusScene3d.camera.moveBackward(0.2);
+				_oculusScene3d.camera.moveBackward(0.20);
 			}
 		}
 		
@@ -97,14 +90,6 @@ package
 		{
 			if (event.asset.assetType == AssetType.MESH) {
 				var mesh:Mesh = event.asset as Mesh;
-				//mesh.castsShadows = false;
-				
-				/*var material:TextureMaterial = mesh.material as TextureMaterial;
-				if(material){
-					trace("mesh has mat");
-					//material.lightPicker = null;
-				}*/
-				
 				_oculusScene3d.addChild(mesh);
 
 				// starting gui after the first asset is added, the stage context is ready by then

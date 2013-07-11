@@ -35,7 +35,7 @@ package oculusAne.away3d
 		
 		public function OculusScene3D() 
 		{			
-			var zFar:Number = 1200;
+			var zFar:Number = 24000;
 			var zNear:Number = 0.5;
 			
 			_tracker = new OculusANE();
