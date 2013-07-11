@@ -4,13 +4,12 @@ oculus-ane
 Oculus ANE (Adobe Native Extension)
 
 Alpha support for both Mac OSX and Windows.
-AWAY3D Support (alpha): 
 
-Just added support for Away3D. Some caveats:
+Support for Away3D. Some caveats:
 
 	1) Not optimized
-	2) No lens correction yet
-	3) No peripheral occlusion yet
+	2) Basic lens correction (works only at the rift's native resolution of 1280x800)
+	3) No Chromatic aberration implemented yet (colors shift at the edges)
 
 --- 
 
