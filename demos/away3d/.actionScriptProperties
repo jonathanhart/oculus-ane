@@ -46,7 +46,7 @@
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
     <buildTarget buildTargetName="default" platformId="default">
-      <airSettings airCertificatePath="cert/certificate.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="C:/svnProjects/AtlasCopco/ProductExplorer/flash/cert/BUT_pc_distribution/AC_ProductExplorer.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
           <anePathEntry path="C:/svnProjects/oculus-ane/trunk/ane/bin/OculusANE.ane"/>

@@ -31,6 +31,7 @@ package oculusAne.away3d
 		private var _prevPos:Vector3D;
 
 		public var hmdInfo:HmdInfo;
+		public var lensCenterOffset:Number;
 		
 		public function OculusScene3D() 
 		{			
@@ -67,15 +68,16 @@ package oculusAne.away3d
 			}
 			
 			//var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
+			// TODO: calculate correct value
 			var fieldOfView:Number = 129;
 			
 			trace("fieldOfView: " + fieldOfView);
 			//var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
 			
 			var horizontalShift:Number = (hmdInfo.hScreenSize / 4) - (hmdInfo.lensSeparationDistance / 2); // meters per eye
-			var horizontalShiftPercentage:Number = horizontalShift / (hmdInfo.hScreenSize / 2);
+			lensCenterOffset = horizontalShift / (hmdInfo.hScreenSize / 2); // percentage 0 - 1
 			
-			_camera = new OculusCamera(fieldOfView, horizontalShiftPercentage);
+			_camera = new OculusCamera(fieldOfView, lensCenterOffset);
 			_camera.stereoSeperation = hmdInfo.interPupillaryDistance; // m
 			_camera.position = _nullVector;
 			addChild(_camera);
@@ -88,7 +90,7 @@ package oculusAne.away3d
 		
 			trackerTarget = _camera;
 			
-			_view = new OculusView(this, _camera);		
+			_view = new OculusView(this, _camera);	
 			_view.backgroundColor = 0x000000;
 			_view.antiAlias = 0;
 			_view.addEventListener(Event.ADDED_TO_STAGE, onViewAddedToStage);			

@@ -25,11 +25,15 @@ package oculusAne.away3d
 
 		private var _oculusBarrelDistortionFilterLeft:OculusBarrelDistortionFilter3D;
 		private var _oculusBarrelDistortionFilterRight:OculusBarrelDistortionFilter3D;
+
+		private var _lensCenterOffsetX:Number = 0;
+		private var _lensCenterOffsetY:Number = 0;
 		
 		public function OculusView(scene:OculusScene3D, camera:OculusCamera) 
 		{
 			_scene = scene;
 			_camera = camera;
+			_lensCenterOffsetX = _camera.lensCenterOffset;
 
 			leftView = new View3D(_scene, _camera.leftCamera);
 			addChild(leftView);
@@ -156,26 +160,29 @@ package oculusAne.away3d
 		
 		
 		
-		public function get lensCenterX():Number
+		public function get lensCenterOffsetX():Number
 		{
-			return _oculusBarrelDistortionFilterLeft.lensCenterX;
+			return _lensCenterOffsetX;
 		}
 		
-		public function set lensCenterX(value:Number):void
+		public function set lensCenterOffsetX(value:Number):void
 		{
-			_oculusBarrelDistortionFilterLeft.lensCenterX = value;
-			_oculusBarrelDistortionFilterRight.lensCenterX = value;
+			_lensCenterOffsetX = value;
+			_oculusBarrelDistortionFilterLeft.lensCenterX = 0.5 + _lensCenterOffsetX;
+			_oculusBarrelDistortionFilterRight.lensCenterX = 0.5 - _lensCenterOffsetX;
+			_camera.lensCenterOffset = _lensCenterOffsetX;
 		}
 		
-		public function get lensCenterY():Number
+		public function get lensCenterOffsetY():Number
 		{
-			return _oculusBarrelDistortionFilterLeft.lensCenterY;
+			return _lensCenterOffsetY;
 		}
 		
-		public function set lensCenterY(value:Number):void
+		public function set lensCenterOffsetY(value:Number):void
 		{
-			_oculusBarrelDistortionFilterLeft.lensCenterY = value;	
-			_oculusBarrelDistortionFilterRight.lensCenterY = value;		
+			_lensCenterOffsetY = value;
+			_oculusBarrelDistortionFilterLeft.lensCenterY = 0.5 + _lensCenterOffsetY;
+			_oculusBarrelDistortionFilterRight.lensCenterY = 0.5 + _lensCenterOffsetY;		
 		}
 		
 		public function get scaleIn():Number

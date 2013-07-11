@@ -38,6 +38,9 @@ package
 
 		private var _gui:SimpleGUI;
 		
+		private var _forward:Boolean = false;
+		private var _backward:Boolean = false;
+		
 		public function Main():void 
 		{
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -51,7 +54,7 @@ package
 			AssetLibrary.enableParser(AWDParser);
 			AssetLibrary.addEventListener(AssetEvent.ASSET_COMPLETE, onAssetComplete);
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
-			AssetLibrary.load(new URLRequest("level_light.awd"));
+			AssetLibrary.load(new URLRequest("level_heavy.awd"));
 			
 			_oculusScene3d.camera.moveUp(20);
 			_oculusScene3d.camera.moveBackward(10);
@@ -72,7 +75,22 @@ package
 			
 			addChild(new AwayStats(_oculusScene3d.view.leftView));
 			
+			
+			_oculusScene3d.addEnterFrameHandler(onEnterFrame);
+			
 			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+		}
+		
+		private function onEnterFrame():void
+		{
+			if(_forward){
+				_oculusScene3d.camera.moveForward(0.2);
+			}
+			
+			if(_backward){
+				_oculusScene3d.camera.moveBackward(0.2);
+			}
 		}
 		
 		private function onAssetComplete(event:AssetEvent):void 
@@ -102,6 +120,12 @@ package
 		private function initGui():void 
 		{
 			if(!_gui){
+				
+				var attach:Sprite = new Sprite();
+				addChild(attach);
+				attach.x = 50;
+				attach.y = 150;
+				
 				_gui = new SimpleGUI(this, "Barrel Distortion", "C");
 				
 				_gui.addColumn("Left");
@@ -109,8 +133,8 @@ package
 				var baseClassPath:String;
 				
 				baseClassPath = "oculusScene3d.view.";
-				_gui.addSlider(baseClassPath + "lensCenterX", 0, 1, {label:'lensCenterX'});
-				_gui.addSlider(baseClassPath + "lensCenterY", 0, 1, {label:'lensCenterY'});
+				_gui.addSlider(baseClassPath + "lensCenterOffsetX", -0.2, 0.2, {label:'lensCenterOffsetX'});
+				_gui.addSlider(baseClassPath + "lensCenterOffsetY", -0.2, 0.2, {label:'lensCenterOffsetY'});
 	 
 				_gui.addSlider(baseClassPath + "scaleIn", 0, 4, {label:'scaleInX'});
 				_gui.addSlider(baseClassPath + "scale", 0, 1, {label:'scaleX'});
@@ -120,6 +144,7 @@ package
 				_gui.addSlider(baseClassPath + "hmdWarpParamW", 0, 1, {label:'hmdWarpParamW'});
 				
 				_gui.addSlider("oculusScene3d.camera.fieldOfView", 90, 150, {label:'fieldOfView'});
+				_gui.addSlider("oculusScene3d.camera.stereoSeperation", 0, 2, {label:'stereoSeperation'});
 				
 				_gui.show();
 				
@@ -130,12 +155,21 @@ package
 			}
 		}
 		
-		protected function onKeyUp(event:KeyboardEvent):void
+		protected function onKeyDown(event:KeyboardEvent):void
 		{
 			if(event.keyCode == Keyboard.F){
 				stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
 			}
-		}		
+		
+			_forward = (event.keyCode == Keyboard.UP);
+			_backward = (event.keyCode == Keyboard.DOWN);
+		}	
+		
+		protected function onKeyUp(event:KeyboardEvent):void
+		{
+			_forward = false;
+			_backward = false;
+		}
 		
 
 		public function get oculusScene3d():OculusScene3D

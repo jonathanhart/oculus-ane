@@ -61,7 +61,7 @@ package uk.co.soulwire.gui
 		public static const VERSION : Number = 1.02;
 		
 		private static const TOOLBAR_HEIGHT : int = 13;
-		private static const COMPONENT_MARGIN : int = 8;		private static const COLUMN_MARGIN : int = 1;		private static const GROUP_MARGIN : int = 1;		private static const PADDING : int = 4;		private static const MARGIN : int = 1;
+		private static const COMPONENT_MARGIN : int = 8;		private static const COLUMN_MARGIN : int = 1;		private static const GROUP_MARGIN : int = 1;		private static const PADDING : int = 4;		private static const MARGIN : int = 100;
 		
 		//	----------------------------------------------------------------
 		//	PRIVATE MEMBERS
