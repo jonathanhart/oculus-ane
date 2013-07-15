@@ -46,7 +46,8 @@ extern "C" {
 		FRESetArrayLength(&cameraQuaternionResult, 4);
 		
 		// cout << "getCameraQuaternion";
-		Quatf quaternion = fusion.GetOrientation();
+		//Quatf quaternion = fusion.GetOrientation();
+		Quatf quaternion = fusion.GetPredictedOrientation();
 		
 		FREObject xVal;
 		double x = static_cast<double>(quaternion.x);
@@ -193,6 +194,7 @@ extern "C" {
 			if (pSensor) {
 				pSensor->SetRange(SensorRange(4 * 9.81f, 8 * Math<float>::Pi, 1.0f), true);
 				fusion.AttachToSensor(pSensor);
+				fusion.SetPredictionEnabled(true);
 				cout << "Attached to sensor\n";
 			} else {
 				cout << "ERROR: pSensor null\n";

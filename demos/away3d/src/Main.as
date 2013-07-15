@@ -34,7 +34,7 @@ package
 		private var _forward:Boolean = false;
 		private var _backward:Boolean = false;
 		
-		public function Main():void 
+		public function Main():void
 		{
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
