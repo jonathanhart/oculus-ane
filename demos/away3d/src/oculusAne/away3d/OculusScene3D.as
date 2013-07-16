@@ -67,15 +67,19 @@ package oculusAne.away3d
 				hmdInfo.chromaAbCorrection.push(0);
 			}
 			
-			//var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
+			var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
 			// TODO: calculate correct value
-			var fieldOfView:Number = 129;
+			//var fieldOfView:Number = 129;
 			
 			trace("fieldOfView: " + fieldOfView);
 			//var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
 			
 			var horizontalShift:Number = (hmdInfo.hScreenSize / 4) - (hmdInfo.lensSeparationDistance / 2); // meters per eye
 			lensCenterOffset = horizontalShift / (hmdInfo.hScreenSize / 2); // percentage 0 - 1
+			trace("lensCenterOffset calc: " + lensCenterOffset);
+			lensCenterOffset = 0.08;
+			//lensCenterOffset = 0.048;
+			trace("lensCenterOffset man: " + lensCenterOffset);
 			
 			_camera = new OculusCamera(fieldOfView, lensCenterOffset);
 			_camera.stereoSeperation = hmdInfo.interPupillaryDistance; // m
@@ -92,7 +96,7 @@ package oculusAne.away3d
 			
 			_view = new OculusView(this, _camera);	
 			_view.backgroundColor = 0x000000;
-			_view.antiAlias = 0;
+			_view.antiAlias = 2;
 			_view.addEventListener(Event.ADDED_TO_STAGE, onViewAddedToStage);			
 		}
 

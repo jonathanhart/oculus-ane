@@ -1,14 +1,18 @@
 package 
 {	
+	import flash.display.Loader;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageDisplayState;
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
 	import flash.events.KeyboardEvent;
+	import flash.geom.Vector3D;
 	import flash.net.URLRequest;
 	import flash.ui.Keyboard;
+	import flash.utils.setTimeout;
 	
+	import away3d.containers.ObjectContainer3D;
 	import away3d.debug.AwayStats;
 	import away3d.entities.Mesh;
 	import away3d.events.AssetEvent;
@@ -16,6 +20,10 @@ package
 	import away3d.library.AssetLibrary;
 	import away3d.library.assets.AssetType;
 	import away3d.loaders.parsers.AWDParser;
+	import away3d.primitives.WireframeCube;
+	import away3d.primitives.WireframePlane;
+	import away3d.primitives.WireframeSphere;
+	
 	import oculusAne.away3d.OculusScene3D;
 	
 	import uk.co.soulwire.gui.SimpleGUI;
@@ -48,14 +56,14 @@ package
 			AssetLibrary.addEventListener(AssetEvent.ASSET_COMPLETE, onAssetComplete);
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
 			AssetLibrary.load(new URLRequest("level_heavy.awd"));
+			
 			//AssetLibrary.load(new URLRequest("hoverpad.awd"));
 			//AssetLibrary.load(new URLRequest("sceneTest.AWD"));
 			
 			
-			//_oculusScene3d.camera.moveUp(200);
-			_oculusScene3d.camera.moveBackward(10);
-			_oculusScene3d.camera.moveRight(20);
-			//_oculusScene3d.camera.yaw(180);
+			_oculusScene3d.camera.moveUp(1);
+			//_oculusScene3d.camera.moveBackward(10);
+			//_oculusScene3d.camera.moveRight(20);
 			//_oculusScene3d.camera.position = new Vector3D(0,0,0,0);
 			
 			
@@ -68,11 +76,12 @@ package
 			
 			//addChild(new AwayStats(_oculusScene3d.view.leftView));
 			
-			
 			_oculusScene3d.addEnterFrameHandler(onEnterFrame);
 			
 			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+			
+			setTimeout(initGui, 2000);
 		}
 		
 		private function onEnterFrame():void
@@ -91,9 +100,6 @@ package
 			if (event.asset.assetType == AssetType.MESH) {
 				var mesh:Mesh = event.asset as Mesh;
 				_oculusScene3d.addChild(mesh);
-
-				// starting gui after the first asset is added, the stage context is ready by then
-				initGui();
 			}
 		}
 		
@@ -105,6 +111,36 @@ package
 		private function initGui():void 
 		{
 			if(!_gui){
+				
+				var house:ObjectContainer3D = new ObjectContainer3D();
+				house.rotationY = 270;
+				house.z = 7;
+				house.x = -0.5;
+				
+				var floor:WireframePlane = new WireframePlane(5,14,5,14);
+				floor.rotationZ = 90;
+				house.addChild(floor);
+				
+				
+				var ceiling:WireframePlane = new WireframePlane(5,14,5,14, 0xff00ff);
+				ceiling.rotationZ = 90;
+				ceiling.y = 2.5;
+				house.addChild(ceiling);						
+				
+				var wall:WireframePlane = new WireframePlane(14,2.5,14,3, 0xff0000);
+				wall.rotationY = 90;
+				wall.y = 2.5/2;
+				wall.z = 2.5;
+				house.addChild(wall);		
+				
+				
+				var wall2:WireframePlane = new WireframePlane(5,2.5,5,3, 0x00ff00);
+				wall2.rotationY = 0;
+				wall2.y = 2.5/2;
+				wall2.x = 14/2;
+				house.addChild(wall2);		
+				
+				_oculusScene3d.addChild(house);
 				
 				var attach:Sprite = new Sprite();
 				addChild(attach);
@@ -134,8 +170,9 @@ package
 				_gui.show();
 				
 				
-				//var loader:Loader = new Loader();
-				//loader.load(new URLRequest('overlay.png'));
+				var loader:Loader = new Loader();
+				loader.load(new URLRequest('overlay1.png'));
+				loader.alpha = 0.2;
 				//addChild(loader);
 			}
 		}

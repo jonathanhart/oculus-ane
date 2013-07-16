@@ -57,14 +57,14 @@ package oculusAne.away3d
 		{
 			var dk:Vector.<Number> = scene.hmdInfo.distortionK;
 			
-			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5+_camera.horizontalShiftPercentage, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
-			_oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
-			//oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			_oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.5 + (_lensCenterOffsetX), 0.5, 3.12, 0.33, dk[0], dk[1], dk[2], dk[3]);
+			//_oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 3.26, 0.175, dk[0], dk[1], dk[2], dk[3]);
+			//_oculusBarrelDistortionFilterLeft =  new OculusBarrelDistortionFilter3D(0.545, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
 			leftView.filters3d = [_oculusBarrelDistortionFilterLeft];
 			
-			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5-_camera.horizontalShiftPercentage, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
-			_oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 3.14, 0.195, dk[0], dk[1], dk[2], dk[3]);
-			//oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
+			_oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.5 - (_lensCenterOffsetX), 0.5, 3.12, 0.33, dk[0], dk[1], dk[2], dk[3]);
+			//_oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 3.26, 0.175, dk[0], dk[1], dk[2], dk[3]);
+			//_oculusBarrelDistortionFilterRight = new OculusBarrelDistortionFilter3D(0.455, 0.5, 2, 0.5, dk[0], dk[1], dk[2], dk[3]);
 			rightView.filters3d = [_oculusBarrelDistortionFilterRight];
 		}
 		
@@ -168,9 +168,10 @@ package oculusAne.away3d
 		public function set lensCenterOffsetX(value:Number):void
 		{
 			_lensCenterOffsetX = value;
-			_oculusBarrelDistortionFilterLeft.lensCenterX = 0.5 + _lensCenterOffsetX;
-			_oculusBarrelDistortionFilterRight.lensCenterX = 0.5 - _lensCenterOffsetX;
+			_oculusBarrelDistortionFilterLeft.lensCenterX = 0.5 + (_lensCenterOffsetX);
+			_oculusBarrelDistortionFilterRight.lensCenterX = 0.5 - (_lensCenterOffsetX);
 			_camera.lensCenterOffset = _lensCenterOffsetX;
+			trace("_lensCenterOffsetX: " + _lensCenterOffsetX);
 		}
 		
 		public function get lensCenterOffsetY():Number
@@ -194,6 +195,7 @@ package oculusAne.away3d
 		{
 			_oculusBarrelDistortionFilterLeft.scaleIn = value;	
 			_oculusBarrelDistortionFilterRight.scaleIn = value;		
+			trace("scaleIn: " + value);
 		}
 		
 		public function get scale():Number
@@ -204,7 +206,8 @@ package oculusAne.away3d
 		public function set scale(value:Number):void
 		{
 			_oculusBarrelDistortionFilterLeft.scale = value;
-			_oculusBarrelDistortionFilterRight.scale = value;		
+			_oculusBarrelDistortionFilterRight.scale = value;	
+			trace("scale: " + value);
 		}
 		
 		public function get hmdWarpParamX():Number
