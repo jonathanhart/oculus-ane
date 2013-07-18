@@ -36,7 +36,7 @@ package oculusAne.away3d
 		public function OculusScene3D() 
 		{			
 			var zFar:Number = 24000;
-			var zNear:Number = 0.5;
+			var zNear:Number = 0.1;
 			
 			_tracker = new OculusANE();
 			
@@ -68,10 +68,11 @@ package oculusAne.away3d
 			}
 			
 			var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
+			trace("fieldOfView calc: " + fieldOfView);
 			// TODO: calculate correct value
-			//var fieldOfView:Number = 129;
+			fieldOfView = 111;
+			trace("fieldOfView man: " + fieldOfView);
 			
-			trace("fieldOfView: " + fieldOfView);
 			//var halfScreenAspectRatio:Number = hmdInfo.hResolution / (2 * hmdInfo.vResolution);
 			
 			var horizontalShift:Number = (hmdInfo.hScreenSize / 4) - (hmdInfo.lensSeparationDistance / 2); // meters per eye

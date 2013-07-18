@@ -7,22 +7,17 @@ package
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
 	import flash.events.KeyboardEvent;
-	import flash.geom.Vector3D;
 	import flash.net.URLRequest;
 	import flash.ui.Keyboard;
 	import flash.utils.setTimeout;
 	
 	import away3d.containers.ObjectContainer3D;
-	import away3d.debug.AwayStats;
 	import away3d.entities.Mesh;
 	import away3d.events.AssetEvent;
 	import away3d.events.LoaderEvent;
 	import away3d.library.AssetLibrary;
 	import away3d.library.assets.AssetType;
 	import away3d.loaders.parsers.AWDParser;
-	import away3d.primitives.WireframeCube;
-	import away3d.primitives.WireframePlane;
-	import away3d.primitives.WireframeSphere;
 	
 	import oculusAne.away3d.OculusScene3D;
 	
@@ -32,7 +27,7 @@ package
 	 * Simple demo showcasing the away3d oculus integration
 	 * @author Fragilem17
 	 */
-	[SWF(backgroundColor="#000000", frameRate="120", quality="LOW", width="1280", height="800")]
+	[SWF(backgroundColor="#000000", frameRate="60", quality="LOW", width="1280", height="800")]
 	public class Main extends Sprite
 	{	
 		private var _oculusScene3d:OculusScene3D;	
@@ -41,12 +36,17 @@ package
 		
 		private var _forward:Boolean = false;
 		private var _backward:Boolean = false;
+
+		private var _container:ObjectContainer3D;
+
+		public var overlay1:Loader;
+		public var overlay2:Loader;
 		
 		public function Main():void
 		{
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
-			stage.quality = StageQuality.LOW;
+			stage.quality = StageQuality.BEST;
 			
 			_oculusScene3d = new OculusScene3D();
 			addChild(_oculusScene3d.view);
@@ -57,14 +57,14 @@ package
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
 			AssetLibrary.load(new URLRequest("level_heavy.awd"));
 			
-			//AssetLibrary.load(new URLRequest("hoverpad.awd"));
-			//AssetLibrary.load(new URLRequest("sceneTest.AWD"));
 			
+			_container = new ObjectContainer3D(); 
+			_oculusScene3d.addChild(_container);
+			_container.scale(0.5);
 			
-			_oculusScene3d.camera.moveUp(1);
-			//_oculusScene3d.camera.moveBackward(10);
-			//_oculusScene3d.camera.moveRight(20);
-			//_oculusScene3d.camera.position = new Vector3D(0,0,0,0);
+			_oculusScene3d.camera.moveUp(1.8);
+			_oculusScene3d.camera.moveForward(5);
+			_oculusScene3d.camera.moveLeft(2);
 			
 			
 			//   By default the tracker's target is the oculusScene3D's camera
@@ -86,20 +86,26 @@ package
 		
 		private function onEnterFrame():void
 		{
+			// avg walkingSpeed  = 5 Km/h
+			var walkingSpeed:Number = 5000 / 60 / 60 / 60; // minute, second, frames
+			
 			if(_forward){
-				_oculusScene3d.camera.moveForward(0.20);
+				_oculusScene3d.camera.moveForward(walkingSpeed);
 			}
 			
 			if(_backward){
-				_oculusScene3d.camera.moveBackward(0.20);
+				_oculusScene3d.camera.moveBackward(walkingSpeed);
 			}
 		}
 		
 		private function onAssetComplete(event:AssetEvent):void 
 		{
+			//trace("event.asset.assetType: " + event.asset.assetType);
 			if (event.asset.assetType == AssetType.MESH) {
+				//trace("event.asset: " + event.asset.name);
 				var mesh:Mesh = event.asset as Mesh;
-				_oculusScene3d.addChild(mesh);
+				//trace("parent: " + mesh.parent);
+				_container.addChild(mesh);
 			}
 		}
 		
@@ -112,6 +118,7 @@ package
 		{
 			if(!_gui){
 				
+				/*
 				var house:ObjectContainer3D = new ObjectContainer3D();
 				house.rotationY = 270;
 				house.z = 7;
@@ -140,41 +147,70 @@ package
 				wall2.x = 14/2;
 				house.addChild(wall2);		
 				
-				_oculusScene3d.addChild(house);
+				_oculusScene3d.addChild(_container);
+				*/
 				
-				var attach:Sprite = new Sprite();
-				addChild(attach);
-				attach.x = 50;
-				attach.y = 150;
 				
-				_gui = new SimpleGUI(this, "Barrel Distortion", "C");
+				overlay1 = new Loader();
+				overlay1.load(new URLRequest('overlay1.png'));
+				overlay1.alpha = 0.6;
+				overlay1.visible = false;
+				addChild(overlay1);	
 				
-				_gui.addColumn("Left");
+				
+				overlay2 = new Loader();
+				overlay2.load(new URLRequest('overlay2.png'));
+				overlay2.alpha = 0.6;
+				overlay2.visible = false;
+				addChild(overlay2);				
+
+				_gui = new SimpleGUI(this, "Settings", "C");
+				
+				_gui.addColumn("Barrel Distortion");
 				
 				var baseClassPath:String;
 				
 				baseClassPath = "oculusScene3d.view.";
-				_gui.addSlider(baseClassPath + "lensCenterOffsetX", -0.2, 0.2, {label:'lensCenterOffsetX'});
-				_gui.addSlider(baseClassPath + "lensCenterOffsetY", -0.2, 0.2, {label:'lensCenterOffsetY'});
+				_gui.addButton("preset 1", {callback:preset1, width:160});
+				_gui.addButton("preset 2", {callback:preset2, width:160});
+				_gui.addSlider("oculusScene3d.camera.stereoSeperation", 0, 2, {label:'st sep'});
+				_gui.addSlider(baseClassPath + "barrelDistortionLensCenterOffsetX", 0, 0.1, {label:'bd lc X'});
+				_gui.addSlider(baseClassPath + "lensCenterOffsetX", 0, 0.1, {label:'lc X'});
+				_gui.addSlider(baseClassPath + "lensCenterOffsetY", 0, 0.1, {label:'lc Y'});
 	 
-				_gui.addSlider(baseClassPath + "scaleIn", 0, 4, {label:'scaleInX'});
-				_gui.addSlider(baseClassPath + "scale", 0, 1, {label:'scaleX'});
-				_gui.addSlider(baseClassPath + "hmdWarpParamX", 0, 1, {label:'hmdWarpParamX'});
-				_gui.addSlider(baseClassPath + "hmdWarpParamY", 0, 1, {label:'hmdWarpParamY'});
-				_gui.addSlider(baseClassPath + "hmdWarpParamZ", 0, 1, {label:'hmdWarpParamZ'});
-				_gui.addSlider(baseClassPath + "hmdWarpParamW", 0, 1, {label:'hmdWarpParamW'});
+				_gui.addToggle("overlay1.visible", {label:'overlay 1 visible'});
+				_gui.addToggle("overlay2.visible", {label:'overlay 2 visible'});
+				_gui.addSlider(baseClassPath + "scaleIn", 2, 4, {label:'s in '});
+				_gui.addSlider(baseClassPath + "scale", 0, 1, {label:'s out'});
+				//_gui.addSlider(baseClassPath + "hmdWarpParamX", 0, 1, {label:'hmdWarpParamX'});
+				//_gui.addSlider(baseClassPath + "hmdWarpParamY", 0, 1, {label:'hmdWarpParamY'});
+				//_gui.addSlider(baseClassPath + "hmdWarpParamZ", 0, 1, {label:'hmdWarpParamZ'});
+				//_gui.addSlider(baseClassPath + "hmdWarpParamW", 0, 1, {label:'hmdWarpParamW'});
 				
-				_gui.addSlider("oculusScene3d.camera.fieldOfView", 90, 150, {label:'fieldOfView'});
-				_gui.addSlider("oculusScene3d.camera.stereoSeperation", 0, 2, {label:'stereoSeperation'});
+				_gui.addSlider("oculusScene3d.camera.fieldOfView", 90, 150, {label:'fov'});
 				
-				_gui.show();
-				
-				
-				var loader:Loader = new Loader();
-				loader.load(new URLRequest('overlay1.png'));
-				loader.alpha = 0.2;
-				//addChild(loader);
+				//_gui.show();
 			}
+		}
+		
+		public function preset1():void {
+			oculusScene3d.camera.stereoSeperation = 0.06400000303983688;
+			oculusScene3d.view.lensCenterOffsetX = 0.07598821439086476;
+			oculusScene3d.view.barrelDistortionLensCenterOffsetX = oculusScene3d.view.lensCenterOffsetX / 2;
+			oculusScene3d.view.lensCenterOffsetY = 0;
+			oculusScene3d.view.scaleIn = 3.12;
+			oculusScene3d.view.scale = 0.25;
+			oculusScene3d.camera.fieldOfView = 111;
+		}
+		
+		public function preset2():void {
+			oculusScene3d.camera.stereoSeperation = 0.06400000303983688;
+			oculusScene3d.view.lensCenterOffsetX = 0.045;
+			oculusScene3d.view.barrelDistortionLensCenterOffsetX = oculusScene3d.view.lensCenterOffsetX / 2;
+			oculusScene3d.view.lensCenterOffsetY = 0;
+			oculusScene3d.view.scaleIn = 3.19;
+			oculusScene3d.view.scale = 0.31;
+			oculusScene3d.camera.fieldOfView = 97.5588441205328;
 		}
 		
 		protected function onKeyDown(event:KeyboardEvent):void

@@ -45,6 +45,7 @@ package oculusAne.away3d
 		public function set stereoSeperation(value:Number):void 
 		{
 			_stereoSeperation = value;
+			trace("stereoSeperation: " + _stereoSeperation);
 			leftCamera.x = -(_stereoSeperation / 2);
 			rightCamera.x = (_stereoSeperation / 2);
 		}		
