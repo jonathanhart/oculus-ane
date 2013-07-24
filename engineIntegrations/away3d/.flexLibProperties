@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="oculusANE.away3d.OculusScene3D"/>
+    <classEntry path="oculusANE.away3d.OculusView"/>
+    <classEntry path="oculusANE.away3d.OculusCamera"/>
+    <classEntry path="oculusANE.away3d.OculusBarrelDistortionFilter3D"/>
+    <classEntry path="oculusANE.away3d.OculusLens"/>
+    <classEntry path="oculusANE.away3d.OculusBarrelDistortionTask"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
