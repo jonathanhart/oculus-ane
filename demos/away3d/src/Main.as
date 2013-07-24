@@ -19,7 +19,7 @@ package
 	import away3d.library.assets.AssetType;
 	import away3d.loaders.parsers.AWDParser;
 	
-	import oculusAne.away3d.OculusScene3D;
+	import oculusANE.away3d.OculusScene3D;
 	
 	import uk.co.soulwire.gui.SimpleGUI;
 	
