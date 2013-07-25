@@ -31,6 +31,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="lib"/>
+      <libraryPathEntry kind="3" linkType="1" path="C:/svnProjects/oculus-ane/trunk/engineIntegrations/away3d/bin/OculusANE-away3D.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="5" linkType="2" path="C:/svnProjects/oculus-ane/trunk/ane/bin/OculusANE.ane"/>
     </libraryPath>
     <sourceAttachmentPath/>

@@ -6,11 +6,15 @@ package
 	import flash.display.StageDisplayState;
 	import flash.display.StageQuality;
 	import flash.display.StageScaleMode;
+	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.media.Sound;
 	import flash.net.URLRequest;
 	import flash.ui.Keyboard;
 	import flash.utils.setTimeout;
 	
+	import away3d.audio.Sound3D;
+	import away3d.cameras.Camera3D;
 	import away3d.containers.ObjectContainer3D;
 	import away3d.entities.Mesh;
 	import away3d.events.AssetEvent;
@@ -42,6 +46,12 @@ package
 		public var overlay1:Loader;
 		public var overlay2:Loader;
 		
+		[Embed(source="nature_distant_river_birds.mp3")]
+		private static var NatureSound:Class;
+		public static var natureSound:Sound = (Sound)(new NatureSound());		
+
+		private var _natureSound3d:Sound3D;
+		
 		public function Main():void
 		{
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -56,17 +66,15 @@ package
 			AssetLibrary.addEventListener(AssetEvent.ASSET_COMPLETE, onAssetComplete);
 			AssetLibrary.addEventListener(LoaderEvent.RESOURCE_COMPLETE, onResourceComplete);
 			AssetLibrary.load(new URLRequest("level_heavy.awd"));
-			
-			
-			_container = new ObjectContainer3D(); 
-			_oculusScene3d.addChild(_container);
-			_container.scale(0.5);
+
 			
 			_oculusScene3d.camera.moveUp(1.8);
 			_oculusScene3d.camera.moveForward(5);
-			_oculusScene3d.camera.moveLeft(2);
+			_oculusScene3d.camera.moveLeft(2);			
 			
-			
+			_natureSound3d = new Sound3D(natureSound, _oculusScene3d.camera, null, 1, 10);
+			_natureSound3d.addEventListener(Event.SOUND_COMPLETE, onBGSoundComplete);
+				
 			//   By default the tracker's target is the oculusScene3D's camera
 			//   You can change the tracker's target this way
 			//_oculusScene3d.trackerTarget = null;
@@ -84,11 +92,17 @@ package
 			setTimeout(initGui, 2000);
 		}
 		
+		protected function onBGSoundComplete(event:Event):void
+		{
+			_natureSound3d.play();
+		}
+		
 		private function onEnterFrame():void
 		{
 			// avg walkingSpeed  = 5 Km/h
 			var walkingSpeed:Number = 5000 / 60 / 60 / 60; // minute, second, frames
-			
+			//walkingSpeed *= 100;
+
 			if(_forward){
 				_oculusScene3d.camera.moveForward(walkingSpeed);
 			}
@@ -96,16 +110,27 @@ package
 			if(_backward){
 				_oculusScene3d.camera.moveBackward(walkingSpeed);
 			}
+			
 		}
 		
 		private function onAssetComplete(event:AssetEvent):void 
 		{
 			//trace("event.asset.assetType: " + event.asset.assetType);
+			
+			if(event.asset.assetType == AssetType.CAMERA){
+				var cam:Camera3D = event.asset as Camera3D;
+				_oculusScene3d.camera.transform = cam.transform;
+			}
+			
 			if (event.asset.assetType == AssetType.MESH) {
-				//trace("event.asset: " + event.asset.name);
 				var mesh:Mesh = event.asset as Mesh;
-				//trace("parent: " + mesh.parent);
-				_container.addChild(mesh);
+				_oculusScene3d.addChild(mesh);	
+				
+				if(event.asset.name == "log_small_001_nophys_0"){
+					trace('adding nature sound to a log');			
+					mesh.addChild(_natureSound3d);
+					_natureSound3d.play();
+				}	
 			}
 		}
 		
@@ -117,7 +142,7 @@ package
 		private function initGui():void 
 		{
 			if(!_gui){
-				
+
 				/*
 				var house:ObjectContainer3D = new ObjectContainer3D();
 				house.rotationY = 270;
@@ -177,7 +202,7 @@ package
 				_gui.addSlider(baseClassPath + "barrelDistortionLensCenterOffsetX", 0, 0.1, {label:'bd lc X'});
 				_gui.addSlider(baseClassPath + "lensCenterOffsetX", 0, 0.1, {label:'lc X'});
 				_gui.addSlider(baseClassPath + "lensCenterOffsetY", 0, 0.1, {label:'lc Y'});
-	 
+	 			
 				_gui.addToggle("overlay1.visible", {label:'overlay 1 visible'});
 				_gui.addToggle("overlay2.visible", {label:'overlay 2 visible'});
 				_gui.addSlider(baseClassPath + "scaleIn", 2, 4, {label:'s in '});
