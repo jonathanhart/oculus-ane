@@ -38,7 +38,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="2" path="lib"/>
-      <libraryPathEntry kind="1" linkType="2" path="C:/svnProjects/oculus-ane/trunk/ane/as3/bin"/>
+      <libraryPathEntry kind="1" linkType="2" path="C:/git/oculus-ane/ane/as3/bin"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

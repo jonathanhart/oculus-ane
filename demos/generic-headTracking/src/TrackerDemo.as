@@ -1,9 +1,9 @@
 package
-{
-	import com.numeda.OculusANE.OculusANE;
-	
+{	
 	import flash.display.Sprite;
 	import flash.events.Event;
+	
+	import oculusANE.OculusANE;
 	
 	public class TrackerDemo extends Sprite
 	{

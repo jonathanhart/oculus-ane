@@ -30,7 +30,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="5" linkType="2" path="/Users/jonathan/Documents/git/oculus-ane/build/OculusANE.ane"/>
+      <libraryPathEntry kind="5" linkType="2" path="C:/git/oculus-ane/ane/bin/OculusANE.ane"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -48,6 +48,10 @@
       <airSettings airCertificatePath="" airTimestamp="true" anePathSet="false" version="1">
         <airExcludes/>
         <anePaths/>
+        <newLaunchParams/>
+        <modifiedLaunchParams/>
+        <newPackagingParams/>
+        <modifiedPackagingParams/>
       </airSettings>
       <actionScriptSettings version="1"/>
     </buildTarget>

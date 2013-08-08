@@ -31,8 +31,8 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="lib"/>
-      <libraryPathEntry kind="3" linkType="1" path="C:/svnProjects/oculus-ane/trunk/engineIntegrations/away3d/bin/OculusANE-away3D.swc" useDefaultLinkType="false"/>
-      <libraryPathEntry kind="5" linkType="2" path="C:/svnProjects/oculus-ane/trunk/ane/bin/OculusANE.ane"/>
+      <libraryPathEntry kind="3" linkType="1" path="/OculusANE-away3D/bin/OculusANE-away3D.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="5" linkType="2" path="C:/git/oculus-ane/ane/bin/OculusANE.ane"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -47,10 +47,10 @@
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
     <buildTarget buildTargetName="default" platformId="default">
-      <airSettings airCertificatePath="C:/svnProjects/AtlasCopco/ProductExplorer/flash/cert/BUT_pc_distribution/AC_ProductExplorer.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
-          <anePathEntry path="C:/svnProjects/oculus-ane/trunk/ane/bin/OculusANE.ane"/>
+          <anePathEntry path="C:/git/oculus-ane/ane/bin/OculusANE.ane"/>
         </anePaths>
         <newLaunchParams/>
         <modifiedLaunchParams/>

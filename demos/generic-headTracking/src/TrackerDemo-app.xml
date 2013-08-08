@@ -258,5 +258,6 @@
 
 <extensions>
         <extensionID>com.numeda.OculusANE</extensionID>
+    <extensionID>oculusAne</extensionID>
     </extensions>
 </application>
