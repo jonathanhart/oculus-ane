@@ -8,3 +8,8 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+Debug
+/ane/win-visualstudio/OculusANE/Release
+/ane/win-visualstudio/OculusANE.opensdf
+/ane/win-visualstudio/OculusANE.sdf
+/ane/win-visualstudio/Release/OculusANE.pdb
