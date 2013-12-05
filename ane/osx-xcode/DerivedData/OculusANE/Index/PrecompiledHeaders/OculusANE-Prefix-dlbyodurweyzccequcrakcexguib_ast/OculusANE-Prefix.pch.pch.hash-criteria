@@ -1,0 +1,26 @@
+Contents of /Users/jonathan/Documents/git/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Prefix.pch
+-x
+objective-c
+-arch
+i386
+-fretain-comments-from-system-headers
+-std=gnu99
+-fpascal-strings
+-O0
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+-fasm-blocks
+-mmacosx-version-min=10.8
+-g
+-I/Users/jonathan/Documents/git/oculus-ane/ane/osx-xcode/build/Release/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/jonathan/Documents/git/oculus-ane/ane/osx-xcode/build/Release
+-F/Applications/Xcode.app/Contents/Developer/Library/Frameworks
+-ferror-limit=10
+-working-directory=/Users/jonathan/Documents/git/oculus-ane/ane/osx-xcode
+-Xclang
+-detailed-preprocessing-record
+i386-apple-darwin12.5.0
+"4.2.1 Compatible Apple LLVM 5.0 (clang-500.2.79)"
+SDK_PRODUCT_BUILD_VERSION=13A595
+13A595
