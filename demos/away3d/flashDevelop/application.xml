@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/4.0">
+  <id>Oculus2</id>
+  <versionNumber>1.0</versionNumber>
+  <filename>Oculus2</filename>
+  <name>Oculus2</name>
+  <supportedProfiles>extendedDesktop</supportedProfiles>
+  <initialWindow>
+    <title>Oculus2</title>
+    <content>Oculus2.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+    <renderMode>direct</renderMode>
+    <depthAndStencil>true</depthAndStencil>
+  </initialWindow>
+  <!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+  <extensions>
+    <extensionID>oculusAne</extensionID>
+  </extensions>
+</application>
