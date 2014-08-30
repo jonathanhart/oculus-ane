@@ -9,18 +9,14 @@
 #import "OculusANE.h"
 #include <Adobe AIR/Adobe Air.h>
 
-#include "OVR.h"
+#include "OVR_CAPI.h"
 #include <string>
 #include <sstream>
 
 using namespace std;
-using namespace OVR;
 
 extern "C" {
-    Ptr<SensorDevice> pSensor;
-    SensorFusion fusion;
-    Ptr<DeviceManager> pManager;
-    Ptr<HMDDevice> pDevice;
+    ovrHmd hmd = NULL;
     
     void redirectConsoleLogToDocumentFolder ()
     {
@@ -36,7 +32,7 @@ extern "C" {
         
         uint32_t isSupportedSwitch = 1;
         
-        if (pSensor==NULL) {
+        if (hmd==NULL) {
             isSupportedSwitch = 0;
         }
         
@@ -45,80 +41,100 @@ extern "C" {
         return result;
     }
     
+    FREObject getResolution(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
+    {
+        FREObject resolutionResult;
+        FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &resolutionResult, nil);
+        FRESetArrayLength(&resolutionResult, 2);
+        
+        ovrSizei size = hmd->Resolution;
+
+        // get an element at index
+        FREObject xVal;
+        double x = static_cast<double>(size.w);
+        FRENewObjectFromDouble(x, &xVal);
+        FRESetArrayElementAt(resolutionResult, 0, xVal);
+        
+        FREObject yVal;
+        double y = static_cast<double>(size.h);
+        FRENewObjectFromDouble(y, &yVal);
+        FRESetArrayElementAt(resolutionResult, 1, yVal);
+        
+        return resolutionResult;
+    }
+    
     FREObject getCameraQuaternion(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
     {
         FREObject cameraQuaternionResult;
         FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &cameraQuaternionResult, nil);
         FRESetArrayLength(&cameraQuaternionResult, 4);
+                
+        // Query the HMD for the current tracking state.
+        ovrTrackingState ts = ovrHmd_GetTrackingState(hmd, ovr_GetTimeInSeconds());
+     //   if ((ovrStatus_OrientationTracked | ovrStatus_PositionTracked))
+     //   {
+            ovrQuatf quaternion = ts.HeadPose.ThePose.Orientation;
+            
+           // NSLog(@"getCameraQuaternion %f %f %f %f", quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+            
+            // get an element at index
+            FREObject xVal;
+            double x = static_cast<double>(quaternion.x);
+            FRENewObjectFromDouble(x, &xVal);
+            FRESetArrayElementAt(cameraQuaternionResult, 0, xVal);
+            
+            FREObject yVal;
+            double y = static_cast<double>(quaternion.y);
+            FRENewObjectFromDouble(y, &yVal);
+            FRESetArrayElementAt(cameraQuaternionResult, 1, yVal);
+            
+            FREObject zVal;
+            double z = static_cast<double>(quaternion.z);
+            FRENewObjectFromDouble(z, &zVal);
+            FRESetArrayElementAt(cameraQuaternionResult, 2, zVal);
+            
+            FREObject wVal;
+            double w = static_cast<double>(quaternion.w);
+            FRENewObjectFromDouble(w, &wVal);
+            FRESetArrayElementAt(cameraQuaternionResult, 3, wVal);
+            
+            // NSLog(@"Quat Vals: %f,%f,%f,%f", quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+            
+   //     }
+        
 
-        NSLog(@"getCameraQuaternion");
-        Quatf quaternion = fusion.GetOrientation();
-        
-        // get an element at index
-        FREObject xVal;
-        double x = static_cast<double>(quaternion.x);
-        FRENewObjectFromDouble(x, &xVal);
-        FRESetArrayElementAt(cameraQuaternionResult, 0, xVal);
-
-        FREObject yVal;
-        double y = static_cast<double>(quaternion.y);
-        FRENewObjectFromDouble(y, &yVal);
-        FRESetArrayElementAt(cameraQuaternionResult, 1, yVal);
-        
-        FREObject zVal;
-        double z = static_cast<double>(quaternion.z);
-        FRENewObjectFromDouble(z, &zVal);
-        FRESetArrayElementAt(cameraQuaternionResult, 2, zVal);
-        
-        FREObject wVal;
-        double w = static_cast<double>(quaternion.w);
-        FRENewObjectFromDouble(w, &wVal);
-        FRESetArrayElementAt(cameraQuaternionResult, 3, wVal);
-        
-       // NSLog(@"Quat Vals: %f,%f,%f,%f", quaternion.x, quaternion.y, quaternion.z, quaternion.w);
-        
         return cameraQuaternionResult;
     }
+    
+    
     
     FREObject getHMDInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
     {
         FREObject result;
         FRENewObject((const uint8_t*)"Object", 0, NULL, &result, nil);
         
-        HMDInfo info;
-        pSensor->GetDeviceInfo(&info);
-        
+        ovrSizei size = hmd->Resolution;
+        /*
+        ovrHmd_GetRenderDesc(hmd, <#ovrEyeType eyeType#>, <#ovrFovPort fov#>)
         FREObject hScreenSize;
-        FRENewObjectFromDouble(static_cast<double>(info.HScreenSize), &hScreenSize);
+        FRENewObjectFromDouble(static_cast<double>(size.w), &hScreenSize);
         FRESetObjectProperty(result, (const uint8_t*)"HScreenSize", hScreenSize, NULL);
-
+        
         FREObject vScreenSize;
-        FRENewObjectFromDouble(static_cast<double>(info.VScreenSize), &vScreenSize);
+        FRENewObjectFromDouble(static_cast<double>(size.h), &vScreenSize);
         FRESetObjectProperty(result, (const uint8_t*)"VScreenSize", vScreenSize, NULL);
-
-        FREObject vScreenCenter;
-        FRENewObjectFromDouble(static_cast<double>(info.VScreenCenter), &vScreenCenter);
-        FRESetObjectProperty(result, (const uint8_t*)"VScreenCenter", vScreenCenter, NULL);
-
+        
         FREObject eyeToScreenDistance;
-        FRENewObjectFromDouble(static_cast<double>(info.EyeToScreenDistance), &eyeToScreenDistance);
+        FRENewObjectFromDouble(static_cast<double>(hmd->DefaultEyeFov->), &eyeToScreenDistance);
         FRESetObjectProperty(result, (const uint8_t*)"EyeToScreenDistance", eyeToScreenDistance, NULL);
-
+        
         FREObject lensSeparationDistance;
         FRENewObjectFromDouble(static_cast<double>(info.LensSeparationDistance), &lensSeparationDistance);
         FRESetObjectProperty(result, (const uint8_t*)"LensSeparationDistance", lensSeparationDistance, NULL);
-
+        
         FREObject interPupillaryDistance;
         FRENewObjectFromDouble(static_cast<double>(info.InterpupillaryDistance), &interPupillaryDistance);
         FRESetObjectProperty(result, (const uint8_t*)"InterpupillaryDistance", interPupillaryDistance, NULL);
-        
-        FREObject hResolution;
-        FRENewObjectFromDouble(static_cast<double>(info.HResolution), &hResolution);
-        FRESetObjectProperty(result, (const uint8_t*)"HResolution", hResolution, NULL);
-        
-        FREObject vResolution;
-        FRENewObjectFromDouble(static_cast<double>(info.VResolution), &vResolution);
-        FRESetObjectProperty(result, (const uint8_t*)"VResolution", vResolution, NULL);
         
         FREObject kDistortion;
         FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &kDistortion, nil);
@@ -128,8 +144,9 @@ extern "C" {
             FRENewObjectFromDouble(static_cast<double>(info.DistortionK[i]), &kValue);
             FRESetArrayElementAt(kDistortion, i, kValue);
         }
-        
+
         FRESetObjectProperty(result, (const uint8_t*)"DistortionK", kDistortion, NULL);
+                 */
         return result;
     }
     
@@ -157,61 +174,22 @@ extern "C" {
         
         NSLog(@"Initialized Native Extension");
         
-        OVR::System::Init();
-        pManager = *DeviceManager::Create();
-        
-        NSLog(@"Initialized OVR");
-        if (!pManager) {
-            NSLog(@"ERROR: pManager null");
-        }
-        DeviceEnumerator<SensorDevice> isensor = pManager->EnumerateDevices<SensorDevice>();
-        DeviceEnumerator<SensorDevice> oculusSensor;
-        
-        while(isensor)
-        {
-            DeviceInfo di;
-            if (isensor.GetDeviceInfo(&di))
-            {
-                if (strstr(di.ProductName, "Tracker"))
-                {
-                    if (!oculusSensor)
-                        oculusSensor = isensor;
-                    }
-            }
-            
-            isensor.Next();
-        }
-        
-        if (oculusSensor) {
-            pSensor = *oculusSensor.CreateDevice();
+        ovr_Initialize();
+        NSLog(@"Detected %d", ovrHmd_Detect());
+        hmd = ovrHmd_Create(0);
 
-            // this range is set from the sdk example code
-            if (pSensor) {
-                pSensor->SetRange(SensorRange(4 * 9.81f, 8 * Math<float>::Pi, 1.0f), true);
-                fusion.AttachToSensor(pSensor);
-                NSLog(@"Attached to sensor");
-            } else {
-                NSLog(@"ERROR: pSensor null");
-            }
-            oculusSensor.Clear();
-        } else {
-            NSLog(@"ERROR: no Sensor found");
+        if(hmd==NULL)
+        {
+            NSLog(@"FATAL: NO HMD");
         }
+        bool result = ovrHmd_ConfigureTracking(hmd, ovrTrackingCap_Orientation |
+                                 ovrTrackingCap_MagYawCorrection |
+                                 ovrTrackingCap_Position, 0);
+        NSLog(@"Tracking passed ? %d", result);
     }
     
     void OculusANE_ContextFinalizer(FREContext ctx)
     {
-        if (pManager) {
-            pManager.Clear();
-        }
-        
-        if (pSensor) {
-            pSensor.Clear();
-        }
-        
-        pManager = NULL;
-        pSensor = NULL;
-        
         return;
     }
     
@@ -220,9 +198,12 @@ extern "C" {
         *ctxInitializerToSet = &OculusANE_ContextInitializer;
         *ctxFinalizerToSet = &OculusANE_ContextFinalizer;
       
-        //redirectConsoleLogToDocumentFolder();
+        redirectConsoleLogToDocumentFolder();
     }
     
     void OculusANEFinalizer (FREContext ctx) {
+        ovrHmd_Destroy(hmd);
+        ovr_Shutdown();
+        hmd = NULL;
     }
 }

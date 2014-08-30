@@ -20,4 +20,16 @@
 		<nature>com.adobe.flexbuilder.project.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] away3d-core-fp11-4.1.6-src</name>
+			<type>2</type>
+			<location>/Users/jonathanhart/Desktop/numeda_projects/ext/away3d-core-fp11-4.1.6/src</location>
+		</link>
+		<link>
+			<name>[source path] away3d-src</name>
+			<type>2</type>
+			<location>/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/engineIntegrations/away3d/src</location>
+		</link>
+	</linkedResources>
 </projectDescription>

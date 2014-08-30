@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<application xmlns="http://ns.adobe.com/air/application/3.8">
+<application xmlns="http://ns.adobe.com/air/application/15.0">
   <!-- Adobe AIR Application Descriptor File Template. Specifies parameters 
 		for identifying, installing, and launching AIR applications. xmlns - The 
 		Adobe AIR namespace: http://ns.adobe.com/air/application/3.4 The last segment 
@@ -166,7 +166,5 @@
   <!-- </android> -->
   <!-- End of the schema for adding the android specific tags in AndroidManifest.xml 
 		file -->
-  <extensions>
-    <extensionID>oculusAne</extensionID>
-  </extensions>
+  
 </application>

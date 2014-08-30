@@ -10,22 +10,29 @@
   </features>
   <libraries>
     <library path="library.swf">
-      <script name="com/numeda/OculusANE/OculusANE" mod="1369733115000" signatureChecksum="1204182374" >
-        <def id="com.numeda.OculusANE:OculusANE" /> 
+      <script name="oculusANE/OculusANE" mod="1409300033000" signatureChecksum="1661102945" >
+        <def id="oculusANE:OculusANE" /> 
         <dep id="flash.external:ExtensionContext" type="e" /> 
         <dep id="Error" type="e" /> 
+        <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.geom:Point" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
-      <script name="_42d22f7d30db7a3172d399d94ca77236b7aef301d4f3a5de21a12bb158a8e7b4_flash_display_Sprite" mod="1370233887855" signatureChecksum="2829351629" >
-        <def id="_42d22f7d30db7a3172d399d94ca77236b7aef301d4f3a5de21a12bb158a8e7b4_flash_display_Sprite" /> 
+      <script name="_037ea5cbeb3bcbe773e215f2d2c9699f8de4a1362f6c712a09365bd346ea593e_flash_display_Sprite" mod="1409302841278" signatureChecksum="997161819" >
+        <def id="_037ea5cbeb3bcbe773e215f2d2c9699f8de4a1362f6c712a09365bd346ea593e_flash_display_Sprite" /> 
         <dep id="flash.system:Security" type="e" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.display:Sprite" type="i" /> 
       </script>
+      <script name="oculusANE/HmdInfo" mod="1409301088000" signatureChecksum="3934030751" >
+        <def id="oculusANE:HmdInfo" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
       <digests>
-        <digest type="SHA-256" signed="false" value="f1da36e0a6f9954793430c747436c3fa86fce6cee1c14f22e7b1472a1892d738"   />
+        <digest type="SHA-256" signed="false" value="08c6c9417d7e653fef4d1fa36755f87a920592a2a826136f36b3fee324cd55d6"   />
       </digests>
     </library>
   </libraries>

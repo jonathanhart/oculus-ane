@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <actionScriptProperties analytics="false" mainApplicationPath="Main.as" projectUUID="06c687c8-4c31-4602-8942-6fa6c1c2d606" version="11">
   <compiler additionalCompilerArguments="-locale en_US" advancedTelemetry="false" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="false" htmlHistoryManagement="false" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin" removeUnusedRSL="true" sourceFolderPath="src" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="true" useDebugRSLSwfs="true" useFlashSDK="true" verifyDigests="true" warn="true">
-    <compilerSourcePath/>
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/jonathanhart/Desktop/numeda_projects/ext/away3d-core-fp11-4.1.6/src"/>
+      <compilerSourcePathEntry kind="1" linkType="1" path="/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/engineIntegrations/away3d/src"/>
+    </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
         <excludedEntries>
@@ -31,8 +34,7 @@
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="lib"/>
-      <libraryPathEntry kind="3" linkType="1" path="/OculusANE-away3D/bin/OculusANE-away3D.swc" useDefaultLinkType="false"/>
-      <libraryPathEntry kind="5" linkType="2" path="C:/git/oculus-ane/ane/bin/OculusANE.ane"/>
+      <libraryPathEntry kind="3" linkType="1" path="/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/build/OculusANE.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
