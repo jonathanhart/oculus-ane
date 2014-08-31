@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61B53A9A19B064AB009F10C4 /* libovr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B53A9919B064AB009F10C4 /* libovr.a */; };
+		61B53AA619B06A8B009F10C4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B53AA519B06A8B009F10C4 /* OpenGL.framework */; };
 		ABDACAB51752041900994FF9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAB41752041900994FF9 /* Cocoa.framework */; };
 		ABDACABF1752041900994FF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDACABD1752041900994FF9 /* InfoPlist.strings */; };
 		ABDACAC31752041900994FF9 /* OculusANE.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABDACAC21752041900994FF9 /* OculusANE.mm */; };
@@ -16,7 +18,6 @@
 		ABDACAD51752041900994FF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABDACAD31752041900994FF9 /* InfoPlist.strings */; };
 		ABDACAD81752041900994FF9 /* OculusANETests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDACAD71752041900994FF9 /* OculusANETests.m */; };
 		ABDACAE217520A9900994FF9 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE117520A9900994FF9 /* Adobe AIR.framework */; };
-		ABDACAE417520E3E00994FF9 /* libovr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE317520E3E00994FF9 /* libovr.a */; };
 		ABDACAE6175450E900994FF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE5175450E900994FF9 /* CoreGraphics.framework */; };
 		ABDACAE7175450FE00994FF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAB91752041900994FF9 /* Foundation.framework */; };
 		ABDACAE91754513E00994FF9 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABDACAE81754513E00994FF9 /* CoreServices.framework */; };
@@ -34,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61B53A9919B064AB009F10C4 /* libovr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libovr.a; path = ../../oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release/libovr.a; sourceTree = "<group>"; };
+		61B53A9B19B064DB009F10C4 /* OVR_Kernel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVR_Kernel.h; sourceTree = "<group>"; };
+		61B53A9C19B064DB009F10C4 /* OVR_Version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVR_Version.h; sourceTree = "<group>"; };
+		61B53A9D19B064DB009F10C4 /* OVR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVR.h; sourceTree = "<group>"; };
+		61B53AA119B06591009F10C4 /* Src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Src; sourceTree = "<group>"; };
+		61B53AA319B065AC009F10C4 /* Src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Src; sourceTree = "<group>"; };
+		61B53AA519B06A8B009F10C4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		ABDACAB11752041900994FF9 /* OculusANE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OculusANE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDACAB41752041900994FF9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ABDACAB71752041900994FF9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -61,11 +69,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B53AA619B06A8B009F10C4 /* OpenGL.framework in Frameworks */,
+				61B53A9A19B064AB009F10C4 /* libovr.a in Frameworks */,
 				ABDACAEB1754515F00994FF9 /* IOKit.framework in Frameworks */,
 				ABDACAE91754513E00994FF9 /* CoreServices.framework in Frameworks */,
 				ABDACAE7175450FE00994FF9 /* Foundation.framework in Frameworks */,
 				ABDACAE6175450E900994FF9 /* CoreGraphics.framework in Frameworks */,
-				ABDACAE417520E3E00994FF9 /* libovr.a in Frameworks */,
 				ABDACAE217520A9900994FF9 /* Adobe AIR.framework in Frameworks */,
 				ABDACAB51752041900994FF9 /* Cocoa.framework in Frameworks */,
 			);
@@ -87,6 +96,11 @@
 		ABDACAA71752041900994FF9 = {
 			isa = PBXGroup;
 			children = (
+				61B53AA319B065AC009F10C4 /* Src */,
+				61B53AA119B06591009F10C4 /* Src */,
+				61B53A9B19B064DB009F10C4 /* OVR_Kernel.h */,
+				61B53A9C19B064DB009F10C4 /* OVR_Version.h */,
+				61B53A9D19B064DB009F10C4 /* OVR.h */,
 				ABDACAEA1754515F00994FF9 /* IOKit.framework */,
 				ABDACAE81754513E00994FF9 /* CoreServices.framework */,
 				ABDACAE5175450E900994FF9 /* CoreGraphics.framework */,
@@ -110,6 +124,8 @@
 		ABDACAB31752041900994FF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61B53AA519B06A8B009F10C4 /* OpenGL.framework */,
+				61B53A9919B064AB009F10C4 /* libovr.a */,
 				ABDACAB41752041900994FF9 /* Cocoa.framework */,
 				ABDACACA1752041900994FF9 /* SenTestingKit.framework */,
 				ABDACAB61752041900994FF9 /* Other Frameworks */,
@@ -414,13 +430,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OculusANE/OculusANE-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					../../oculus_sdk/OculusSDK/LibOVR/include,
-					../../oculus_sdk/OculusSDK/LibOVR/Src,
+					../../oculus_sdk_041/OculusSDK/LibOVR/include,
+					../../oculus_sdk_041/OculusSDK/LibOVR/Src,
 				);
 				INFOPLIST_FILE = "OculusANE/OculusANE-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release\"",
+					"$(SRCROOT)/../../oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release\"",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -445,13 +461,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OculusANE/OculusANE-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
-					../../oculus_sdk/OculusSDK/LibOVR/include,
-					../../oculus_sdk/OculusSDK/LibOVR/Src,
+					../../oculus_sdk_041/OculusSDK/LibOVR/include,
+					../../oculus_sdk_041/OculusSDK/LibOVR/Src,
 				);
 				INFOPLIST_FILE = "OculusANE/OculusANE-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../oculus_sdk/OculusSDK/LibOVR/Lib/MacOS/Release\"",
+					"$(SRCROOT)/../../oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release\"",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -507,6 +523,7 @@
 				ABDACADD1752041900994FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABDACADE1752041900994FF9 /* Build configuration list for PBXNativeTarget "OculusANETests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				ABDACAE01752041900994FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

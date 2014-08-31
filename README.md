@@ -1,15 +1,17 @@
 oculus-ane
 ==========
 
+* RECENT CHANGES:
+
+We now are upgraded to 0.4.1 on the Mac side, meaning DK2 support. Yay! PC support is on the way, if anyone wants to contribute please get in touch!
+
+Issues related to the ANE compiling incorrectly have been addressed for Mac.
+
+*NOTE*
+
+If you are modifying compiling the OSX ANE yourself via Xcode, be sure to change in your Preferences the Derived Data location. It should be in “Relative” mode. This way, the build.sh script will correctly find it. If there’s a simpler way to approach this, let me know. However, if all you want is the ANE you should be fine. Just look in the build directory.
+
 Oculus ANE (Adobe Native Extension)
-
-Alpha support for both Mac OSX and Windows.
-
-Support for Away3D. Some caveats:
-
-	1) Not optimized
-	2) Basic lens correction (works only at the rift's native resolution of 1280x800)
-	3) No Chromatic aberration implemented yet (colors shift at the edges)
 
 --- 
 

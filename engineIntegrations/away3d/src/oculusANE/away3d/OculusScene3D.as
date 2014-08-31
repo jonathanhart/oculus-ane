@@ -1,5 +1,8 @@
 package oculusANE.away3d
 {	
+	import com.numeda.OculusANE.HmdInfo;
+	import com.numeda.OculusANE.OculusANE;
+	
 	import flash.events.Event;
 	import flash.geom.Vector3D;
 	
@@ -23,14 +26,14 @@ package oculusANE.away3d
 		private var _camera:OculusCamera;
 		
 		private var _enterFrameHandlers:Vector.<Function> = new Vector.<Function>;
-		private var _tracker:OculusANE;
+		private var _tracker:oculusANE.OculusANE;
 		private var _nullVector:Vector3D = new Vector3D();
 		
 		private var _quatVec:Vector.<Number>;
 		private var _quat:Quaternion = new Quaternion();
 		private var _prevPos:Vector3D;
 
-		public var hmdInfo:HmdInfo;
+		public var hmdInfo:oculusANE.HmdInfo;
 		public var lensCenterOffset:Number;
 		
 		public function OculusScene3D() 
@@ -39,34 +42,7 @@ package oculusANE.away3d
 			var zNear:Number = 0.1;
 			
 			_tracker = new OculusANE();
-			
-			if (_tracker.isSupported()) {
-				// get information from HMD
-				hmdInfo = _tracker.getHMDInfo();
-			}else {
-				// set default values from Oculus devkit 1 
-				hmdInfo = new HmdInfo();
-				hmdInfo.hScreenSize	= 0.14975999295711517;
-				hmdInfo.vScreenSize	= 0.09359999746084213;
-				hmdInfo.vScreenCenter = 0.046799998730421066;	
-				hmdInfo.eyeToScreenDistance = 0.04100000113248825;
-				hmdInfo.lensSeparationDistance = 0.06350000202655792;
-				hmdInfo.interPupillaryDistance = 0.06400000303983688;
-				hmdInfo.hResolution = 1280;
-				hmdInfo.vResolution = 800;
-				hmdInfo.distortionK	= new Vector.<Number>;
-				hmdInfo.distortionK.push(1);
-				hmdInfo.distortionK.push(0.2199999988079071);
-				hmdInfo.distortionK.push(0.23999999463558197);
-				hmdInfo.distortionK.push(0);
-				
-				hmdInfo.chromaAbCorrection = new Vector.<Number>;
-				hmdInfo.chromaAbCorrection.push(0.9959999918937683);
-				hmdInfo.chromaAbCorrection.push(-0.004000000189989805);
-				hmdInfo.chromaAbCorrection.push(1.0140000581741333);
-				hmdInfo.chromaAbCorrection.push(0);
-			}
-			
+		
 			var fieldOfView:Number = (2 * Math.atan(hmdInfo.vScreenSize / (2 * hmdInfo.eyeToScreenDistance))) * 57.2957795;
 			trace("fieldOfView calc: " + fieldOfView);
 			// TODO: calculate correct value
@@ -81,7 +57,7 @@ package oculusANE.away3d
 			lensCenterOffset = 0.08;
 			//lensCenterOffset = 0.048;
 			trace("lensCenterOffset man: " + lensCenterOffset);
-			
+		
 			_camera = new OculusCamera(fieldOfView, lensCenterOffset);
 			_camera.stereoSeperation = hmdInfo.interPupillaryDistance; // m
 			_camera.position = _nullVector;

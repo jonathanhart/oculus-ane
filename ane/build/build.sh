@@ -1,10 +1,10 @@
 rm OculusANE.ane
 rm OculusANE.swc
-cp ../OculusANE.swc .
+cp ../as3/bin/OculusANE.swc .
 unzip -o OculusANE.swc
 rm -r -f mac
 mkdir mac
-cp -L -R "../osx-xcode/build/Release/" mac
+cp -L -R "../osx-xcode/DerivedData/OculusANE/Build/Products/Debug/" mac
 cp library.swf mac
 mkdir windows
 cp library.swf windows

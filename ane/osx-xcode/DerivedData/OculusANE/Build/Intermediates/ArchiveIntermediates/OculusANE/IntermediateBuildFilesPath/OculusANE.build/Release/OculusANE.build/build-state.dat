@@ -1,0 +1,342 @@
+TOculusANE
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist
+cSymLink /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+cProcessPCH++ /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE normal i386
+cGenerateDSYMFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+cCopyStringsFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings
+cTouch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+cStrip /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+cSetOwnerAndGroup jonathanhart:staff /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+cSetMode u+w,go-w,a+rX /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+cTouch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM
+
+N/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR
+c0000000053E950FE0000000001AA3044
+t1407799550
+s27930692
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c00000000534991AF00000000000000AA
+t1397330351
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c0000000053250FFA000000000000044C
+t1394937850
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c0000000053250FFA00000000000001DE
+t1394937850
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c0000000053250FFB000000000000253C
+t1394937851
+s9532
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c0000000053250FFB000000000008B334
+t1394937851
+s570164
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+c0000000053250FFB000000000000979C
+t1394937851
+s38812
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c0000000053250FFB00000000000C9E38
+t1394937851
+s826936
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+c0000000053250FFB000000000004426C
+t1394937851
+s279148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+c0000000053250FFB000000000000BB7C
+t1394937851
+s47996
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework
+t2
+s0
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM
+t1409383062
+s102
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+t1409383061
+s170
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+t1409383062
+s1916636
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist
+t1409383061
+s1244
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings
+t1409383062
+s92
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.LinkFileList
+c0000000054017A9500000000000000F5
+t1409383061
+s245
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o
+t1409383062
+s17180
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch
+t1409383061
+s17549032
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist
+c0000000054002ABA00000000000003B8
+t1409297082
+s952
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Prefix.pch
+c0000000054002ABA0000000000000095
+t1409297082
+s149
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm
+c000000005401797E0000000000001D27
+t1409382782
+s7463
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/en.lproj/InfoPlist.strings
+c0000000054002ABA000000000000002D
+t1409297082
+s45
+
+N/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release/libovr.a
+c0000000053E950640000000001D21D48
+t1407799396
+s30547272
+
+CBuild AST from /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesbe303515b2b1b941^7aff3b15b2b1b941^---0#1#1#--18"Check dependencies36"3130FD32-60EE-4336-BA7E-F235B157AE1F-
+
+CCompileC DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+s431075861.884599
+e431075862.216887
+r1
+xCompileC
+xDerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm
+xnormal
+xi386
+xobjective-c++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.h
+d/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Headers/Adobe Air.h
+d/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Headers/FlashRuntimeExtensions.h
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/oculus_sdk_041/OculusSDK/LibOVR/Src/OVR_CAPI.h
+o/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm:117:18: warning: unused variable 'size' [-Wunused-variable]
+o        ovrSizei size = hmd->Resolution;
+o                 ^
+o1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm273"CompileC DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compilerb283e215b2b1b941^05873716b2b1b941^-237"/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm:117:18: warning: unused variable 'size' [-Wunused-variable]        ovrSizei size = hmd->Resolution;                 ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@22"Unused variable 'size'-431075862#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@102"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm0000000000000000^116#17#116#17#3911#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@102"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm0000000000000000^4047"CompileC DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o OculusANE/OculusANE.mm normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/OculusANE.hmap -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/include -I../../oculus_sdk_041/OculusSDK/LibOVR/include -I../../oculus_sdk_041/OculusSDK/LibOVR/Src -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/DerivedSources/i386 -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/DerivedSources -F/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release -F/Applications/Adobe\ Flash\ Builder\ 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac -fno-rtti -include /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch -MMD -MT dependencies -MF /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.d --serialize-diagnostics /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.dia -c /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE.mm -o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o36"86008DEB-4971-48EE-A099-CCCB674AD4B4-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CCopyStringsFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings
+s431075862.823444
+e431075862.824159
+r1
+xCopyStringsFile
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings
+xOculusANE/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Copy OculusANE/en.lproj/InfoPlist.strings246"CopyStringsFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings8dd5d216b2b1b941^8bfcd216b2b1b941^---0#0#1#-19%DVTDocumentLocation2@116"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/en.lproj/InfoPlist.strings0000000000000000^706"CopyStringsFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj/InfoPlist.strings OculusANE/en.lproj/InfoPlist.strings    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding UTF-16 --outdir /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/en.lproj -- OculusANE/en.lproj/InfoPlist.strings36"3246C941-34A5-4288-8AEE-CB8B9CB922B8-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CGenerateDSYMFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+s431075862.299639
+e431075862.823150
+r1
+xGenerateDSYMFile
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection205"Generate /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM307"GenerateDSYMFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE48c04c16b2b1b941^6bbad216b2b1b941^---0#0#1#-19%DVTDocumentLocation2@203"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM00342048dcffdf42^928"GenerateDSYMFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE -o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM36"8038B39A-65A1-4228-A06E-DCAE17DDBBED-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CLd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE normal i386
+s431075862.217506
+e431075862.298963
+r1
+xLd
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+xnormal
+xi386
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.LinkFileList
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release/libovr.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/IOKit.framework/IOKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/CoreServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Adobe Flash Builder 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac/Adobe AIR.framework/Adobe AIR
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libc++.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.eprintf.a
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.osx.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libquarantine.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+d/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection244"Link /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE181"Ld DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE normal i386d0b93716b2b1b941^8b8a4c16b2b1b941^---0#0#1#--2300"Ld DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE normal i386    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    export MACOSX_DEPLOYMENT_TARGET=10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release -L/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/../../oculus_sdk_041/OculusSDK/LibOVR/Lib/Mac/Release -F/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release -F/Applications/Adobe\ Flash\ Builder\ 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac -filelist /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE.LinkFileList -install_name /Library/Frameworks/OculusANE.framework/Versions/A/OculusANE -mmacosx-version-min=10.8 -all_load -ObjC -stdlib=libc++ -fobjc-link-runtime -framework OpenGL -lovr -framework IOKit -framework CoreServices -framework Foundation -framework CoreGraphics -framework Adobe\ AIR -framework Cocoa -single_module -compatibility_version 1 -current_version 1 -Xlinker -dependency_info -Xlinker /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/Objects-normal/i386/OculusANE_dependency_info.dat -o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE36"5CBF90E5-CAED-4404-B94A-CA8D5FE60070-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CProcessInfoPlistFile /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist
+s431075861.235448
+e431075861.236364
+r1
+xProcessInfoPlistFile
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Process /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist229"ProcessInfoPlistFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist OculusANE/OculusANE-Info.plistdb4d3c15b2b1b941^43c53c15b2b1b941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist0000000000000000^735"ProcessInfoPlistFile DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist OculusANE/OculusANE-Info.plist    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    builtin-infoPlistUtility /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Info.plist -expandbuildsettings -platform macosx -o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/Resources/Info.plist36"ABF29B6C-277C-4208-AAB6-1247729B2017-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CProcessPCH++ /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler
+s431075861.240726
+e431075861.883965
+r1
+xProcessPCH++
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch
+xOculusANE/OculusANE-Prefix.pch
+xnormal
+xi386
+xobjective-c++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile OculusANE/OculusANE-Prefix.pch276"ProcessPCH++ DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler64ad3d15b2b1b941^c74ce215b2b1b941^---0#0#1#-19%DVTDocumentLocation2@110"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Prefix.pch0000000000000000^3793"ProcessPCH++ DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/OculusANE.hmap -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/include -I../../oculus_sdk_041/OculusSDK/LibOVR/include -I../../oculus_sdk_041/OculusSDK/LibOVR/Src -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/DerivedSources/i386 -I/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/IntermediateBuildFilesPath/OculusANE.build/Release/OculusANE.build/DerivedSources -F/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release -F/Applications/Adobe\ Flash\ Builder\ 4.7/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK/runtimes/air/mac -fno-rtti --serialize-diagnostics /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.dia -MMD -MT dependencies -MF /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.d -c /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/OculusANE/OculusANE-Prefix.pch -o /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/PrecompiledHeaders/OculusANE-Prefix-enlburhfghfwvehgjejurghuekqh/OculusANE-Prefix.pch.pch36"F3AC3F04-0ECD-4D1F-8144-3953F14F47BA-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CProcessPCH++ /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Index/PrecompiledHeaders/OculusANE-Prefix-ahfxzdiunwrffygtqnzayneybwey_ast/OculusANE-Prefix.pch.pch OculusANE/OculusANE-Prefix.pch normal i386 objective-c++ com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CSetMode u+w,go-w,a+rX /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+s431075862.845727
+e431075862.849355
+r1
+xSetMode
+xu+w,go-w,a+rX
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection167"SetMode u+w,go-w,a+rX DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework167"SetMode u+w,go-w,a+rX DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.frameworkbd8ad816b2b1b941^7270d916b2b1b941^---0#0#1#-19%DVTDocumentLocation2@226"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/0000000000000000^500"SetMode u+w,go-w,a+rX DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /bin/chmod -RH u+w,go-w,a+rX /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework36"BED18D74-51A2-4F90-92C9-B2FF96D92BD8-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CSetOwnerAndGroup jonathanhart:staff /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+s431075862.840521
+e431075862.845478
+r1
+xSetOwnerAndGroup
+xjonathanhart:staff
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection181"SetOwnerAndGroup jonathanhart:staff DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework181"SetOwnerAndGroup jonathanhart:staff DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.frameworkb135d716b2b1b941^2a72d816b2b1b941^---0#0#1#-19%DVTDocumentLocation2@226"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/0000000000000000^524"SetOwnerAndGroup jonathanhart:staff DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /usr/sbin/chown -RH jonathanhart:staff /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework36"D78EE9AB-F3F0-4DC1-B6DC-BBBACEBBEBBA-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CStrip /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+s431075862.827809
+e431075862.840271
+r1
+xStrip
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection172"Strip DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE172"Strip DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE7cf3d316b2b1b941^931dd716b2b1b941^---0#0#1#-19%DVTDocumentLocation2@246"file:///Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE0000000000000000^593"Strip DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -S /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework/Versions/A/OculusANE36"23B0A52A-7E6B-4C28-8339-2FC6BCAEC2B6-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CSymLink /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+s431075861.236606
+e431075861.240293
+r1
+xSymLink
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection199"Process /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework272"SymLink DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework3d9c3c15b2b1b941^49853d15b2b1b941^---0#0#1#--780"SymLink DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /bin/ln -sf /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework36"A361410A-3838-47E2-BDD6-FFB5A2D753C5-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CTouch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM
+s431075862.849590
+e431075862.852065
+r1
+xTouch
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection202"Touch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM129"Touch DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM9d85d916b2b1b941^9621da16b2b1b941^---0#0#1#--429"Touch DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /usr/bin/touch -c /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/BuildProductsPath/Release/OculusANE.framework.dSYM36"09738752-9CA2-458F-96D5-0A8AF707ADE9-
+b9D202900-C890-4A85-9AEC-35112D843C84
+
+CTouch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+s431075862.824373
+e431075862.827544
+r1
+xTouch
+x/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection224"Touch /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework151"Touch DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework3410d316b2b1b941^6edbd316b2b1b941^---0#0#1#--473"Touch DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework    cd /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode    /usr/bin/touch -c /Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/ane/osx-xcode/DerivedData/OculusANE/Build/Intermediates/ArchiveIntermediates/OculusANE/InstallationBuildProductsLocation/Library/Frameworks/OculusANE.framework36"BA9BC93F-7FBB-4FD4-BC97-1A7E613ACD9A-
+b9D202900-C890-4A85-9AEC-35112D843C84
+

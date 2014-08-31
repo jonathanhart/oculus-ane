@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>OculusANE-away3D-demo</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.apollobuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.apollonature</nature>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[source path] away3d-core-fp11-4.1.6-src</name>
+			<type>2</type>
+			<location>/Users/jonathanhart/Desktop/numeda_projects/ext/away3d-core-fp11-4.1.6/src</location>
+		</link>
+		<link>
+			<name>[source path] away3d-src</name>
+			<type>2</type>
+			<location>/Users/jonathanhart/Desktop/numeda_projects/ext/oculus-ane/engineIntegrations/away3d/src</location>
+		</link>
+	</linkedResources>
+</projectDescription>

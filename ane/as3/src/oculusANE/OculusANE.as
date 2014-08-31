@@ -2,6 +2,7 @@ package oculusANE
 {
 	import flash.events.EventDispatcher;
 	import flash.external.ExtensionContext;
+	import flash.geom.Point;
 	
 	public class OculusANE extends EventDispatcher
 	{
@@ -22,18 +23,10 @@ package oculusANE
 			return _extContext.call("getCameraQuaternion") as Vector.<Number>;
 		}
 		
-		public function getHMDInfo() : HmdInfo
+		public function getOculusResolution() : Point
 		{
-			var info:Object = _extContext.call("getHMDInfo") as Object;
-			var hmdInfo:HmdInfo = new HmdInfo();
-			
-			for (var property:String in info) {
-				if (hmdInfo.hasOwnProperty(property)){
-					hmdInfo[property] = info[property];
-				}
-			}
-
-			return hmdInfo;
+			var resolution:Vector.<Number> = _extContext.call("getOculusResolution") as Vector.<Number>;
+			return new Point(resolution[0], resolution[1]);
 		}
 		
 		public function isSupported() : Boolean

@@ -1,9 +1,9 @@
 package oculusANE.away3d
 {
+	import flash.geom.Vector3D;
+	
 	import away3d.cameras.lenses.LensBase;
 	import away3d.core.math.Matrix3DUtils;
-	
-	import flash.geom.Vector3D;
 	
 	public class OculusLens extends LensBase
 	{
@@ -21,7 +21,7 @@ package oculusANE.away3d
 			this.top = top;
 		}
 		
-		public override function project(point3d:Vector3D):Vector3D
+		public override function project(point3d:Vector3D, v:Vector3D=null):Vector3D
 		{
 			//In dev version of Away3D 4.1.0 - LensBase.as
 			//TODO this function was affected by commit 21a6cea0fa644d812c418aca665e31ab5fb1f73e, applied reverting override
@@ -43,7 +43,7 @@ package oculusANE.away3d
 		 * @param mZ The distance from the projection plane.
 		 * @return The scene position of the given screen coordinates.
 		 */
-		public override function unproject(mX:Number, mY:Number, mZ:Number):Vector3D
+		public override function unproject(mX:Number, mY:Number, mZ:Number, v:Vector3D=null):Vector3D
 		{
 			//In dev version of Away3D 4.1.0 - LensBase.as
 			//TODO this function was affected by commit 21a6cea0fa644d812c418aca665e31ab5fb1f73e, applied reverting override

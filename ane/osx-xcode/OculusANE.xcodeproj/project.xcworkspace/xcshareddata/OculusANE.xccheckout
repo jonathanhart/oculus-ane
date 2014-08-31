@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A170DB50-138C-4C15-A864-099ED480BF29</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OculusANE</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EFF3CFD4-4F41-4832-B087-2D09A278313B</key>
+		<string>https://github.com/jonathanhart/oculus-ane.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ane/osx-xcode/OculusANE.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EFF3CFD4-4F41-4832-B087-2D09A278313B</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jonathanhart/oculus-ane.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EFF3CFD4-4F41-4832-B087-2D09A278313B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EFF3CFD4-4F41-4832-B087-2D09A278313B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>oculus-ane</string>
+		</dict>
+	</array>
+</dict>
+</plist>
