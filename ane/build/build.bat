@@ -19,7 +19,7 @@ REM // copy the mac build files here
 xcopy "..\osx-xcode\build\Release" "mac\" /S /Y
 
 REM // copy the windows build files here
-xcopy "..\win-visualstudio\Release" "win\" /S /Y
+xcopy "..\win-visualstudio\OculusANE_041\Release\OculusANE.dll" "win\OculusANE.dll" /S /Y
 
 REM // call the build script on adt
 call "C:/Program Files (x86)/FlashDevelop/Tools/flexsdk/bin/adt" -package -target ane ../bin/OculusANE.ane extension.xml -swc OculusANE.swc -platform MacOS-x86 -C mac . -platform Windows-x86 -C win . 
