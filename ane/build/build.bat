@@ -16,7 +16,7 @@ REM // copy the swc here
 xcopy "..\as3\bin\OculusANE.swc" "." /Y
 
 REM // copy the mac build files here
-xcopy "..\osx-xcode\build\Release" "mac\" /S /Y
+xcopy "..\osx-xcode\DerivedData\OculusANE\Build\Products\Release" "mac\" /S /Y
 
 REM // copy the windows build files here
 xcopy "..\win-visualstudio\OculusANE_041\Release\OculusANE.dll" "win\OculusANE.dll" /S /Y
