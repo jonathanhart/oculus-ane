@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.6.0" build="23201" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="oculusANE/OculusANE" mod="1409689710554" signatureChecksum="2060616352" >
+        <def id="oculusANE:OculusANE" /> 
+        <dep id="__AS3__.vec:Vector" type="e" /> 
+        <dep id="flash.geom:Vector3D" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="Error" type="e" /> 
+        <dep id="flash.geom:Point" type="e" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="flash.geom:Vector3D" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="flash.geom:Point" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:EventDispatcher" type="i" /> 
+      </script>
+      <script name="oculusANE/HmdInfo" mod="1409492845580" signatureChecksum="3934030751" >
+        <def id="oculusANE:HmdInfo" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="Object" type="i" /> 
+      </script>
+      <script name="_7d697a7cee9450149938291c23e884984ac2bce9a41b22bfc749e643d5d07341_flash_display_Sprite" mod="1409691328107" signatureChecksum="2779871559" >
+        <def id="_7d697a7cee9450149938291c23e884984ac2bce9a41b22bfc749e643d5d07341_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="3037c977133684f7fddb4314b30ab7615afd96ec47115e7850fe3a45d279c0ea"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>
