@@ -1,17 +1,17 @@
-﻿Build started 02/09/2014 22:42:16.
+﻿Build started 05/09/2014 22:29:27.
      1>Project "C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\OculusANE.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\Tom\AppData\Local\FlashDevelop\Apps\ascsdk\14.0.0\include /IC:\OculusSDK\LibOVR\Include /IC:\OculusSDK\LibOVR\Src /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D OCULUSANE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt OculusANE.cpp
          OculusANE.cpp
-     1>OculusANE.cpp(235): warning C4800: 'ovrBool' : forcing value to bool 'true' or 'false' (performance warning)
+     1>OculusANE.cpp(236): warning C4800: 'ovrBool' : forcing value to bool 'true' or 'false' (performance warning)
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\OculusSDK\LibOVR\Src /LIBPATH:C:\OculusSDK\LibOVR\Lib\Win32\VS2013 /LIBPATH:"C:\Program Files\FlashDevelop\Tools\flexsdk\lib\win" FlashRuntimeExtensions.lib ws2_32.lib Dbghelp.lib libovr.lib dxguid.lib dxgi.lib d3d10.lib d3d11.lib d3dcompiler.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.lib" /MACHINE:X86 /SAFESEH /DLL Release\OculusANE.obj
             Creating library C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.lib and object C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.exp
          Generating code
          Finished generating code
-         OculusANE.vcxproj -> C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.dll
-     1>Done Building Project "C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\OculusANE.vcxproj" (Build target(s)).
+     1>LINK : fatal error LNK1201: error writing to program database 'C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\Release\OculusANE.pdb'; check for insufficient disk space, invalid path, or insufficient privilege
+     1>Done Building Project "C:\git\oculus-ane\ane\win-visualstudio\OculusANE_041\OculusANE.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.66
+Time Elapsed 00:00:01.76

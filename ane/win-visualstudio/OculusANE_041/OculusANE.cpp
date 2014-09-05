@@ -217,6 +217,7 @@ extern "C" {
 		if (!HMD)
 		{
 			cout << "Oculus Rift not detected.\n";
+			return;
 		}
 		else{
 			if (HMD->ProductName[0] == '\0'){
