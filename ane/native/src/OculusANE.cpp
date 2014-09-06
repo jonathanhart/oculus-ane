@@ -21,6 +21,12 @@ using namespace std;
 extern "C" {
 
 	ovrHmd HMD = NULL;
+	ovrEyeRenderDesc	EyeRenderDesc[2];
+	ovrRecti			EyeRenderViewport[2];
+	ovrVector2f			UVScaleOffset[2][2];
+	Sizei				RenderTargetSize;
+	ovrDistortionMesh	meshData[2];
+	ovrFovPort			eyeFov[2];
 	
 	FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
 		FREObject result;
@@ -224,11 +230,51 @@ extern "C" {
 				cout << "Rift detected, display not enabled.\n";
 			}
 			else{
-				cout << HMD->Handle;
+				//cout << HMD->Handle;
 			}
 		}
 
-		ovrHmd_SetEnabledCaps(HMD, ovrHmdCap_LowPersistence | ovrHmdCap_DynamicPrediction);
+
+
+
+		#ifndef max
+		#define max(a,b)            (((a) > (b)) ? (a) : (b))
+		#endif
+
+		//Configure Stereo settings.
+		Sizei recommenedTex0Size = ovrHmd_GetFovTextureSize(HMD, ovrEye_Left, HMD->DefaultEyeFov[0], 1.0f);
+		Sizei recommenedTex1Size = ovrHmd_GetFovTextureSize(HMD, ovrEye_Right, HMD->DefaultEyeFov[1], 1.0f);
+		
+		RenderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
+		RenderTargetSize.h = max(recommenedTex0Size.h, recommenedTex1Size.h);
+
+		// The viewport sizes are re-computed in case RenderTargetSize changed due to HW limitations.
+		eyeFov[0] = HMD->DefaultEyeFov[0];
+		eyeFov[1] = HMD->DefaultEyeFov[1];
+
+		for (int eyeNum = 0; eyeNum < 2; eyeNum++)
+		{
+			// Allocate mesh vertices, registering with renderer using the OVR vertex format.
+			
+			ovrHmd_CreateDistortionMesh(HMD, (ovrEyeType)eyeNum, eyeFov[eyeNum],
+				ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData[eyeNum]);
+
+			cout << "\n" + meshData[eyeNum].VertexCount;
+			
+			//ovrHmd_DestroyDistortionMesh(&meshData);
+
+			//Create eye render description for use later
+			EyeRenderDesc[eyeNum] = ovrHmd_GetRenderDesc(HMD, (ovrEyeType)eyeNum, eyeFov[eyeNum]);
+
+			//Do scale and offset
+			ovrHmd_GetRenderScaleAndOffset(eyeFov[eyeNum], RenderTargetSize, EyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
+		}
+
+
+
+
+
+		ovrHmd_SetEnabledCaps(HMD, ovrHmdCap_DynamicPrediction);
 
 		// Start the sensor which informs of the Rift's pose and motion
 		bool result = ovrHmd_ConfigureTracking(HMD, ovrTrackingCap_Orientation |
@@ -252,7 +298,10 @@ extern "C" {
 	}
 
 	void OculusANEFinalizer(FREContext ctx) {
-		ovrHmd_Destroy(HMD);
+		if (HMD){
+			ovrHmd_Destroy(HMD);
+		}
+
 		ovr_Shutdown();
 		HMD = NULL;
 	}
