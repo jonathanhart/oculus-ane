@@ -1,10 +1,11 @@
-oculus-ane
+﻿oculus-ane
 ==========
 
 * RECENT CHANGES:
 
 The ANE is now DK2 ready (I haven't tested with DK1 anymore)
 Both Mac and Windows, positional and rotational tracking.
+Windows was rebuilt using SDK 0.4.2 - make sure you have the correct config utility installed.
 
 Your engine needs to handle the barrel distortion in order for things to line up correctly in the rift.
 The distortion shaders need updating to be compatible with the DK2. It's next on the list.
