@@ -13,3 +13,11 @@ Debug
 /ane/win-visualstudio/OculusANE.opensdf
 /ane/win-visualstudio/OculusANE.sdf
 /ane/win-visualstudio/Release/OculusANE.pdb
+/ane/native/win-visualstudio/OculusANE/Release
+/ane/native/win-visualstudio/*.sdf
+/ane/native/bin/OculusANE.lib
+/ane/native/bin/OculusANE.pdb
+/ane/native/bin/OculusANE.exp
+/ane/native/win-visualstudio/OculusANE.v12.suo
+/ane/native/win-visualstudio/OculusANE.sdf
+/ane/native/win-visualstudio/*.opensdf

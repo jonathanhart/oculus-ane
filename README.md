@@ -3,7 +3,12 @@ oculus-ane
 
 * RECENT CHANGES:
 
-We now are upgraded to 0.4.1 on the Mac side, meaning DK2 support. Yay! PC support is on the way, if anyone wants to contribute please get in touch!
+The ANE is now DK2 ready (I haven't tested with DK1 anymore)
+Both Mac and Windows, positional and rotational tracking.
+
+Your engine needs to handle the barrel distortion in order for things to line up correctly in the rift.
+The distortion shaders need updating to be compatible with the DK2. It's next on the list.
+
 
 Issues related to the ANE compiling incorrectly have been addressed for Mac.
 
@@ -29,6 +34,11 @@ For every frame of your render loop, have this code:
 		var quatVec:Vector.<Number> = _oculus.getCameraQuaternion();
 		var quat:Quaternion = new Quaternion(-quatVec[0], -quatVec[1], quatVec[2], quatVec[3]); 
 		_camera.transform = quat.toMatrix3D(_core.transform);
+		
+		var position:Vector.<Vector3D> = _oculus.getOculusPosition();
+		// add position to the camera somehow.
+		trace( "position : " + position );
+		
 		_view.render();
 	}
 
