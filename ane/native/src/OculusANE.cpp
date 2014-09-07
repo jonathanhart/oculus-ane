@@ -21,11 +21,10 @@ using namespace std;
 extern "C" {
 
 	ovrHmd HMD = NULL;
-	ovrEyeRenderDesc	EyeRenderDesc[2];
-	ovrRecti			EyeRenderViewport[2];
+	ovrEyeRenderDesc	eyeRenderDesc[2];
+	ovrRecti			eyeRenderViewport[2];
 	ovrVector2f			UVScaleOffset[2][2];
-	Sizei				RenderTargetSize;
-	ovrDistortionMesh	meshData[2];
+	Sizei				renderTargetSize;
 	ovrFovPort			eyeFov[2];
 	
 	FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
@@ -237,6 +236,11 @@ extern "C" {
 
 
 
+
+
+		// the below is setup code for getting the correct distorton mesh
+		// it still needs to move to its correct function for the ANE to have access to it.
+
 		#ifndef max
 		#define max(a,b)            (((a) > (b)) ? (a) : (b))
 		#endif
@@ -245,30 +249,57 @@ extern "C" {
 		Sizei recommenedTex0Size = ovrHmd_GetFovTextureSize(HMD, ovrEye_Left, HMD->DefaultEyeFov[0], 1.0f);
 		Sizei recommenedTex1Size = ovrHmd_GetFovTextureSize(HMD, ovrEye_Right, HMD->DefaultEyeFov[1], 1.0f);
 		
-		RenderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
-		RenderTargetSize.h = max(recommenedTex0Size.h, recommenedTex1Size.h);
+		renderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
+		renderTargetSize.h = max(recommenedTex0Size.h, recommenedTex1Size.h);
 
 		// The viewport sizes are re-computed in case RenderTargetSize changed due to HW limitations.
 		eyeFov[0] = HMD->DefaultEyeFov[0];
 		eyeFov[1] = HMD->DefaultEyeFov[1];
 
+		eyeRenderDesc[0] = ovrHmd_GetRenderDesc(HMD, ovrEye_Left, eyeFov[0]);
+		eyeRenderDesc[1] = ovrHmd_GetRenderDesc(HMD, ovrEye_Right, eyeFov[1]);
+
+		//Generate distortion mesh for each eye
 		for (int eyeNum = 0; eyeNum < 2; eyeNum++)
 		{
-			// Allocate mesh vertices, registering with renderer using the OVR vertex format.
+			ovrDistortionMesh meshData;
+
+			// Allocate  &  generate  distortion  mesh  vertices. ovrDistortionMesh meshData; 
+			ovrHmd_CreateDistortionMesh(HMD, eyeRenderDesc[eyeNum].Eye, eyeRenderDesc[eyeNum].Fov, ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData);
+
+			ovrHmd_GetRenderScaleAndOffset(eyeRenderDesc[eyeNum].Fov, renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
+
 			
-			ovrHmd_CreateDistortionMesh(HMD, (ovrEyeType)eyeNum, eyeFov[eyeNum],
-				ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData[eyeNum]);
 
-			cout << "\n" + meshData[eyeNum].VertexCount;
-			
-			//ovrHmd_DestroyDistortionMesh(&meshData);
+			// Now parse the vertex data and create a render ready vertex buffer from it
+			//DistortionVertex * pVBVerts = (DistortionVertex*)OVR_ALLOC(sizeof(DistortionVertex) * meshData.VertexCount);
+			//DistortionVertex * v = pVBVerts;
+			ovrDistortionVertex * ov = meshData.pVertexData;
+			for (unsigned vertNum = 0; vertNum < meshData.VertexCount; vertNum++)
+			{
+				cout << "\n";
+				//v->Pos.x = ov->ScreenPosNDC.x;
+				//cout << ov->ScreenPosNDC.x;
+				//v->Pos.y = ov->ScreenPosNDC.y;
+				//v->TexR = (*(Vector2f*)&ov->TanEyeAnglesR); 
+				//v->TexG = (*(Vector2f*)&ov->TanEyeAnglesG); 
+				//v->TexB = (*(Vector2f*)&ov->TanEyeAnglesB);
+				//v->Col.R = v->Col.G = v->Col.B = (OVR::UByte)(ov->VignetteFactor * 255.99f);
+				//v->Col.A = (OVR::UByte)(ov->TimeWarpFactor * 255.99f);
+				//v++; 
+				ov++;
+			}
 
-			//Create eye render description for use later
-			EyeRenderDesc[eyeNum] = ovrHmd_GetRenderDesc(HMD, (ovrEyeType)eyeNum, eyeFov[eyeNum]);
+			//Register this mesh with the renderer DistortionData.MeshVBs[eyeNum]  =  *pRender->CreateBuffer(); 
+			//DistortionData.MeshVBs[eyeNum]->Data(Buffer_Vertex, pVBVerts, sizeof(DistortionVertex) * meshData.VertexCount);
 
-			//Do scale and offset
-			ovrHmd_GetRenderScaleAndOffset(eyeFov[eyeNum], RenderTargetSize, EyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
+			//DistortionData.MeshIBs[eyeNum] = *pRender->CreateBuffer();
+			//DistortionData.MeshIBs[eyeNum]->Data(Buffer_Index, meshData.pIndexData, sizeof(unsigned short) * meshData.IndexCount);
+
+			//OVR_FREE(pVBVerts);
+			ovrHmd_DestroyDistortionMesh(&meshData);
 		}
+
 
 
 
