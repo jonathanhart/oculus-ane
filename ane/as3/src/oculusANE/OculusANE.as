@@ -36,7 +36,6 @@ package oculusANE
 			return new Point(resolution[0], resolution[1]);
 		}
 		
-		
 		public function getOculusPosition() : Vector.<Vector3D>
 		{
 			_eyePositions = _extContext.call("getCameraPosition") as Vector.<Number>;
@@ -48,6 +47,13 @@ package oculusANE
 			_eyes[1].z = _eyePositions[5];
 			return _eyes;
 		}
+		
+		
+		public function getHMDInfo () : Object
+		{
+			return _extContext.call("getHMDInfo") as Object;
+		}
+		
 		
 		public function isSupported() : Boolean
 		{
