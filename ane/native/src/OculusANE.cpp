@@ -72,6 +72,9 @@ extern "C" {
 		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &positionResult, NULL);
 		FRESetArrayLength(&positionResult, 6);
 
+		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
+		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
+
 		static ovrPosef eyeRenderPose[2];
 		for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
 		{
@@ -84,7 +87,7 @@ extern "C" {
 			FRESetArrayElementAt(positionResult, (eyeIndex * 3) + 0, xVal);
 
 			FREObject yVal;
-			double y = static_cast<double>(eyeRenderPose[eye].Position.y);
+			double y = HeadPos.y + static_cast<double>(eyeRenderPose[eye].Position.y);
 			FRENewObjectFromDouble(y, &yVal);
 			FRESetArrayElementAt(positionResult, (eyeIndex * 3) + 1, yVal);
 
@@ -138,6 +141,55 @@ extern "C" {
 
 		//     }
 
+		/*
+		ovrHmd_BeginFrameTiming(HMD, 0);
+
+		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
+		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
+
+		ovrPosef headPose[2];
+
+
+		for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
+		{
+			ovrEyeType eye = HMD->EyeRenderOrder[eyeIndex];
+			headPose[eye] = ovrHmd_GetEyePose(HMD, eye);
+
+			// Setup shader constants
+			cout << "EyeToSourceUVScale: ";
+			cout << UVScaleOffset[eyeIndex][0].x;
+			cout << ",";
+			cout << UVScaleOffset[eyeIndex][0].y;
+			cout << "\n";
+
+			cout << "EyeToSourceUVOffset: ";
+			cout << UVScaleOffset[eyeIndex][1].x;
+			cout << ",";
+			cout << UVScaleOffset[eyeIndex][1].y;
+			cout << "\n";
+			
+			ovrMatrix4f timeWarpMatrices[2];
+			ovrHmd_GetEyeTimewarpMatrices(HMD, (ovrEyeType)eyeIndex, headPose[eyeIndex], timeWarpMatrices);
+			
+
+			//cout << "EyeRotationStart: ";
+			//Matrix4f(timeWarpMatrices[0]);
+			
+			//cout << "EyeRotationEnd: ";
+			//cout << Matrix4f(timeWarpMatrices[1]);
+		}
+
+	
+		unsigned char latencyColor[3];
+		ovrHmd_GetLatencyTest2DrawColor(HMD, latencyColor);
+		cout << "latencyColor: ";
+		cout << latencyColor[0];
+		cout << latencyColor[1];
+		cout << latencyColor[2];
+		cout << "\n";
+		
+		ovrHmd_EndFrameTiming(HMD);
+		*/
 
 		return cameraQuaternionResult;
 	}
@@ -207,11 +259,10 @@ extern "C" {
 
 
 			ovrDistortionMesh meshData;
-
+			
 			// Allocate  &  generate  distortion  mesh  vertices. ovrDistortionMesh meshData; 
 			ovrHmd_CreateDistortionMesh(HMD, eyeRenderDesc.Eye, eyeRenderDesc.Fov, ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData);
 			ovrHmd_GetRenderScaleAndOffset(eyeRenderDesc.Fov, renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
-
 
 			FREObject freEyeInfo;
 			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
@@ -316,13 +367,23 @@ extern "C" {
 			FRESetArrayElementAt(freEyeInfos, eyeNum, freEyeInfo);
 
 
-			//Register this mesh with the renderer DistortionData.MeshVBs[eyeNum]  =  *pRender->CreateBuffer(); 
-			//DistortionData.MeshVBs[eyeNum]->Data(Buffer_Vertex, pVBVerts, sizeof(DistortionVertex) * meshData.VertexCount);
+			FREObject freIndexData;
+			FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freIndexData, NULL);
+			FRESetArrayLength(freIndexData, meshData.IndexCount);
 
-			//DistortionData.MeshIBs[eyeNum] = *pRender->CreateBuffer();
-			//DistortionData.MeshIBs[eyeNum]->Data(Buffer_Index, meshData.pIndexData, sizeof(unsigned short) * meshData.IndexCount);
+			
+			int i;
+			for (unsigned int indexNum = 0; indexNum < meshData.IndexCount; indexNum++)
+			{
+				i = meshData.pIndexData[indexNum];
 
-			//OVR_FREE(pVBVerts);
+				FREObject freIndex;
+				FRENewObjectFromUint32(i, &freIndex);
+				FRESetArrayElementAt(freIndexData, indexNum, freIndex);
+			}
+
+			FRESetObjectProperty(freEyeInfo, (const uint8_t*)"indexData", freIndexData, NULL);
+
 			ovrHmd_DestroyDistortionMesh(&meshData);
 		}
 
