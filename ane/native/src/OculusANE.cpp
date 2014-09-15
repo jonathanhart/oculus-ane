@@ -72,9 +72,6 @@ extern "C" {
 		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &positionResult, NULL);
 		FRESetArrayLength(&positionResult, 6);
 
-		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
-		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
-
 		static ovrPosef eyeRenderPose[2];
 		for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
 		{
@@ -87,7 +84,7 @@ extern "C" {
 			FRESetArrayElementAt(positionResult, (eyeIndex * 3) + 0, xVal);
 
 			FREObject yVal;
-			double y = HeadPos.y + static_cast<double>(eyeRenderPose[eye].Position.y);
+			double y = static_cast<double>(eyeRenderPose[eye].Position.y);
 			FRENewObjectFromDouble(y, &yVal);
 			FRESetArrayElementAt(positionResult, (eyeIndex * 3) + 1, yVal);
 
@@ -233,6 +230,28 @@ extern "C" {
 		FRESetObjectProperty(result, (const uint8_t*)"renderTargetSize", freRenderTargetSize, NULL);
 
 
+		float eyeHeight = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, OVR_DEFAULT_EYE_HEIGHT);
+		FREObject freEyeHeight;
+		FRENewObjectFromDouble(static_cast<double>(eyeHeight), &freEyeHeight);
+		FRESetObjectProperty(result, (const uint8_t*)"eyeHeight", freEyeHeight, NULL);
+		
+		float playerHeight = ovrHmd_GetFloat(HMD, OVR_KEY_PLAYER_HEIGHT, OVR_DEFAULT_PLAYER_HEIGHT);
+		FREObject frePlayerHeight;
+		FRENewObjectFromDouble(static_cast<double>(playerHeight), &frePlayerHeight);
+		FRESetObjectProperty(result, (const uint8_t*)"playerHeight", frePlayerHeight, NULL);
+
+		float IPD = ovrHmd_GetFloat(HMD, OVR_KEY_IPD, OVR_DEFAULT_IPD);
+		FREObject freIPD;
+		FRENewObjectFromDouble(static_cast<double>(IPD), &freIPD);
+		FRESetObjectProperty(result, (const uint8_t*)"IPD", freIPD, NULL);
+
+		float neckToEyeDistance = ovrHmd_GetFloat(HMD, OVR_KEY_NECK_TO_EYE_DISTANCE, OVR_DEFAULT_NECK_TO_EYE_VERTICAL);
+		FREObject freNeckToEyeDistance;
+		FRENewObjectFromDouble(static_cast<double>(neckToEyeDistance), &freNeckToEyeDistance);
+		FRESetObjectProperty(result, (const uint8_t*)"neckToEyeDistance", freNeckToEyeDistance, NULL);
+
+
+
 
 		// The viewport sizes are re-computed in case RenderTargetSize changed due to HW limitations.
 		eyeFov[0] = HMD->DefaultEyeFov[0];
@@ -254,15 +273,14 @@ extern "C" {
 				eyeRenderDesc = ovrHmd_GetRenderDesc(HMD, ovrEye_Right, eyeFov[eyeNum]);
 			}
 			
-			
-
-
 
 			ovrDistortionMesh meshData;
 			
 			// Allocate  &  generate  distortion  mesh  vertices. ovrDistortionMesh meshData; 
 			ovrHmd_CreateDistortionMesh(HMD, eyeRenderDesc.Eye, eyeRenderDesc.Fov, ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData);
-			ovrHmd_GetRenderScaleAndOffset(eyeRenderDesc.Fov, renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
+
+			//Do scale and offset
+			ovrHmd_GetRenderScaleAndOffset(eyeFov[eyeNum], renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
 
 			FREObject freEyeInfo;
 			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
@@ -465,26 +483,24 @@ extern "C" {
 		if (!HMD)
 		{
 			cout << "Oculus Rift not detected.\n";
-			return;
+			//return;
 		}
 		else{
 			if (HMD->ProductName[0] == '\0'){
 				cout << "Rift detected, display not enabled.\n";
 			}
 			else{
-				//cout << HMD->Handle;
+				cout << "Rift detected.";
+				cout << HMD->Handle;
+				ovrHmd_SetEnabledCaps(HMD, ovrHmdCap_DynamicPrediction);
+
+				// Start the sensor which informs of the Rift's pose and motion
+				bool result = ovrHmd_ConfigureTracking(HMD, ovrTrackingCap_Orientation |
+					ovrTrackingCap_MagYawCorrection |
+					ovrTrackingCap_Position, 0);
+
 			}
 		}
-
-
-		ovrHmd_SetEnabledCaps(HMD, ovrHmdCap_DynamicPrediction);
-
-		// Start the sensor which informs of the Rift's pose and motion
-		bool result = ovrHmd_ConfigureTracking(HMD, ovrTrackingCap_Orientation |
-			ovrTrackingCap_MagYawCorrection |
-			ovrTrackingCap_Position, 0);
-
-		//NSLog(@"Tracking passed ? %d", result);
 	}
 
 	void OculusANE_ContextFinalizer(FREContext ctx)
