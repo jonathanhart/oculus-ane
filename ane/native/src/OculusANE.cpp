@@ -21,11 +21,12 @@ using namespace std;
 extern "C" {
 
 	ovrHmd HMD = NULL;
-	//ovrEyeRenderDesc	eyeRenderDesc[2];
+	ovrEyeRenderDesc	eyeRenderDesc[2];
 	ovrRecti			eyeRenderViewport[2];
 	ovrVector2f			UVScaleOffset[2][2];
 	Sizei				renderTargetSize;
 	ovrFovPort			eyeFov[2];
+	static ovrPosef eyeRenderPose[2];
 	
 	FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
 		FREObject result;
@@ -72,7 +73,6 @@ extern "C" {
 		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &positionResult, NULL);
 		FRESetArrayLength(&positionResult, 6);
 
-		static ovrPosef eyeRenderPose[2];
 		for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
 		{
 			ovrEyeType eye = HMD->EyeRenderOrder[eyeIndex];
@@ -134,63 +134,132 @@ extern "C" {
 		FRENewObjectFromDouble(w, &wVal);
 		FRESetArrayElementAt(cameraQuaternionResult, 3, wVal);
 
-		// NSLog(@"Quat Vals: %f,%f,%f,%f", quaternion.x, quaternion.y, quaternion.z, quaternion.w);
-
-		//     }
-
-		/*
-		ovrHmd_BeginFrameTiming(HMD, 0);
-
-		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
-		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
-
-		ovrPosef headPose[2];
-
-
-		for (int eyeIndex = 0; eyeIndex < ovrEye_Count; eyeIndex++)
-		{
-			ovrEyeType eye = HMD->EyeRenderOrder[eyeIndex];
-			headPose[eye] = ovrHmd_GetEyePose(HMD, eye);
-
-			// Setup shader constants
-			cout << "EyeToSourceUVScale: ";
-			cout << UVScaleOffset[eyeIndex][0].x;
-			cout << ",";
-			cout << UVScaleOffset[eyeIndex][0].y;
-			cout << "\n";
-
-			cout << "EyeToSourceUVOffset: ";
-			cout << UVScaleOffset[eyeIndex][1].x;
-			cout << ",";
-			cout << UVScaleOffset[eyeIndex][1].y;
-			cout << "\n";
-			
-			ovrMatrix4f timeWarpMatrices[2];
-			ovrHmd_GetEyeTimewarpMatrices(HMD, (ovrEyeType)eyeIndex, headPose[eyeIndex], timeWarpMatrices);
-			
-
-			//cout << "EyeRotationStart: ";
-			//Matrix4f(timeWarpMatrices[0]);
-			
-			//cout << "EyeRotationEnd: ";
-			//cout << Matrix4f(timeWarpMatrices[1]);
-		}
-
-	
-		unsigned char latencyColor[3];
-		ovrHmd_GetLatencyTest2DrawColor(HMD, latencyColor);
-		cout << "latencyColor: ";
-		cout << latencyColor[0];
-		cout << latencyColor[1];
-		cout << latencyColor[2];
-		cout << "\n";
-		
-		ovrHmd_EndFrameTiming(HMD);
-		*/
-
 		return cameraQuaternionResult;
 	}
 
+
+	FREObject getRenderInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
+	{
+		FREObject result;
+		FRENewObject((const uint8_t*)"Object", 0, NULL, &result, NULL);
+
+
+		FREObject freEyeInfos;
+		FRENewObject((const uint8_t*)"Vector.<Object>", 0, NULL, &freEyeInfos, NULL);
+		FRESetArrayLength(freEyeInfos, 2);
+
+
+		ovrHmd_BeginFrameTiming(HMD, 0);
+		// Retrieve data useful for handling the Health and Safety Warning - unused, but here for reference
+		ovrHSWDisplayState hswDisplayState;
+		ovrHmd_GetHSWDisplayState(HMD, &hswDisplayState);
+
+		// Adjust eye position and rotation from controls, maintaining y position from HMD.
+		static float    BodyYaw(3.141592f);
+		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
+		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
+		
+		for (int eyeNum = 0; eyeNum < ovrEye_Count; eyeNum++)
+		{
+			ovrEyeType eye = HMD->EyeRenderOrder[eyeNum];
+			eyeRenderPose[eye] = ovrHmd_GetEyePose(HMD, eye);
+
+			// Get view and projection matrices
+			Matrix4f rollPitchYaw = Matrix4f::RotationY(BodyYaw);
+			Matrix4f finalRollPitchYaw = rollPitchYaw * Matrix4f(eyeRenderPose[eye].Orientation);
+			Vector3f finalUp = finalRollPitchYaw.Transform(Vector3f(0, 1, 0));
+			Vector3f finalForward = finalRollPitchYaw.Transform(Vector3f(0, 0, -1));
+			Vector3f shiftedEyePos = HeadPos + rollPitchYaw.Transform(eyeRenderPose[eye].Position);
+			Matrix4f view = Matrix4f::LookAtRH(shiftedEyePos, shiftedEyePos + finalForward, finalUp);
+			Matrix4f proj = ovrMatrix4f_Projection(eyeRenderDesc[eye].Fov, 0.01f, 10000.0f, true);
+
+			//pRender->SetViewport(Recti(EyeRenderViewport[eye]));
+			//pRender->SetProjection(proj);
+			//pRender->SetDepthMode(true, true);
+			//pRoomScene->Render(pRender, Matrix4f::Translation(eyeRenderDesc[eye].ViewAdjust) * view);
+
+			FREObject freEyeInfo;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
+
+
+			FREObject freProjection;
+			FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freProjection, NULL);
+			FRESetArrayLength(freProjection, 16);
+			for (int i = 0; i<4; i++) {
+				for (int j = 0; j<4; j++) {
+					FREObject raw;
+					FRENewObjectFromDouble(static_cast<double>(proj.M[i][j]), &raw);
+					FRESetArrayElementAt(freProjection, (4 * i) + j, raw);
+				}
+			}
+
+			FRESetObjectProperty(freEyeInfo, (const uint8_t*)"projection", freProjection, NULL);
+			
+
+
+			// Get and set shader constants
+			//Shaders->SetUniform2f("EyeToSourceUVScale", UVScaleOffset[eyeNum][0].x, UVScaleOffset[eyeNum][0].y);
+			//Shaders->SetUniform2f("EyeToSourceUVOffset", UVScaleOffset[eyeNum][1].x, UVScaleOffset[eyeNum][1].y);
+
+			/*
+			ovrHmd_GetRenderScaleAndOffset(eyeFov[eyeNum], renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
+
+			// PUSHING UVScaleOffset SIZE INFO
+			FREObject freUVScaleOffset;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freUVScaleOffset, NULL);
+
+			FREObject freEyeToSourceUVScale;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeToSourceUVScale, NULL);
+
+			FREObject freEyeToSourceUVScaleX;
+			FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][0].x), &freEyeToSourceUVScaleX);
+			FRESetObjectProperty(freEyeToSourceUVScale, (const uint8_t*)"x", freEyeToSourceUVScaleX, NULL);
+
+			FREObject freEyeToSourceUVScaleY;
+			FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][0].y), &freEyeToSourceUVScaleY);
+			FRESetObjectProperty(freEyeToSourceUVScale, (const uint8_t*)"y", freEyeToSourceUVScaleY, NULL);
+
+			FRESetObjectProperty(freUVScaleOffset, (const uint8_t*)"eyeToSourceUVScale", freEyeToSourceUVScale, NULL);
+
+
+			FREObject freEyeToSourceUVOffset;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeToSourceUVOffset, NULL);
+
+			FREObject freEyeToSourceUVOffsetX;
+			FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][1].x), &freEyeToSourceUVOffsetX);
+			FRESetObjectProperty(freEyeToSourceUVOffset, (const uint8_t*)"x", freEyeToSourceUVOffsetX, NULL);
+
+			FREObject freEyeToSourceUVOffsetY;
+			FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][1].y), &freEyeToSourceUVOffsetY);
+			FRESetObjectProperty(freEyeToSourceUVOffset, (const uint8_t*)"y", freEyeToSourceUVOffsetY, NULL);
+
+			FRESetObjectProperty(freUVScaleOffset, (const uint8_t*)"eyeToSourceUVOffset", freEyeToSourceUVOffset, NULL);
+
+			FRESetObjectProperty(freEyeInfo, (const uint8_t*)"UVScaleOffset", freUVScaleOffset, NULL);
+			*/
+
+
+
+			ovrMatrix4f timeWarpMatrices[2];
+			ovrHmd_GetEyeTimewarpMatrices(HMD, (ovrEyeType)eyeNum, eyeRenderPose[eyeNum], timeWarpMatrices);
+			//Shaders->SetUniform4x4f("EyeRotationStart", timeWarpMatrices[0]);  //Nb transposed when set
+			//Shaders->SetUniform4x4f("EyeRotationEnd", timeWarpMatrices[1]);  //Nb transposed when set
+			// Perform distortion
+			//pRender->Render(&distortionShaderFill, MeshVBs[eyeNum], MeshIBs[eyeNum], sizeof(ovrDistortionVertex));
+
+			FRESetArrayElementAt(freEyeInfos, eyeNum, freEyeInfo);
+			FRESetObjectProperty(result, (const uint8_t*)"eyeInfos", freEyeInfos, NULL);
+		}
+
+		
+
+
+		ovrHmd_EndFrameTiming(HMD);
+
+		return result;
+	}
+
+	
 
 
 	FREObject getHMDInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
@@ -198,9 +267,7 @@ extern "C" {
 		FREObject result;
 		FRENewObject((const uint8_t*)"Object", 0, NULL, &result, NULL);
 
-		// the below is setup code for getting the correct distorton mesh
-		// it still needs to move to its correct function for the ANE to have access to it.
-
+		
 		#ifndef max
 		#define max(a,b)            (((a) > (b)) ? (a) : (b))
 		#endif
@@ -212,7 +279,14 @@ extern "C" {
 		renderTargetSize.w = recommenedTex0Size.w + recommenedTex1Size.w;
 		renderTargetSize.h = max(recommenedTex0Size.h, recommenedTex1Size.h);
 
+		// Initialize eye rendering information.
+		// The viewport sizes are re-computed in case RenderTargetSize changed due to HW limitations.
+		ovrFovPort eyeFov[2] = { HMD->DefaultEyeFov[0], HMD->DefaultEyeFov[1] };
 
+		eyeRenderViewport[0].Pos = Vector2i(0, 0);
+		eyeRenderViewport[0].Size = Sizei(renderTargetSize.w / 2, renderTargetSize.h);
+		eyeRenderViewport[1].Pos = Vector2i((renderTargetSize.w + 1) / 2, 0);
+		eyeRenderViewport[1].Size = eyeRenderViewport[0].Size;
 
 		// PUSHING RENDERTARGET SIZE INFO
 		FREObject freRenderTargetSize;
@@ -252,12 +326,6 @@ extern "C" {
 
 
 
-
-		// The viewport sizes are re-computed in case RenderTargetSize changed due to HW limitations.
-		eyeFov[0] = HMD->DefaultEyeFov[0];
-		eyeFov[1] = HMD->DefaultEyeFov[1];
-
-
 		FREObject freEyeInfos;
 		FRENewObject((const uint8_t*)"Vector.<Object>", 0, NULL, &freEyeInfos, NULL);
 		FRESetArrayLength(freEyeInfos, 2);
@@ -265,25 +333,80 @@ extern "C" {
 		//Generate distortion mesh for each eye
 		for (int eyeNum = 0; eyeNum < 2; eyeNum++)
 		{
-			ovrEyeRenderDesc eyeRenderDesc;
 			if (eyeNum == 0){
-				eyeRenderDesc = ovrHmd_GetRenderDesc(HMD, ovrEye_Left, eyeFov[eyeNum]);
+				eyeRenderDesc[eyeNum] = ovrHmd_GetRenderDesc(HMD, ovrEye_Left, eyeFov[eyeNum]);
 			}
 			else{
-				eyeRenderDesc = ovrHmd_GetRenderDesc(HMD, ovrEye_Right, eyeFov[eyeNum]);
+				eyeRenderDesc[eyeNum] = ovrHmd_GetRenderDesc(HMD, ovrEye_Right, eyeFov[eyeNum]);
 			}
 			
+
 
 			ovrDistortionMesh meshData;
 			
 			// Allocate  &  generate  distortion  mesh  vertices. ovrDistortionMesh meshData; 
-			ovrHmd_CreateDistortionMesh(HMD, eyeRenderDesc.Eye, eyeRenderDesc.Fov, ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData);
+			ovrHmd_CreateDistortionMesh(HMD, eyeRenderDesc[eyeNum].Eye, eyeRenderDesc[eyeNum].Fov, ovrDistortionCap_Chromatic | ovrDistortionCap_TimeWarp, &meshData);
+
+
+			FREObject freEyeInfo;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
+
+
+			ovrMatrix4f proj = ovrMatrix4f_Projection(eyeRenderDesc[eyeNum].Fov, 0.01f, 10000.0f, true);
+
+			FREObject freProjection;
+			FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freProjection, NULL);
+			FRESetArrayLength(freProjection, 16);
+			for (int i = 0; i<4; i++) {
+				for (int j = 0; j<4; j++) {
+					FREObject kValue;
+					FRENewObjectFromDouble(static_cast<double>(proj.M[i][j]), &kValue);
+					FRESetArrayElementAt(freProjection, (4*i)+j, kValue);
+				}
+			}
+
+			FRESetObjectProperty(freEyeInfo, (const uint8_t*)"projection", freProjection, NULL);
+
 
 			//Do scale and offset
 			ovrHmd_GetRenderScaleAndOffset(eyeFov[eyeNum], renderTargetSize, eyeRenderViewport[eyeNum], UVScaleOffset[eyeNum]);
 
-			FREObject freEyeInfo;
-			FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
+
+			// PUSHING UVScaleOffset SIZE INFO
+			FREObject freUVScaleOffset;
+			FRENewObject((const uint8_t*)"Object", 0, NULL, &freUVScaleOffset, NULL);
+
+				FREObject freEyeToSourceUVScale;
+				FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeToSourceUVScale, NULL);
+
+					FREObject freEyeToSourceUVScaleX;
+					FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][0].x), &freEyeToSourceUVScaleX);
+					FRESetObjectProperty(freEyeToSourceUVScale, (const uint8_t*)"x", freEyeToSourceUVScaleX, NULL);
+
+					FREObject freEyeToSourceUVScaleY;
+					FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][0].y), &freEyeToSourceUVScaleY);
+					FRESetObjectProperty(freEyeToSourceUVScale, (const uint8_t*)"y", freEyeToSourceUVScaleY, NULL);
+
+				FRESetObjectProperty(freUVScaleOffset, (const uint8_t*)"eyeToSourceUVScale", freEyeToSourceUVScale, NULL);
+
+
+				FREObject freEyeToSourceUVOffset;
+				FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeToSourceUVOffset, NULL);
+
+					FREObject freEyeToSourceUVOffsetX;
+					FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][1].x), &freEyeToSourceUVOffsetX);
+					FRESetObjectProperty(freEyeToSourceUVOffset, (const uint8_t*)"x", freEyeToSourceUVOffsetX, NULL);
+
+					FREObject freEyeToSourceUVOffsetY;
+					FRENewObjectFromDouble(static_cast<double>(UVScaleOffset[eyeNum][1].y), &freEyeToSourceUVOffsetY);
+					FRESetObjectProperty(freEyeToSourceUVOffset, (const uint8_t*)"y", freEyeToSourceUVOffsetY, NULL);
+
+				FRESetObjectProperty(freUVScaleOffset, (const uint8_t*)"eyeToSourceUVOffset", freEyeToSourceUVOffset, NULL);
+
+			FRESetObjectProperty(freEyeInfo, (const uint8_t*)"UVScaleOffset", freUVScaleOffset, NULL);
+
+
+
 
 			FREObject freEyeInfoIndexCount;
 			FRENewObjectFromDouble(static_cast<double>(meshData.IndexCount), &freEyeInfoIndexCount);
@@ -408,48 +531,12 @@ extern "C" {
 
 		FRESetObjectProperty(result, (const uint8_t*)"eyeInfos", freEyeInfos, NULL);
 
-		/*
-		OLD SDK
-
-		FREObject wRenderTargetSize;
-		FRENewObjectFromDouble(static_cast<double>(size.w), &hScreenSize);
-		FRESetObjectProperty(result, (const uint8_t*)"HScreenSize", hScreenSize, NULL);
-
-		FREObject vRenderTargetSize;
-		FRENewObjectFromDouble(static_cast<double>(size.h), &vScreenSize);
-		FRESetObjectProperty(result, (const uint8_t*)"VScreenSize", vScreenSize, NULL);
-
-		FREObject eyeToScreenDistance;
-		FRENewObjectFromDouble(static_cast<double>(hmd->DefaultEyeFov->), &eyeToScreenDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"EyeToScreenDistance", eyeToScreenDistance, NULL);
-
-		FREObject lensSeparationDistance;
-		FRENewObjectFromDouble(static_cast<double>(info.LensSeparationDistance), &lensSeparationDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"LensSeparationDistance", lensSeparationDistance, NULL);
-
-		FREObject interPupillaryDistance;
-		FRENewObjectFromDouble(static_cast<double>(info.InterpupillaryDistance), &interPupillaryDistance);
-		FRESetObjectProperty(result, (const uint8_t*)"InterpupillaryDistance", interPupillaryDistance, NULL);
-
-		FREObject kDistortion;
-		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &kDistortion, nil);
-		FRESetArrayLength(kDistortion, 4);
-		for(int i=0; i<4; i++) {
-			FREObject kValue;
-			FRENewObjectFromDouble(static_cast<double>(info.DistortionK[i]), &kValue);
-			FRESetArrayElementAt(kDistortion, i, kValue);
-		}
-
-		FRESetObjectProperty(result, (const uint8_t*)"DistortionK", kDistortion, NULL);
-		*/
-
-
 		return result;
 	}
 
 	void OculusANE_ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet){
 
-		int functions = 5;
+		int functions = 6;
 
 		*numFunctionsToSet = functions;
 
@@ -467,13 +554,17 @@ extern "C" {
 		func[2].functionData = NULL;
 		func[2].function = &getHMDInfo;
 
-		func[3].name = (const uint8_t*)"getOculusResolution";
+		func[3].name = (const uint8_t*)"getRenderInfo";
 		func[3].functionData = NULL;
-		func[3].function = &getResolution;
+		func[3].function = &getRenderInfo;
 
-		func[4].name = (const uint8_t*)"getCameraPosition";
+		func[4].name = (const uint8_t*)"getOculusResolution";
 		func[4].functionData = NULL;
-		func[4].function = &getCameraPosition;
+		func[4].function = &getResolution;
+
+		func[5].name = (const uint8_t*)"getCameraPosition";
+		func[5].functionData = NULL;
+		func[5].function = &getCameraPosition;
 		*functionsToSet = func;
 
 		cout << "Initialized Native Extension\n";

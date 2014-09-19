@@ -54,6 +54,10 @@ package oculusANE
 			return _extContext.call("getHMDInfo") as Object;
 		}
 		
+		public function getRenderInfo () : Object
+		{
+			return _extContext.call("getRenderInfo") as Object;
+		}
 		
 		public function isSupported() : Boolean
 		{
