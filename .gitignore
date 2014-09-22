@@ -21,3 +21,5 @@ Debug
 /ane/native/win-visualstudio/OculusANE.v12.suo
 /ane/native/win-visualstudio/OculusANE.sdf
 /ane/native/win-visualstudio/*.opensdf
+/demos/flare3d_oculus/obj
+/demos/flare3d_oculus/dist

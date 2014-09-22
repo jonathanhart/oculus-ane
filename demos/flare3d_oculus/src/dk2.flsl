@@ -1,0 +1,53 @@
+use namespace flare;
+use namespace flare.transforms;
+use namespace flare.filters;
+
+#semantic POSITION float2;
+#semantic COLOR0 float2;
+
+technique main 
+{
+	sampler2D texture <mip = 0, wrap = 0>;
+	
+    param float2 EyeToSourceUVScale = float2( 0.25, 0.25 );
+	param float2 EyeToSourceUVOffset = float2( 0.25, 0.5 );
+	param float4x4 EyeRotationStart;
+	param float4x4 EyeRotationEnd;
+	
+	input POSITION Position;
+	input UV0 TexCoord0;
+	input UV1 TexCoord1;
+	input UV2 TexCoord2;
+	input COLOR0 timewarpLerpFactor_vignette;
+	
+    float2 TimewarpTexCoord(float2 TexCoord, float4x4 rotMat)
+    {
+		// Vertex inputs are in TanEyeAngle space for the R,G,B channels (i.e. after chromatic 
+		// aberration and distortion). These are now "real world" vectors in direction (x,y,1) 
+		// relative to the eye of the HMD.	Apply the 3x3 timewarp rotation to these vectors.
+        float3 transformed = float3(TexCoord.xy, 1) * rotMat.xyz;
+		// Project them back onto the Z=1 plane of the rendered images.
+        float2 flattened = transformed.xy / transformed.z;
+		// Scale them into ([0,0.5],[0,1]) or ([0.5,0],[0,1]) UV lookup space (depending on eye)
+        return( EyeToSourceUVScale * flattened + EyeToSourceUVOffset );
+    }                                                                                      
+
+	float4x4 lerpedEyeRot;
+	lerpedEyeRot[0] = lerp( EyeRotationStart[0], EyeRotationEnd[0], timewarpLerpFactor_vignette.x );
+	lerpedEyeRot[1] = lerp( EyeRotationStart[1], EyeRotationEnd[1], timewarpLerpFactor_vignette.x );
+	lerpedEyeRot[2] = lerp( EyeRotationStart[2], EyeRotationEnd[2], timewarpLerpFactor_vignette.x );
+	lerpedEyeRot[3] = lerp( EyeRotationStart[3], EyeRotationEnd[3], timewarpLerpFactor_vignette.x );
+	interpolated float2 oTexCoord0 = TimewarpTexCoord( TexCoord0, lerpedEyeRot );
+	interpolated float2 oTexCoord1 = TimewarpTexCoord( TexCoord1, lerpedEyeRot );
+	interpolated float2 oTexCoord2 = TimewarpTexCoord( TexCoord2, lerpedEyeRot );
+	interpolated float oVignette = timewarpLerpFactor_vignette.y;                
+	
+	output vertex = float4(Position.xy, 0.5, 1.0);
+	
+    //Distortion pixel shader
+    float R = sampler2D( texture, oTexCoord0.xy ).r;                                 
+    float G = sampler2D( texture, oTexCoord1.xy ).g;                                 
+    float B = sampler2D( texture, oTexCoord2.xy ).b;                                 
+    output fragment = oVignette * float4( R, G, B, 1 );
+	
+}

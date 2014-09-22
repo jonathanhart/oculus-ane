@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/13.0" minimumPatchLevel="0">
+  <id>Flare3DOculus</id>
+  <versionNumber>1.0.0</versionNumber>
+  <versionLabel>v1</versionLabel>
+  <filename>flare3d</filename>
+  <name>
+    <text xml:lang="en">Flare3DOculus</text>
+  </name>
+ 
+  <installFolder>Flare3D</installFolder>
+  <supportedProfiles>extendedDesktop</supportedProfiles>
+  
+  <initialWindow>
+    <title>Flare3DOculus</title>
+    <content>flare3d.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+    <renderMode>direct</renderMode>
+    <depthAndStencil>true</depthAndStencil>
+    <visible>true</visible>
+  </initialWindow>
+  <extensions>
+    <extensionID>oculusAne</extensionID>
+    <extensionID>com.alexomara.ane.AIRControl.AIRControl</extensionID>
+  </extensions>
+</application>
