@@ -12,6 +12,9 @@ package oculusANE
 		private var _eyePositions:Vector.<Number>;
 		private var _eyes:Vector.<Vector3D>;
 		
+		public static var ovrHmdCap_LowPersistence:uint = 128;
+		public static var ovrHmdCap_DynamicPrediction:uint = 512;
+	
 		public function OculusANE()
 		{
 			super(null);
@@ -53,6 +56,21 @@ package oculusANE
 		{
 			return _extContext.call("getHMDInfo") as Object;
 		}
+		
+		public function beginFrameTiming () : Object
+		{
+			return _extContext.call("beginFrameTiming") as Object;
+		}	
+		
+		public function endFrameTiming () : Object
+		{
+			return _extContext.call("endFrameTiming") as Object;
+		}			
+				
+		public function setEnabledCaps (hmdCaps:uint) : Object
+		{
+			return _extContext.call("setEnabledCaps", hmdCaps) as Object;
+		}	
 		
 		public function getRenderInfo () : Object
 		{

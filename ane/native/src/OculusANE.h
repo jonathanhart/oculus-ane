@@ -22,8 +22,11 @@ extern "C"
 	__declspec(dllexport) FREObject isSupported(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 	__declspec(dllexport) FREObject getCameraQuaternion(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 	__declspec(dllexport) FREObject getHMDInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
+	__declspec(dllexport) FREObject beginFrameTiming(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
+	__declspec(dllexport) FREObject endFrameTiming(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 	__declspec(dllexport) FREObject getRenderInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 	__declspec(dllexport) FREObject getCameraPosition(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 	__declspec(dllexport) FREObject getOculusResolution(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
+	__declspec(dllexport) FREObject setEnabledCaps(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]);
 }
 #endif /* OCULUSRIFTANEDLL_H_ */
