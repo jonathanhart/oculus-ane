@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/13.0" minimumPatchLevel="0">
+<application xmlns="http://ns.adobe.com/air/application/15.0" minimumPatchLevel="0">
   <id>Flare3DOculus</id>
   <versionNumber>1.0.0</versionNumber>
   <versionLabel>v1</versionLabel>
@@ -25,6 +25,5 @@
   </initialWindow>
   <extensions>
     <extensionID>oculusAne</extensionID>
-    <extensionID>com.alexomara.ane.AIRControl.AIRControl</extensionID>
   </extensions>
 </application>

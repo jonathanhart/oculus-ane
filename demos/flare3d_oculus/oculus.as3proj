@@ -8,11 +8,11 @@
     <movie fps="75" />
     <movie width="1280" />
     <movie height="800" />
-    <movie version="14" />
+    <movie version="15" />
     <movie minorVersion="0" />
     <movie platform="AIR" />
     <movie background="#000000" />
-    <movie preferredSDK="AIR 14.0.0;14.0.0;" />
+    <movie preferredSDK="AIR 15.0.0;15.0.0;" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -55,7 +55,6 @@
   <libraryPaths>
     <element path="ext\release\OculusANE.ane" />
     <element path="lib\MinimalComps_0_9_10.swc" />
-    <element path="ext\release\AIRControl.ane" />
     <element path="lib\Flare3D_Dev.swc" />
   </libraryPaths>
   <!-- External Libraries -->
@@ -349,7 +348,7 @@
   </options>
   <!-- Plugin storage -->
   <storage>
-    <entry key="at_enabled"><![CDATA[1]]></entry>
+    <entry key="at_enabled"><![CDATA[0]]></entry>
     <entry key="at_password"><![CDATA[]]></entry>
   </storage>
 </project>
