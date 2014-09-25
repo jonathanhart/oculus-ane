@@ -42,13 +42,14 @@ package
 		private var _scissorRectangles:Vector.<Rectangle> = new Vector.<Rectangle>();
 		private var _projections:Vector.<Matrix3D> = new Vector.<Matrix3D>();
 		
-		private var _halfIPD:Number;
+		private var _ipd:Number;
 		
 		private var _preferredTextureSize:Rectangle = new Rectangle();
 		
 		private var _vFov:Number;
 		private var _hmdInfo:Object;
 		private var _useTimewarp:Boolean = false;
+		private var _useFXAA:Boolean = true;
 		private var _lowPersistence:Boolean = false;
 		private var _isSupported:Boolean = false;
 		private var _bRender:Boolean = true;
@@ -92,9 +93,12 @@ package
 			//_isSupported = true,
 			
 			_vFov = _hmdInfo.eyeInfos[eyeNum].vFov;
+			trace( "vFov sdk : " + _vFov * (180 / Math.PI) );
+			trace( "hFov sdk : " + _hmdInfo.eyeInfos[eyeNum].hFov * (180 / Math.PI) );
+			
 			// this feels better
 			_vFov = 2.22;
-			_halfIPD = parseFloat(_hmdInfo.IPD) / 2;
+			IPD = parseFloat(_hmdInfo.IPD);
 			
 			_preferredTextureSize.width = _hmdInfo.renderTargetSize.w;
 			_preferredTextureSize.height = _hmdInfo.renderTargetSize.h;
@@ -202,19 +206,22 @@ package
 			
 			//projectionCenterOffset = 0;
 			//_vFov = _hmdInfo.eyeInfos[eyeNum].vFov;
-			trace( "_vFov : " + _vFov );
-			trace( "vFov : " + _vFov * (180 / Math.PI) );
+			//trace( "_vFov : " + _vFov );
+			//trace( "vFov : " + _vFov * (180 / Math.PI) );
 			
-			return ocProjection( scissorRect, 0.01, 10000, projectionCenterOffset, _vFov );	
+			return ocProjection( scissorRect, 0.01, 10000, projectionCenterOffset );	
 		}
 		
-		private function ocProjection( view:Rectangle, near:Number, far:Number, offset:Number, yFov:Number ):Matrix3D
+		private function ocProjection( view:Rectangle, near:Number, far:Number, offset:Number):Matrix3D
 		{  	
 			var w:Number = _textureSize.width;
 			var h:Number = _textureSize.height;
 			var aspect:Number = view.width / view.height;
-			var y:Number = 2 / yFov * aspect;
+			var y:Number = 2 / _vFov * aspect;
+			trace( "vFov : " + _vFov * (180 / Math.PI) );
+			trace( "y : " + y );
 			var x:Number = y / aspect;
+			trace( "x : " + x );
 			
 			var rawData:Vector.<Number> = new Vector.<Number>( 16, true );
 			rawData[10] = far / (near - far);
@@ -243,38 +250,41 @@ package
 					super.context.setRenderToTexture( _texture.texture, true, 0 );
 					super.context.clear();
 
-					_oculusANE.beginFrameTiming();
+					//_oculusANE.beginFrameTiming();
 					info = _oculusANE.getRenderInfo();
 					//trace( "info.eyeInfos[eyeNum].position : " + info.eyeInfos[eyeNum].position );
-					headPositionTarget.x = info.eyeInfos[0].position[0];
-					headPositionTarget.y = info.eyeInfos[0].position[1];
-					headPositionTarget.z = -info.eyeInfos[0].position[2];
+					if (headPositionTarget) {
+						headPositionTarget.x = info.eyeInfos[0].position[0];
+						headPositionTarget.y = info.eyeInfos[0].position[1];
+						headPositionTarget.z = -info.eyeInfos[0].position[2];						
+					}
 					
-					var vec:Vector.<Number> = info.eyeInfos[0].orientation as Vector.<Number>;
-					quatToTransform( -vec[0], -vec[1], vec[2], vec[3], headRotationTarget );	
+					if (headRotationTarget) {
+						var vec:Vector.<Number> = info.eyeInfos[0].orientation as Vector.<Number>;
+						quatToTransform( -vec[0], -vec[1], vec[2], vec[3], headRotationTarget );						
+					}
 					
 					
 					for ( eyeNum = 0; eyeNum < 2; eyeNum++ ) {
 						_ocCam.projection = _projections[eyeNum];
 						// position the camera
 						_ocCam.copyTransformFrom( scene.camera, false );
-						_ocCam.translateX( (eyeNum*(2*_halfIPD))-_halfIPD);
+						_ocCam.translateX( (eyeNum*(IPD))-(IPD/2));
 						super.context.setScissorRectangle( _scissorRectangles[eyeNum] );
 						super.render( _ocCam );
 					}
 					
 				}
 				
-				super.context.setRenderToTexture( _distortionTexture.texture, true, 0 );
-				//super.context.setRenderToBackBuffer();
+				if (_useFXAA) {
+					super.context.setRenderToTexture( _distortionTexture.texture, true, 0 );					
+				}else {
+					super.context.setRenderToBackBuffer();
+				}
+				
 				super.context.clear();
 				super.context.setScissorRectangle( null );
-
-				
-				info = _oculusANE.getRenderInfo();
-				
-				
-				
+	
 				for ( eyeNum = 0; eyeNum < 2; eyeNum++ ) {				
 					
 					_ocShader.params.EyeToSourceUVScale.value[0] = _hmdInfo.eyeInfos[eyeNum].UVScaleOffset.eyeToSourceUVScale.x;
@@ -292,14 +302,16 @@ package
 					_ocMeshes[eyeNum].draw( false, _ocShader );	
 				}
 				
-				_oculusANE.endFrameTiming();
+				//_oculusANE.endFrameTiming();
 				
-				super.context.setRenderToBackBuffer();
-				_fxaaShader.setTechnique( "fxaa" );
-				_fxaaShader.params.resolution.value[0] = scene.viewPort.width;
-				_fxaaShader.params.resolution.value[1] = scene.viewPort.height;
-				_fxaaShader.params.targetBuffer.value = _distortionTexture;
-				_fxaaShader.drawQuad();	
+				if (_useFXAA) {
+					super.context.setRenderToBackBuffer();
+					_fxaaShader.setTechnique( "fxaa" );
+					_fxaaShader.params.resolution.value[0] = scene.viewPort.width;
+					_fxaaShader.params.resolution.value[1] = scene.viewPort.height;
+					_fxaaShader.params.targetBuffer.value = _distortionTexture;
+					_fxaaShader.drawQuad();					
+				}
 				
 			}else {
 				super.render(camera, clearDepth, target);
@@ -421,7 +433,28 @@ package
 		public function set vFov(value:Number):void 
 		{
 			_vFov = value;
-			createTexture();
+			_projections[0] = createProjection(0, _scissorRectangles[0]);
+			_projections[1] = createProjection(1, _scissorRectangles[1]);
+		}
+		
+		public function get IPD():Number 
+		{
+			return _ipd;
+		}
+		
+		public function set IPD(value:Number):void 
+		{
+			_ipd = value;
+		}
+		
+		public function get useFXAA():Boolean 
+		{
+			return _useFXAA;
+		}
+		
+		public function set useFXAA(value:Boolean):void 
+		{
+			_useFXAA = value;
 		}
 	}
 }
