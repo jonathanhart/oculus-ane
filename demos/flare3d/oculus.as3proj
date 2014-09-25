@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="bin\flare3d.swf" />
+    <movie fps="75" />
+    <movie width="1280" />
+    <movie height="800" />
+    <movie version="14" />
+    <movie minorVersion="0" />
+    <movie platform="AIR" />
+    <movie background="#000000" />
+    <movie preferredSDK="AIR 14.0.0;14.0.0;" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option accessible="False" />
+    <option advancedTelemetry="False" />
+    <option allowSourcePathOverlap="False" />
+    <option benchmark="False" />
+    <option es="False" />
+    <option inline="False" />
+    <option locale="" />
+    <option loadConfig="" />
+    <option optimize="True" />
+    <option omitTraces="True" />
+    <option showActionScriptWarnings="True" />
+    <option showBindingWarnings="True" />
+    <option showInvalidCSS="True" />
+    <option showDeprecationWarnings="True" />
+    <option showUnusedTypeSelectorWarnings="True" />
+    <option strict="True" />
+    <option useNetwork="False" />
+    <option useResourceBundleMetadata="True" />
+    <option warnings="True" />
+    <option verboseStackTraces="False" />
+    <option linkReport="" />
+    <option loadExterns="" />
+    <option staticLinkRSL="True" />
+    <option additional="-swf-version=21" />
+    <option compilerConstants="" />
+    <option minorVersion="" />
+  </build>
+  <!-- SWC Include Libraries -->
+  <includeLibraries>
+    <!-- example: <element path="..." /> -->
+  </includeLibraries>
+  <!-- SWC Libraries -->
+  <libraryPaths>
+    <element path="ext\release\OculusANE.ane" />
+    <element path="lib\MinimalComps_0_9_10.swc" />
+    <element path="lib\Flare3D_Dev.swc" />
+  </libraryPaths>
+  <!-- External Libraries -->
+  <externalLibraryPaths>
+    <!-- example: <element path="..." /> -->
+  </externalLibraryPaths>
+  <!-- Runtime Shared Libraries -->
+  <rslPaths>
+    <element path="lib\Flare3D_FLSL.swc" />
+  </rslPaths>
+  <!-- Intrinsic Libraries -->
+  <intrinsics>
+    <element path="" />
+  </intrinsics>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
+  </library>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\OculusTest.as" />
+  </compileTargets>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="CreateCertificate.bat" />
+    <hidden path="AIR_readme.txt" />
+    <hidden path="PackageApplication.bat" />
+    <hidden path="SelfSigned.pfx" />
+    <hidden path="SWCSettings.lxml" />
+    <hidden path="java.exe" />
+    <hidden path="Flare3D Studio.as3proj" />
+    <hidden path="Flare3DStudio.exe" />
+    <hidden path="hs_err_pid1764.log" />
+    <hidden path="Native PackageApplication.bat" />
+    <hidden path="plugins.as3proj" />
+    <hidden path="src.rar" />
+    <hidden path="hs_err_pid3704.log" />
+    <hidden path="hs_err_pid588.log" />
+    <hidden path="EvalES4UI.zip" />
+    <hidden path="Local Store" />
+    <hidden path="flash_cs5_extending.pdf" />
+    <hidden path="lib\skin2.fla" />
+    <hidden path="lib\skin.fla" />
+    <hidden path="collada.bat" />
+    <hidden path="docs.docproj" />
+    <hidden path="flare3d.as3proj" />
+    <hidden path="flare3d.bat" />
+    <hidden path="flare3d_prerelease.as3proj" />
+    <hidden path="notes.txt" />
+    <hidden path="prerelease.bat" />
+    <hidden path="readme.txt" />
+    <hidden path="users.txt" />
+    <hidden path="clean.bat" />
+    <hidden path="dev.txt" />
+    <hidden path="manifest.xml" />
+    <hidden path="dev.docproj" />
+    <hidden path="docs flare.docproj" />
+    <hidden path="docs all.docproj" />
+    <hidden path="flare3d.zip" />
+    <hidden path="art" />
+    <hidden path="docs_dev" />
+    <hidden path="flsl\_application.xml" />
+    <hidden path="flsl\alphaMask.flare3dShader" />
+    <hidden path="flsl\animatedTexture.flare3dShader" />
+    <hidden path="flsl\blendMode.flare3dShader" />
+    <hidden path="flsl\bump.flare3dShader" />
+    <hidden path="flsl\color.flare3dShader" />
+    <hidden path="flsl\colorParticle.flare3dShader" />
+    <hidden path="flsl\environment.flare3dShader" />
+    <hidden path="flsl\Flare3D Dev.lnk" />
+    <hidden path="flsl\flsl.as3proj" />
+    <hidden path="flsl\fog.flare3dShader" />
+    <hidden path="flsl\java.exe" />
+    <hidden path="flsl\lights.flare3dShader" />
+    <hidden path="flsl\planar.flare3dShader" />
+    <hidden path="flsl\specular.flare3dShader" />
+    <hidden path="flsl\transform.flare3dShader" />
+    <hidden path="flsl\texture.flare3dShader" />
+    <hidden path="flsl\SWCSettings.lxml" />
+    <hidden path="flsl\Main.as" />
+    <hidden path="flsl\docs.as" />
+    <hidden path="flsl\cert.pfx" />
+    <hidden path="flsl\build.bat" />
+    <hidden path="flsl\application.xml" />
+    <hidden path="flsl\app" />
+    <hidden path="flsl\air" />
+    <hidden path="docs flsl.docproj" />
+    <hidden path="docs with collada.docproj" />
+    <hidden path="flare3d_pre_html.as3proj" />
+    <hidden path="flsl_docs.rtf" />
+    <hidden path="flsl\flsl.swf" />
+    <hidden path="flsl\Adobe AIR" />
+    <hidden path="flsl\META-INF" />
+    <hidden path="flsl\mimetype" />
+    <hidden path="max plugin.nsi" />
+    <hidden path="flsl\specularMap.flare3dShader" />
+    <hidden path="flsl\normalMap.flare3dShader" />
+    <hidden path="flsl\cubemap.flare3dShader" />
+    <hidden path="flsl\null.flare3dShader" />
+    <hidden path="air.as3proj" />
+    <hidden path="backup.bat" />
+    <hidden path="changelog.txt" />
+    <hidden path="classic_viewer.as3proj" />
+    <hidden path="dev_build_air.bat" />
+    <hidden path="dev_build_bundle.bat" />
+    <hidden path="dev_build_installer.bat" />
+    <hidden path="dev_run.bat" />
+    <hidden path="docs_flare.bat" />
+    <hidden path="easing.txt" />
+    <hidden path="experiments.as3proj" />
+    <hidden path="flare3d.air" />
+    <hidden path="flare3d.exe" />
+    <hidden path="Flare3D_2.swc" />
+    <hidden path="flare3d_3dmax_plugin_v2_beta.exe" />
+    <hidden path="flare3d_library.as3proj" />
+    <hidden path="flare3d_zynga44.zip" />
+    <hidden path="flare3d_zynga44d.zip" />
+    <hidden path="flare3d_zynga44e.zip" />
+    <hidden path="LFD - LED BRO-MAY11T_LR (2).pdf" />
+    <hidden path="swc_collada.bat" />
+    <hidden path="swc_dev.bat" />
+    <hidden path="swc_flare3d.bat" />
+    <hidden path="swc_net.bat" />
+    <hidden path="todo.txt" />
+    <hidden path="zip_prerelease.bat" />
+    <hidden path="zip_zynga.bat" />
+    <hidden path="zynga.txt" />
+    <hidden path="_max plugin.nsi" />
+    <hidden path="azoth.exe" />
+    <hidden path="backup_experiments.bat" />
+    <hidden path="backup_full.bat" />
+    <hidden path="backup_version.bat" />
+    <hidden path="binary.as3proj" />
+    <hidden path="compare.WinMerge" />
+    <hidden path="decompiler.as3proj" />
+    <hidden path="dev.as3proj" />
+    <hidden path="flare3d.dmg" />
+    <hidden path="flare3d_experiments.zip" />
+    <hidden path="flare3d_version_01_02_2012.zip" />
+    <hidden path="flare3d_version_02_02_2012.zip" />
+    <hidden path="flare3d_version_03_02_2012.zip" />
+    <hidden path="flare3d_version_04_02_2012.zip" />
+    <hidden path="flare3d_version_05_02_2012.zip" />
+    <hidden path="flare3d_version_06_02_2012.zip" />
+    <hidden path="flare3d_version_07_02_2012.zip" />
+    <hidden path="flare3d_version_08_02_2012.zip" />
+    <hidden path="flare3d_version_09_02_2012.zip" />
+    <hidden path="flare3d_version_10_02_2012.zip" />
+    <hidden path="flare3d_version_11_02_2012.zip" />
+    <hidden path="flare3d_version_12_02_2012.zip" />
+    <hidden path="flare3d_version_13_02_2012.zip" />
+    <hidden path="flare3d_version_14_02_2012.zip" />
+    <hidden path="flare3d_version_24_01_2012.zip" />
+    <hidden path="flare3d_version_25_01_2012.zip" />
+    <hidden path="flare3d_version_26_01_2012.zip" />
+    <hidden path="flare3d_version_30_01_2012.zip" />
+    <hidden path="flare3d_version_31_01_2012.zip" />
+    <hidden path="flare3d_zynga45.zip" />
+    <hidden path="flare3d_zynga46.zip" />
+    <hidden path="flare3d_zynga47.zip" />
+    <hidden path="FLSL.eml" />
+    <hidden path="ide_commandLine.bat" />
+    <hidden path="max plugin - copia.nsi" />
+    <hidden path="simpleShader.fx" />
+    <hidden path="simpleShader2.fx" />
+    <hidden path="compiler_flash.as3proj" />
+    <hidden path="bin\animatedNoise.swf" />
+    <hidden path="src\flare\compiler\library.flare3dShader" />
+    <hidden path="examples\test7.flsl.compiled" />
+    <hidden path="examples\test6.flsl.compiled" />
+    <hidden path="examples\test5.flsl.compiled" />
+    <hidden path="examples\test4.flsl.compiled" />
+    <hidden path="examples\test3.flsl.compiled" />
+    <hidden path="examples\test2.flsl.compiled" />
+    <hidden path="examples\test1.flsl.compiled" />
+    <hidden path="examples\base.flsl.compiled" />
+    <hidden path="new.fx" />
+    <hidden path="model.as3proj" />
+    <hidden path="flsl.exe" />
+    <hidden path="examples\base2.flsl.compiled" />
+    <hidden path="examples\test.flsl.compiled" />
+    <hidden path="exp.PIXExp" />
+    <hidden path="flare3d_flsl_compiler.exe" />
+    <hidden path="flare3d_flsl.zip" />
+    <hidden path="stream.PIXRun" />
+    <hidden path="exporter4.ms" />
+    <hidden path="flare3d 2.5.as3proj" />
+    <hidden path="flare3d.png" />
+    <hidden path="flare3d_2_5_version_08_05_2012.zip" />
+    <hidden path="flare3d_2_5_version_09_05_2012.zip" />
+    <hidden path="flare3d_2_5_version_10_05_2012.zip" />
+    <hidden path="logo.png" />
+    <hidden path="scene5.max" />
+    <hidden path="scene6.max" />
+    <hidden path="bin\10 - metal.png" />
+    <hidden path="bin\alpha_map.jpg" />
+    <hidden path="bin\alpha_map2.jpg" />
+    <hidden path="bin\axis.f3d" />
+    <hidden path="bin\Body.f3d" />
+    <hidden path="bin\bubbles 3.png" />
+    <hidden path="bin\bubbles 8.png" />
+    <hidden path="bin\clay4.png" />
+    <hidden path="bin\clay5.png" />
+    <hidden path="bin\cross.jpg" />
+    <hidden path="bin\cubemap1.png" />
+    <hidden path="bin\cubemap14.png" />
+    <hidden path="bin\cubemap15.png" />
+    <hidden path="bin\cubemap5.png" />
+    <hidden path="bin\cubemap6.png" />
+    <hidden path="bin\displacement.jpg" />
+    <hidden path="bin\displacement2.jpg" />
+    <hidden path="bin\displacement3.jpg" />
+    <hidden path="bin\displacement4.jpg" />
+    <hidden path="bin\displacement5.jpg" />
+    <hidden path="bin\displacement6.jpg" />
+    <hidden path="bin\displacement7.jpg" />
+    <hidden path="bin\droplet_01.png" />
+    <hidden path="bin\fantasysilver.png" />
+    <hidden path="bin\flsl.swf" />
+    <hidden path="bin\iceb.png" />
+    <hidden path="bin\lostinspace2.png" />
+    <hidden path="bin\material16.png" />
+    <hidden path="bin\material3.jpg" />
+    <hidden path="bin\normal1.jpg" />
+    <hidden path="bin\normal6.jpg" />
+    <hidden path="bin\r10.jpg" />
+    <hidden path="bin\r30.jpg" />
+    <hidden path="bin\reflections.jpg" />
+    <hidden path="bin\rusty.png" />
+    <hidden path="bin\skybox1.png" />
+    <hidden path="bin\skybox2.png" />
+    <hidden path="bin\skybox4.png" />
+    <hidden path="bin\skybox5.png" />
+    <hidden path="bin\swampy_v2b.f3d" />
+    <hidden path="bin\teapot.f3d" />
+    <hidden path="bin\thuglee-chrome-02c.jpg" />
+    <hidden path="bin\track.f3d" />
+    <hidden path="bin\track2.f3d" />
+    <hidden path="bin\tree.png" />
+    <hidden path="bin\test.xml" />
+    <hidden path="bin\test_1.index" />
+    <hidden path="bin\test_1.vertex" />
+    <hidden path="bin\test2.xml" />
+    <hidden path="bin\test2_1.index" />
+    <hidden path="bin\test2_1.vertex" />
+    <hidden path="bin\bottom.jpg" />
+    <hidden path="bin\r42.jpg" />
+    <hidden path="bin\Grass.bb" />
+    <hidden path="bin\GrassClip.bmp" />
+    <hidden path="bin\Ground.bmp" />
+    <hidden path="bin\lens1.jpg" />
+    <hidden path="bin\lens2.jpg" />
+    <hidden path="bin\lens3.jpg" />
+    <hidden path="bin\lens4.jpg" />
+    <hidden path="bin\sky_BK.bmp" />
+    <hidden path="bin\sky_FR.bmp" />
+    <hidden path="bin\sky_LF.bmp" />
+    <hidden path="bin\sky_RT.bmp" />
+    <hidden path="bin\sky_UP.bmp" />
+    <hidden path="bin\c.png" />
+    <hidden path="bin\Mina.png" />
+    <hidden path="FLSL.xml" />
+    <hidden path="exporter5.ms" />
+    <hidden path="cubeMapTexture.ms" />
+    <hidden path="application.xml" />
+    <hidden path="compiler.as3proj" />
+    <hidden path="ctools.xml" />
+    <hidden path="bin\compile.ms" />
+    <hidden path="bin\chess.max" />
+    <hidden path="bin\2.5.ms" />
+    <hidden path="bin\exporter2.5.ms" />
+    <hidden path="bin\exporter2.5.mse" />
+    <hidden path="bin\scene.max" />
+    <hidden path="bin\scene2.max" />
+    <hidden path="bin\scene3.max" />
+    <hidden path="bin\scene4.max" />
+    <hidden path="bin\shapes.max" />
+    <hidden path="Oculus_SDK_Overview.pdf" />
+    <hidden path="flare3d_oculus.exe" />
+    <hidden path="obj" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="Custom" />
+    <option testMovieCommand="run.bat" />
+  </options>
+  <!-- Plugin storage -->
+  <storage>
+    <entry key="at_enabled"><![CDATA[0]]></entry>
+    <entry key="at_password"><![CDATA[]]></entry>
+  </storage>
+</project>
