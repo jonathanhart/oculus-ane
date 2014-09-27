@@ -5,6 +5,7 @@ package
 	import flare.flsl.*;
 	import flare.materials.*;
 	import flare.materials.filters.*;
+	import flare.physics.test.AxisInfo;
 	import flare.primitives.*;
 	import flare.system.*;
 	import flare.utils.Matrix3DUtils;
@@ -48,14 +49,15 @@ package
 		
 		private var _vFov:Number;
 		private var _hmdInfo:Object;
-		private var _useTimewarp:Boolean = false;
+		private var _useTimewarp:Boolean = true;
 		private var _useFXAA:Boolean = true;
-		private var _lowPersistence:Boolean = false;
+		private var _lowPersistence:Boolean = true;
 		private var _isSupported:Boolean = false;
 		private var _bRender:Boolean = true;
 		private var _textureScale:Number = 1;
 		private var _textureSize:Rectangle;
 		private var _createTextureTimeout:int;
+		private var _rotationMatrix:Matrix3D = new Matrix3D();
 		
 		public var _oculusANE:OculusANE;
 		public var headRotationTarget:Pivot3D;
@@ -87,6 +89,7 @@ package
 			}
 			
 			_hmdInfo = _oculusANE.getHMDInfo();
+			lowPersistence = _lowPersistence;
 
 			// TODO : workout nice oculus fake
 			//_hmdInfo = JSON.parse(new oculusJson())
@@ -174,6 +177,7 @@ package
 					_texture.mipMode = Texture3D.MIP_NONE;
 					_texture.upload( scene );
 					_ocShader.params.texture.value = _texture;	
+					
 					_distortionTexture = new Texture3D(_textureSize);
 					_distortionTexture.mipMode = Texture3D.MIP_NONE;
 					_distortionTexture.upload( scene );					
@@ -229,11 +233,12 @@ package
 			rawData[14] = (far * near) / (near - far);
 			rawData[0] = x / ( w / view.width );
 			rawData[5] = y / ( h / view.height );
-			rawData[8] = 1 - ( view.width / w ) - view.x / w * 2 + offset;
-			rawData[9] = -1 + ( view.height / h ) + view.y / h * 2;
+			rawData[8] = (1 - ( view.width / w ) - view.x / w * 2 + offset);
+			rawData[9] = (-1 + ( view.height / h ) + view.y / h * 2);
 			_hmdInfo
 			var proj:Matrix3D = new Matrix3D( rawData );
-				proj.prependScale( 1, 1, -1 );
+			proj.prependScale( 1, 1, -1 );
+			//proj.prependRotation( 180, new Vector3D(0,0,1) );
 			return proj;
 		}
 				
@@ -244,28 +249,31 @@ package
 				var info:Object;
 				var eyeNum:int;
 				
+				//info = _oculusANE.getRenderInfo();
 
 				if (_bRender) {
 					
 					super.context.setRenderToTexture( _texture.texture, true, 0 );
 					super.context.clear();
 
-					//_oculusANE.beginFrameTiming();
-					info = _oculusANE.getRenderInfo();
-					//trace( "info.eyeInfos[eyeNum].position : " + info.eyeInfos[eyeNum].position );
-					if (headPositionTarget) {
-						headPositionTarget.x = info.eyeInfos[0].position[0];
-						headPositionTarget.y = info.eyeInfos[0].position[1];
-						headPositionTarget.z = -info.eyeInfos[0].position[2];						
-					}
-					
-					if (headRotationTarget) {
-						var vec:Vector.<Number> = info.eyeInfos[0].orientation as Vector.<Number>;
-						quatToTransform( -vec[0], -vec[1], vec[2], vec[3], headRotationTarget );						
-					}
-					
-					
 					for ( eyeNum = 0; eyeNum < 2; eyeNum++ ) {
+
+						info = _oculusANE.getEyePose(eyeNum);
+						//_oculusANE.beginFrameTiming();
+						
+						//trace( "info.eyeInfos[eyeNum].position : " + info.eyeInfos[eyeNum].position );
+						if (headPositionTarget) {
+							headPositionTarget.x = info.position[0];
+							headPositionTarget.y = info.position[1];
+							headPositionTarget.z = -info.position[2];						
+						}
+						
+						if (headRotationTarget) {
+							var vec:Vector.<Number> = info.orientation as Vector.<Number>;
+							quatToTransform( -vec[0], -vec[1], vec[2], vec[3], headRotationTarget );						
+						}
+							
+						
 						_ocCam.projection = _projections[eyeNum];
 						// position the camera
 						_ocCam.copyTransformFrom( scene.camera, false );
@@ -285,6 +293,7 @@ package
 				super.context.clear();
 				super.context.setScissorRectangle( null );
 	
+				
 				for ( eyeNum = 0; eyeNum < 2; eyeNum++ ) {				
 					
 					_ocShader.params.EyeToSourceUVScale.value[0] = _hmdInfo.eyeInfos[eyeNum].UVScaleOffset.eyeToSourceUVScale.x;
@@ -292,11 +301,21 @@ package
 					_ocShader.params.EyeToSourceUVOffset.value[0] = _hmdInfo.eyeInfos[eyeNum].UVScaleOffset.eyeToSourceUVOffset.x;
 					_ocShader.params.EyeToSourceUVOffset.value[1] = _hmdInfo.eyeInfos[eyeNum].UVScaleOffset.eyeToSourceUVOffset.y;
 					
-					
 					// timewarp stuff is doing weird.. disabled for the moment
 					if (_useTimewarp) {
-						 _ocShader.params.EyeRotationStart.value.rawData = info.eyeInfos[0].eyeRotationStart;
-						 _ocShader.params.EyeRotationEnd.value.rawData = info.eyeInfos[0].eyeRotationEnd;
+						info = _oculusANE.getEyeTimewarpMatrices(eyeNum);
+						
+						//trace( "info.eyeRotationStart : " + info.eyeRotationStart );
+						
+						//info.eyeRotationStart[0] = -info.eyeRotationStart[0];
+						_rotationMatrix.rawData = info.eyeRotationStart;
+						_rotationMatrix.invert();
+						_ocShader.params.EyeRotationStart.value.rawData = _rotationMatrix.rawData;
+						
+						//info.eyeRotationEnd[0] = -info.eyeRotationEnd[0];
+						_rotationMatrix.rawData = info.eyeRotationEnd;
+						_rotationMatrix.invert();
+						_ocShader.params.EyeRotationEnd.value.rawData = _rotationMatrix.rawData;
 					}
 					
 					_ocMeshes[eyeNum].draw( false, _ocShader );	

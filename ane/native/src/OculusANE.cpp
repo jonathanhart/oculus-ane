@@ -42,6 +42,7 @@ extern "C" {
 		return result;
 	}
 
+
 	FREObject getResolution(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
 	{
 		FREObject resolutionResult;
@@ -66,7 +67,7 @@ extern "C" {
 
 
 
-
+	
 	FREObject getCameraPosition(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
 	{
 		FREObject positionResult;
@@ -139,7 +140,6 @@ extern "C" {
 		return cameraQuaternionResult;
 	}
 
-
 	FREObject beginFrameTiming(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
 	{
 		FREObject result;
@@ -160,6 +160,119 @@ extern "C" {
 		return result;
 	}
 
+	FREObject freOvrHmd_GetEyeTimewarpMatrices(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
+	{
+		unsigned int eyeNum = 0;
+		FREGetObjectAsUint32(argv[0], &eyeNum);
+
+		FREObject freEyeInfo;
+		FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
+
+		// TIMEWARP
+		ovrMatrix4f timeWarpMatrices[2];
+		ovrHmd_GetEyeTimewarpMatrices(HMD, (ovrEyeType)eyeNum, eyeRenderPose[eyeNum], timeWarpMatrices);
+
+
+		FREObject freEyeRotationStart;
+		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freEyeRotationStart, NULL);
+		FRESetArrayLength(freEyeRotationStart, 16);
+		for (int i = 0; i<4; i++) {
+			for (int j = 0; j<4; j++) {
+				FREObject raw;
+				FRENewObjectFromDouble(static_cast<double>(timeWarpMatrices[0].M[i][j]), &raw);
+				FRESetArrayElementAt(freEyeRotationStart, (4 * i) + j, raw);
+			}
+		}
+		FRESetObjectProperty(freEyeInfo, (const uint8_t*)"eyeRotationStart", freEyeRotationStart, NULL);
+
+
+		FREObject freEyeRotationEnd;
+		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freEyeRotationEnd, NULL);
+		FRESetArrayLength(freEyeRotationEnd, 16);
+		for (int i = 0; i<4; i++) {
+			for (int j = 0; j<4; j++) {
+				FREObject raw;
+				FRENewObjectFromDouble(static_cast<double>(timeWarpMatrices[1].M[i][j]), &raw);
+				FRESetArrayElementAt(freEyeRotationEnd, (4 * i) + j, raw);
+			}
+		}
+		FRESetObjectProperty(freEyeInfo, (const uint8_t*)"eyeRotationEnd", freEyeRotationEnd, NULL);
+
+
+		return freEyeInfo;
+	}
+
+	FREObject freOvrHmd_GetEyePose(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
+	{
+		unsigned int eyeNum = 0;
+		FREGetObjectAsUint32(argv[0], &eyeNum);
+
+		// Adjust eye position and rotation from controls, maintaining y position from HMD.
+		//static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
+		//HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
+
+		ovrEyeType eye = HMD->EyeRenderOrder[eyeNum];
+		eyeRenderPose[eye] = ovrHmd_GetEyePose(HMD, eye);
+
+		FREObject freEyeInfo;
+		FRENewObject((const uint8_t*)"Object", 0, NULL, &freEyeInfo, NULL);
+
+
+		// POSITION
+		FREObject frePosition;
+		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &frePosition, NULL);
+		FRESetArrayLength(&frePosition, 3);
+
+		FREObject xVal;
+		double x = static_cast<double>(eyeRenderPose[eye].Position.x);
+		FRENewObjectFromDouble(x, &xVal);
+		FRESetArrayElementAt(frePosition, 0, xVal);
+
+		FREObject yVal;
+		double y = static_cast<double>(eyeRenderPose[eye].Position.y);
+		FRENewObjectFromDouble(y, &yVal);
+		FRESetArrayElementAt(frePosition, 1, yVal);
+
+		FREObject zVal;
+		double z = static_cast<double>(eyeRenderPose[eye].Position.z);
+		FRENewObjectFromDouble(z, &zVal);
+		FRESetArrayElementAt(frePosition, 2, zVal);
+
+		FRESetObjectProperty(freEyeInfo, (const uint8_t*)"position", frePosition, NULL);
+
+
+
+
+		// ROTATION
+		FREObject freOrientation;
+		FRENewObject((const uint8_t*)"Vector.<Number>", 0, NULL, &freOrientation, NULL);
+		FRESetArrayLength(&freOrientation, 4);
+
+		ovrQuatf quaternion = eyeRenderPose[eye].Orientation;
+
+		// get an element at index
+		x = static_cast<double>(quaternion.x);
+		FRENewObjectFromDouble(x, &xVal);
+		FRESetArrayElementAt(freOrientation, 0, xVal);
+
+		y = static_cast<double>(quaternion.y);
+		FRENewObjectFromDouble(y, &yVal);
+		FRESetArrayElementAt(freOrientation, 1, yVal);
+
+		z = static_cast<double>(quaternion.z);
+		FRENewObjectFromDouble(z, &zVal);
+		FRESetArrayElementAt(freOrientation, 2, zVal);
+
+		FREObject wVal;
+		double w = static_cast<double>(quaternion.w);
+		FRENewObjectFromDouble(w, &wVal);
+		FRESetArrayElementAt(freOrientation, 3, wVal);
+
+		FRESetObjectProperty(freEyeInfo, (const uint8_t*)"orientation", freOrientation, NULL);
+
+		return freEyeInfo;
+	}
+
 	FREObject getRenderInfo(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[])
 	{
 		FREObject result;
@@ -171,11 +284,10 @@ extern "C" {
 		FRESetArrayLength(freEyeInfos, 2);
 
 		// Retrieve data useful for handling the Health and Safety Warning - unused, but here for reference
-		ovrHSWDisplayState hswDisplayState;
-		ovrHmd_GetHSWDisplayState(HMD, &hswDisplayState);
+		//ovrHSWDisplayState hswDisplayState;
+		//ovrHmd_GetHSWDisplayState(HMD, &hswDisplayState);
 
 		// Adjust eye position and rotation from controls, maintaining y position from HMD.
-		static float    BodyYaw(3.141592f);
 		static Vector3f HeadPos(0.0f, 1.6f, -5.0f);
 		HeadPos.y = ovrHmd_GetFloat(HMD, OVR_KEY_EYE_HEIGHT, HeadPos.y);
 		
@@ -638,7 +750,7 @@ extern "C" {
 
 	void OculusANE_ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet){
 
-		int functions = 9;
+		int functions = 11;
 
 		*numFunctionsToSet = functions;
 
@@ -679,6 +791,14 @@ extern "C" {
 		func[8].name = (const uint8_t*)"setEnabledCaps";
 		func[8].functionData = NULL;
 		func[8].function = &setEnabledCaps;
+
+		func[9].name = (const uint8_t*)"getEyePose";
+		func[9].functionData = NULL;
+		func[9].function = &freOvrHmd_GetEyePose;
+
+		func[10].name = (const uint8_t*)"getEyeTimewarpMatrices";
+		func[10].functionData = NULL;
+		func[10].function = &freOvrHmd_GetEyeTimewarpMatrices;
 
 		*functionsToSet = func;
 

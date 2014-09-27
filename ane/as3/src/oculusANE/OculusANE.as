@@ -72,6 +72,16 @@ package oculusANE
 			return _extContext.call("setEnabledCaps", hmdCaps) as Object;
 		}	
 		
+		public function getEyePose (eyeNum:uint) : Object
+		{ 
+			return _extContext.call("getEyePose", eyeNum) as Object;
+		}
+		
+		public function getEyeTimewarpMatrices (eyeNum:uint) : Object
+		{ 
+			return _extContext.call("getEyeTimewarpMatrices", eyeNum) as Object;
+		}	
+		
 		public function getRenderInfo () : Object
 		{
 			return _extContext.call("getRenderInfo") as Object;

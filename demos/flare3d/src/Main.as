@@ -18,7 +18,7 @@ package
 	import oculusANE.*;
 	import uk.co.soulwire.gui.SimpleGUI;
 	
-	[SWF(width = 1920, height = 1080, frameRate = 75)]
+	[SWF(width = 1280, height = 800, frameRate = 75)]
 	
 	/**
 	 * Oculus ANE, project page : https://github.com/jonathanhart/oculus-ane

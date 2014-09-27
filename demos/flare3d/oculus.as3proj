@@ -53,9 +53,9 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <element path="ext\release\OculusANE.ane" />
     <element path="lib\MinimalComps_0_9_10.swc" />
     <element path="lib\Flare3D_Dev.swc" />
+    <element path="ext\release\OculusANE.ane" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
