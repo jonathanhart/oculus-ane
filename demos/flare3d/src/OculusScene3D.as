@@ -249,8 +249,6 @@ package
 				var info:Object;
 				var eyeNum:int;
 				
-				//info = _oculusANE.getRenderInfo();
-
 				if (_bRender) {
 					
 					super.context.setRenderToTexture( _texture.texture, true, 0 );
@@ -258,8 +256,8 @@ package
 
 					for ( eyeNum = 0; eyeNum < 2; eyeNum++ ) {
 
+						_oculusANE.beginFrameTiming();
 						info = _oculusANE.getEyePose(eyeNum);
-						//_oculusANE.beginFrameTiming();
 						
 						//trace( "info.eyeInfos[eyeNum].position : " + info.eyeInfos[eyeNum].position );
 						if (headPositionTarget) {
@@ -321,7 +319,7 @@ package
 					_ocMeshes[eyeNum].draw( false, _ocShader );	
 				}
 				
-				//_oculusANE.endFrameTiming();
+				_oculusANE.endFrameTiming();
 				
 				if (_useFXAA) {
 					super.context.setRenderToBackBuffer();
@@ -334,24 +332,6 @@ package
 				
 			}else {
 				super.render(camera, clearDepth, target);
-			}
-		}
-		
-		public function applyHeadRotationTo(target:Pivot3D):void {
-			if ( _isSupported ) {
-				var vec:Vector.<Number> = _oculusANE.getCameraQuaternion();
-				quatToTransform( -vec[0], -vec[1], vec[2], vec[3], target );				
-			}
-		}
-		
-		public function applyHeadPositionTo(head:Pivot3D):void 
-		{
-			if ( _isSupported ) {
-				var vec:Vector.<Vector3D> = _oculusANE.getOculusPosition();
-				//trace( "vec : " + vec );
-				head.x = vec[0].x;
-				head.y = vec[0].y;
-				head.z = -vec[0].z;
 			}
 		}
 		
