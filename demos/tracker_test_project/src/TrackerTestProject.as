@@ -20,10 +20,14 @@ package
 		protected function onEnterFrame(event:Event):void
 		{
 			if ( _oculus.isSupported() ) {
-				var position:Vector.<Vector3D> = _oculus.getOculusPosition();
-				trace( "position : " + position );
-				var quaternion:Vector.<Number> = _oculus.getCameraQuaternion();
-				trace("quaternion: " + quaternion);
+				
+				// do this for each eye
+				var eyePose:Object = _oculus.getEyePose(0);
+				trace("pos x:" + eyePose.position[0] + " y: " + eyePose.position[1] + " z: " + eyePose.position[2]);
+				
+				var vec:Vector.<Number> = eyePose.orientation as Vector.<Number>;
+				trace("rotation vector: " + vec);
+				
 			}
 		}		
 	
